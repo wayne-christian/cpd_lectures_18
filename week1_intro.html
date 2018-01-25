@@ -1,0 +1,505 @@
+<!doctype html>
+<html>
+		<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>Week 1 (18): native vs hybrid s (Intro to CPD & PhoneGap)</title>
+		
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/night.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="css/custom.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		</head>
+		<body>
+<div class="reveal">
+          <div class="slides">
+    <section data-background-transition="convex" data-background="#333333">
+              <h2 >Hello</h2>
+              <p style="color:#F8AA00">Cross Platform Development (CMP3035M)</p>
+            </section>
+    <section data-background-transition="convex" data-background-video="assets/week1assets/rainingcode.mp4" data-background-video-loop="loop">
+              <h3 >Wayne Christian</h3>
+              <p style="color:#F8AA00">Designer, Developer, Director & Senior Lecturer</p>
+            </section>
+    <section data-menu-title="CPD" data-background-transition="convex" data-background="assets/week1assets/start.jpg" data-background-size="900px" data-background-color="#333333" > </section>
+    <section data-menu-title="stickies" data-background-transition="convex" data-background="assets/week1assets/sticky4.JPG" data-background-size="cover" >
+              <h4>Feedback</h4>
+              <p>(Stickies: Rules)</p>
+            </section>
+    <section data-menu-title="stickies" data-background-transition="convex" data-background="#333333">
+              <h4 class="bullet" >Happy</h4>
+              <h4 class=" bullet" >Meh? </h4>
+              <h4 class="bullet" >Unhappy</h4>
+              <p class="small">If you are unhappy or unure on something, please explain on the back</p>
+            </section>
+    <section data-menu-title="stickie 2" data-background-transition="convex">
+              <p><img src="assets/week1assets/sticky2.JPG"/></p>
+            </section>
+    <section data-menu-title="stickie 3" data-background-transition="convex" data-background="assets/week1assets/sticky3.JPG" data-background-size="cover"> </section>
+    <section data-menu-title="stickie 1" data-background-transition="convex" >
+              <p><img src="assets/week1assets/sticky1.JPG"/></p>
+            </section>
+    <section data-menu-title="stickies website" data-background-iframe="https://wayne-christian.github.io/WEB-AUTH-PRESENTATIONS/webauth_stickies/plane/index.html" data-background-interactive> </section>
+    <section data-menu-title="feedback reason" data-background-transition="convex" >
+              <h4 style="text-transform: none">Feedback helps us gauge your understanding and the pace in which you are learning individually and as a group <br>
+        It helps us to try and improve your experience & that understanding</h4>
+            </section>
+    <section data-menu-title="next few weeks" data-background-transition="convex" >
+              <h4>Today</h4>
+              <p>We will cover</p>
+              <p class="fragment small bullet">Module overview</p>
+              <p class="fragment small bullet">Learning outcomes</p>
+              <p class="fragment small bullet">Module Goals</p>
+              <p class="fragment small bullet">Delivery Strategy</p>
+              <p class="fragment small bullet">Assessment (brief - covered by Khaled next week)</p>
+
+              <p class="fragment small bullet">What is Cross-platform development</p>
+              <p class="fragment small" style="color: #666">if we have time</p>
+              <p class="fragment small bullet" style="color: #666">Very quick overview of a basic PG set up</p>
+              <p class="fragment small bullet" style="color: #666">Deploy to a phone using PG build and PG desktop</p>
+            </section>
+    <section data-menu-title="team" data-background-transition="convex" >
+              <h4>The delivery team</h4>
+            </section>
+    <section data-menu-title="wayne" class="fragment" data-background="assets/week1assets/holo1.jpg" data-background-size="cover" data-background-color="#fff">
+              <h4 class="">Wayne Christian (me)</h4>
+              <p class="">My current research focuses on Mixed Reality (focused around Pedagogy)</p>
+              <p>Office Location  AAD1E19 (Interactive Design studio) Architecture building, East Wing, First Floor<br>
+        Support Hours: Tuesday 11.30 - 1.30<br>
+        Wednesday 12.30 - 4.30</p>
+            </section>
+    <section data-menu-title="waynes loop" data-background-transition="convex" data-background-video="assets/week1assets/ade_loop.mp4" data-background-video-loop="loop"> </section>
+    <section data-menu-title="Hololens example" data-background-transition="convex" data-background-video="assets/week1assets/holo1.mp4" data-background-video-loop="loop"> </section>
+    <section data-menu-title="khaled" class="fragment" data-background="assets/week1assets/khaled.gif" data-background-size="contain" data-background-color="#fff">
+              <h4 class="dark-back">Dr Khaled Bachour</h4>
+              <p class="dark-back">His research focuses on using games as a methodology for HCI research</p>
+              <p class="dark-back">Office Location INB 221<br>
+        Support Hours: Tuesday 10-12</p>
+            </section>
+    
+    <!-- poll-->
+    <section data-menu-title="poll">
+              <iframe src="https://embed.polleverywhere.com/multiple_choice_polls/QxXrrMbxGauNMaO?controls=none&short_poll=true" width="100%" height="600px" frameBorder="0"></iframe>
+            </section>
+    <!-- poll-->
+    
+    <section data-menu-title="team" data-background-transition="convex" >
+              <h4>Module Goals</h4>
+              <p class="fragment small bullet"><strong>Design</strong> => Focus on user experience</p>
+              <p class="fragment small bullet"><strong>Develop</strong> => Using cross-platform tools</p>
+              <p class="fragment small bullet"><strong>Reflect</strong> => On the whole process </p>
+            </section>
+    <section class="" data-background="assets/week1assets/brain.jpg" style="">
+              <h3 style=" text-shadow: black 1px 1px;">It requires logical and creative thinking</h3>
+            </section>
+    <section data-background-transition="convex" data-background-video="assets/week1assets/logical.mp4"> </section>
+    <section data-background-transition="convex" data-background-video="https://assets.awwwards.com/awards/external/2017/02/58ac00a531a84.mp4" data-background-video-loop="loop"> </section>
+    
+            
+    <section data-menu-title="Assessment">
+              <h4>Assessment Overview</h4>
+              <p>We will go through these in more detail through out the module</p>
+              <p class="small">(Brain overload!)</p>
+            </section>
+            <section data-menu-title="Assessment brief start">
+              <h3>What are we doing?</h3>
+            </section>
+    <section data-menu-title="Assessment brief">
+              <p class="small">For this assessment, you will need to design and develop a mobile app and report on the iterative process of designing and developing it. Your app must revolve around a “mobile moment”. For something to qualify as a mobile moment, it should not be possible / desirable to do the same activity with a laptop / desktop computer. Appropriate mobile moments could be (but are not limited to): commuting, waking up,</p>
+            </section>
+    <section data-menu-title="schedule" data-background="assets/week1assets/schedule.png" data-background-size="950px" data-background-color="#fff"> </section>
+    <section data-menu-title="work method" data-background="assets/week1assets/constant_work.png" data-background-size="800px" data-background-color="#fff">
+              <p class="small" style="color: #222">Encouraging a habit of constant work</p>
+            </section>
+    <section data-menu-title="waterfall" data-background="assets/week1assets/waterfall.svg" data-background-size="950px" data-background-color="#1b1b1b">
+              <h3>Nooo!</h3>
+            </section>
+    <section data-menu-title="sprint" data-background="assets/week1assets/agile-sprints.svg" data-background-size="950px" data-background-color="#1b1b1b">
+              <h3>Yay!</h3>
+            </section>
+    <section data-menu-title="agile1" data-background="assets/week1assets/agile.png" data-background-size="400px" data-background-color="#1b1b1b"> </section>
+    <section data-menu-title="agile2" data-background="assets/week1assets/agile2.jpg" data-background-size="contain" data-background-color="#FAFAFA"> </section>
+    <section data-menu-title="team" data-background-transition="convex" >
+              <h4>What this means…</h4>
+              <p class="fragment small bullet">You will work on your assessment in all workshops.</p>
+              <p class="fragment small bullet">All workshops are assessment support!</p>
+              <p class="fragment small bullet">We will give you tasks to do between the workshops.</p>
+              <p class="fragment small bullet">If you do these, you will make steady progress.</p>
+              <p class="fragment small bullet">If you do not, then you will have a lot of catching up to do.</p>
+              <p class="fragment small bullet">The assessment is designed for constant work.</p>
+              <p class="fragment small bullet">This should result in better overall work and less crunch-time.</p>
+              <p class="fragment small bullet">We are aiming for iterative design and development.</p>
+              <p class="fragment small bullet">You are encouraged to keep a design / development / reflective diary.</p>
+              <p class="fragment small bullet">This will help you with the assessment submission.</p>
+            </section>
+    
+    <section data-menu-title="learning outcomes" data-background-transition="convex" >
+              <h4>Module Learning Outcomes</h4>
+              <p class="fragment small"><strong>[LO1]</strong> Critically assess the implications and constraints of native mobile development in comparison to platform agnostic approaches.</p>
+              <p class="fragment small"><strong>[LO2]</strong> Design, prototype, and evaluate mobile applications using hi-fidelity approaches, based on well-developed user scenarios.</p>
+              <p class="fragment small"><strong>[LO3]</strong> Develop cross-platform mobile applications utilizing industry standard tools and technologies.</p>
+              <br>
+              <p class="fragment small">[mcomp]<br>
+        <strong>[LO4]</strong> Critically evaluate current research in cross-platform web and hybrid applications. [MComp]</p>
+            </section>
+    <section data-menu-title="assessment pie" data-state="pie">
+              <p class="small">Assessment weighting</p>
+              <div id="assessmentcontainer"></div>
+            </section>
+    <section data-menu-title="module content" data-background="assets/week1assets/MODULECONTENT.png" data-background-size="950px" data-background-color="#1b1b1b"></section>
+    <section data-menu-title="summary" data-background-transition="convex" >
+              <h4>Summary</h4>
+              <p>Focus on both design and development</p>
+              <p class="fragment small">Habit of regular work to avoid end-of-term crunch</p>
+              <p class="fragment small">(Nearly) everything you do will be relevant for the assessment</p>
+              <p class="fragment small">HTML5, CSS3, Java script, jQuery Mobile + PhoneGap / Cordova used for iterative design and development alike</p>
+            </section>
+  <!--    <section data-menu-title="examples">
+              <h4>Examples</h4>
+            </section>
+  <section data-background-transition="convex" data-background-video="assets/week1assets/example1.mp4" data-background-video-loop="loop"> </section>
+    <section data-background-transition="convex" data-background-video="assets/week1assets/example2.mp4" data-background-video-loop="loop"> </section>
+    <section data-background-transition="convex" data-background-video="assets/week1assets/example3.mp4" data-background-video-loop="loop"> </section>
+    <section data-background-transition="convex" data-background-video="assets/week1assets/example4.mp4" data-background-video-loop="loop"> </section>
+    <section data-menu-title="report example 2" data-background-iframe="assets/week1assets/report1.pdf"> </section>
+    <section data-menu-title="report example 3" data-background-iframe="assets/week1assets/report2.pdf"> </section>-->
+    <section data-menu-title="slide1" data-background="assets/week1assets/nativevshybrid_1.png" data-background-size="cover" data-background-color="#ffffff">
+              <audio data-autoplay src="assets/week1assets/hal.mp3"></audio>
+            </section>
+    <section data-menu-title="native vs hybrid 2" data-background="assets/week1assets/nativevshybrid_2.png" data-background-size="950px" data-background-color="#3B3344"></section>
+    <section data-menu-title="native vs hybrid 3" data-background="assets/week1assets/nativevshybrid_3.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 4" data-background="assets/week1assets/nativevshybrid_4.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 5" data-background="assets/week1assets/nativevshybrid_5.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 6" data-background="assets/week1assets/nativevshybrid_6.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 7" data-background="assets/week1assets/nativevshybrid_7.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 8" data-background="assets/week1assets/nativevshybrid_8.png" data-background-size="cover" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 9" data-background="assets/week1assets/nativevshybrid_9.png" data-background-size="950px" data-background-color="#ffffff"></section>
+ 
+    <section data-menu-title="native vs hybrid 11" data-background="assets/week1assets/nativevshybrid_11.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 12" data-background="assets/week1assets/nativevshybrid_12.png" data-background-size="950px" data-background-color="#33322E"></section>
+    <section data-menu-title="native vs hybrid 13" data-background="assets/week1assets/nativevshybrid_13.png" data-background-size="cover" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 14" data-background="assets/week1assets/nativevshybrid_14.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 15" data-background="assets/week1assets/nativevshybrid_15.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 16" data-background="assets/week1assets/nativevshybrid_16.png" data-background-size="950px" data-background-color="#292623"></section>
+    <section data-menu-title="native vs hybrid 17" data-background="assets/week1assets/nativevshybrid_17.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 18" data-background="assets/week1assets/nativevshybrid_18.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 19" data-background="assets/week1assets/nativevshybrid_19.png" data-background-size="cover" data-background-color="#292623"></section>
+    <section data-menu-title="native vs hybrid 20" data-background="assets/week1assets/nativevshybrid_20.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 21" data-background="assets/week1assets/nativevshybrid_21.png" data-background-size="cover" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 22" data-background="assets/week1assets/nativevshybrid_22.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 23" data-background="assets/week1assets/nativevshybrid_23.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 24" data-background="assets/week1assets/nativevshybrid_24.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 25" data-background="assets/week1assets/nativevshybrid_25.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 26" data-background="assets/week1assets/nativevshybrid_26.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 27" data-background="assets/week1assets/nativevshybrid_27.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 28" data-background="assets/week1assets/nativevshybrid_28.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 29" data-background="assets/week1assets/nativevshybrid_29.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 30" data-background="assets/week1assets/nativevshybrid_30.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 31" data-background="assets/week1assets/nativevshybrid_31.png" data-background-size="cover" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 32" data-background="assets/week1assets/nativevshybrid_32.png" data-background-size="cover" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 33" data-background="assets/week1assets/nativevshybrid_33.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 34" data-background="assets/week1assets/nativevshybrid_34.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 35" data-background="assets/week1assets/nativevshybrid_35.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 36" data-background="assets/week1assets/nativevshybrid_36.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 37" data-background="assets/week1assets/nativevshybrid_37.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 38" data-background="assets/week1assets/nativevshybrid_38.png" data-background-size="950px" data-background-color="#363E40"></section>
+    <section data-menu-title="native vs hybrid 39" data-background="assets/week1assets/nativevshybrid_39.png" data-background-size="950px" data-background-color="#3B3244"></section>
+    <section data-menu-title="native vs hybrid 40" data-background="assets/week1assets/nativevshybrid_40.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 41" data-background="assets/week1assets/nativevshybrid_41.png" data-background-size="950px" data-background-color="#3B3244"></section>
+    <section data-menu-title="native vs hybrid 42" data-background="assets/week1assets/nativevshybrid_42.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 43" data-background="assets/week1assets/nativevshybrid_43.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="cordova current stats" data-state="npmstats">
+              <p class="small">Current Cordova cli stats (not including PG Build)</p>
+              <div id="npmstatscontainer"></div>
+            </section>
+    <section data-menu-title="native vs hybrid 44" data-background="assets/week1assets/nativevshybrid_44.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 45" data-background="assets/week1assets/nativevshybrid_45.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 46" data-background="assets/week1assets/nativevshybrid_46.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 47" data-background="assets/week1assets/nativevshybrid_47.png" data-background-size="cover" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 48" data-background="assets/week1assets/nativevshybrid_48.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 49" data-background="assets/week1assets/nativevshybrid_49.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 50" data-background="assets/week1assets/nativevshybrid_50.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 51" data-background="assets/week1assets/nativevshybrid_51.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 52" data-background="assets/week1assets/nativevshybrid_52.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 53" data-background="assets/week1assets/nativevshybrid_53.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 54" data-background="assets/week1assets/nativevshybrid_54.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 55" data-background="assets/week1assets/nativevshybrid_55.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 56" data-background="assets/week1assets/nativevshybrid_56.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 57" data-background="assets/week1assets/nativevshybrid_57.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 58" data-background="assets/week1assets/nativevshybrid_58.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 59" data-background="assets/week1assets/nativevshybrid_59.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 60" data-background="assets/week1assets/nativevshybrid_60.png" data-background-size="cover" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 61" data-background="assets/week1assets/nativevshybrid_61.png" data-background-size="cover" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 62" data-background="assets/week1assets/nativevshybrid_62.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 63" data-background="assets/week1assets/nativevshybrid_63.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 64" data-background="assets/week1assets/nativevshybrid_64.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 65" data-background="assets/week1assets/nativevshybrid_65.png" data-background-size="coverx" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 66" data-background="assets/week1assets/nativevshybrid_66.png" data-background-size="cover" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 67" data-background="assets/week1assets/nativevshybrid_67.png" data-background-size="cover" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 68" data-background="assets/week1assets/nativevshybrid_68.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 69" data-background="assets/week1assets/nativevshybrid_69.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 70" data-background="assets/week1assets/nativevshybrid_70.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 71" data-background="assets/week1assets/nativevshybrid_71.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 72" data-background="assets/week1assets/nativevshybrid_72.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 73" data-background="assets/week1assets/nativevshybrid_73.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 74" data-background="assets/week1assets/nativevshybrid_74.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 75" data-background="assets/week1assets/nativevshybrid_75.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 76" data-background="assets/week1assets/nativevshybrid_76.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 77" data-background="assets/week1assets/nativevshybrid_77.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 78" data-background="assets/week1assets/nativevshybrid_78.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 79" data-background="assets/week1assets/nativevshybrid_79.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 80" data-background="assets/week1assets/nativevshybrid_80.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 81" data-background="assets/week1assets/nativevshybrid_81.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 82" data-background="assets/week1assets/nativevshybrid_82.png" data-background-size="950px" data-background-color="#3B3244"></section>
+    <section data-menu-title="native vs hybrid 83" data-background="assets/week1assets/nativevshybrid_83.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 84" data-background="assets/week1assets/nativevshybrid_84.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 85" data-background="assets/week1assets/nativevshybrid_85.png" data-background-size="contain" ></section>
+    <section data-menu-title="native vs hybrid 86" data-background="assets/week1assets/nativevshybrid_86.png" data-background-size="contain" ></section>
+    <section data-menu-title="native vs hybrid 87" data-background="assets/week1assets/nativevshybrid_87.png" data-background-size="contain" ></section>
+    <section data-menu-title="native vs hybrid 88" data-background="assets/week1assets/nativevshybrid_88.png" data-background-size="contain" ></section>
+    <section data-menu-title="native vs hybrid 89" data-background="assets/week1assets/nativevshybrid_89.png" data-background-size="950px" data-background-color="#3B3244"></section>
+  
+    <section data-menu-title="native vs hybrid 91" data-background="assets/week1assets/nativevshybrid_91.png" data-background-size="950px" data-background-color="#3B3244"></section>
+    <section data-menu-title="native vs hybrid 92" data-background="assets/week1assets/nativevshybrid_92.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 93" data-background="assets/week1assets/nativevshybrid_93.png" data-background-size="950px" data-background-color="#363E40"></section>
+    <section data-menu-title="config example" data-background-color="#3f3f3f" >
+              <p class="small">Config.xml (contains all the build info)</p>
+              <pre style="    margin: 0;
+    width: 100%;">
+<code class="smallcode" style="font-size: 36%">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+&lt;widget xmlns   = &quot;http://www.w3.org/ns/widgets&quot;
+    xmlns:gap   = &quot;http://phonegap.com/ns/1.0&quot;
+    id          = &quot;com.lincoln.locationtracker&quot;
+    versionCode = &quot;1&quot;
+    version     = &quot;1.0.2&quot; &gt;
+    
+    &lt;!-- versionCode is optional and Android only --&gt;
+    &lt;name&gt;name&lt;/name&gt;
+    &lt;description&gt;
+        Example app.
+    &lt;/description&gt; 
+    &lt;author href=&quot;website&quot; email=&quot;your email&quot;&gt;
+        Wayne Christian
+    &lt;/author&gt;
+	&lt;!--
+      This allows your app to load assets from all *.phongap.com domains
+    --&gt;
+	&lt;access origin=&quot;*&quot; /&gt;
+	
+	 &lt;!--
+        If you do not want any permissions to be added to your app, add the
+        following tag to your config.xml; you will still have the INTERNET
+        permission on your app, which PhoneGap requires.
+    --&gt;
+	&lt;preference name=&quot;keepRunning&quot; 			   value=&quot;false&quot; /&gt;
+	&lt;preference name=&quot;AllowInlineMediaPlayback&quot;   value=&quot;true&quot;/&gt;
+    &lt;preference name=&quot;permissions&quot;                value=&quot;none&quot;/&gt;
+
+    &lt;!-- Customize your app and platform with the preference element. --&gt;
+    &lt;preference name=&quot;orientation&quot;                value=&quot;portrait&quot; /&gt;       
+    &lt;!-- all: default means both landscape and portrait are enabled --&gt;
+    &lt;preference name=&quot;target-device&quot;              value=&quot;universal&quot; /&gt;      
+    &lt;!-- all: possible values handset, tablet, or universal --&gt;
+    &lt;preference name=&quot;fullscreen&quot;                 value=&quot;true&quot; /&gt;          
+    &lt;!-- all: hides the status bar at the top of the screen --&gt;
+    &lt;preference name=&quot;webviewbounce&quot;              value=&quot;true&quot; /&gt;           
+    &lt;!-- ios: control whether the screen 'bounces' when scrolled beyond the top --&gt;
+    &lt;preference name=&quot;prerendered-icon&quot;           value=&quot;true&quot; /&gt;           
+    &lt;!-- ios: if icon is prerendered, iOS will not apply it's gloss to the app's icon on the user's home screen --&gt;
+    &lt;preference name=&quot;stay-in-webview&quot;            value=&quot;true&quot; /&gt;           
+    &lt;!-- ios: external links should open in the default browser, 'true' would use the webview the app lives in --&gt;
+    &lt;preference name=&quot;ios-statusbarstyle&quot;         value=&quot;black-opaque&quot; /&gt;  
+    &lt;!-- ios: black-translucent will appear black because the PhoneGap webview doesn't go beneath the status bar --&gt;
+    &lt;preference name=&quot;detect-data-types&quot;          value=&quot;true&quot; /&gt;           
+    &lt;!-- ios: controls whether data types (such as phone no. and dates) are automatically turned into links by the system --&gt;
+    &lt;preference name=&quot;exit-on-suspend&quot;            value=&quot;true&quot; /&gt;           
+    &lt;!-- ios: if set to true, app will terminate when home button is pressed --&gt;
+    &lt;preference name=&quot;show-splash-screen-spinner&quot; value=&quot;true&quot; /&gt;           
+    &lt;!-- ios: if set to false, the spinner won't appear on the splash screen during app loading --&gt;
+    &lt;preference name=&quot;auto-hide-splash-screen&quot;    value=&quot;true&quot; /&gt;           
+    &lt;!-- ios: if set to false, the splash screen must be hidden using a JavaScript API --&gt;
+    &lt;preference name=&quot;disable-cursor&quot;             value=&quot;false&quot; /&gt;          
+    &lt;!-- blackberry: prevents a mouse-icon/cursor from being displayed on the app --&gt;
+    &lt;preference name=&quot;android-installLocation&quot;    value=&quot;auto&quot; /&gt;          
+    &lt;!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. --&gt;
+	&lt;preference name=&quot;splash-screen-delay&quot; 	   value=&quot;5000&quot; /&gt;
+    &lt;!--
+        Define a specific version of PhoneGap to build into your app.
+        &lt;preference name=&quot;phonegap-version&quot;       value=&quot;3.5.0&quot; /&gt;
+    --&gt;
+
+    &lt;!-- Plugins --&gt;
+
+    &lt;!-- Core plugins 
+	NOTE THAT ONLY IMPORT WHAT YOU NEED - WITH IOS 10 THERE ARE ADDITIONAL SECURITY FEATURES 
+	THAT MAY HINDER GETTING IT ONTO THE APP STORE 
+	--&gt;
+	
+    &lt;!-- Core plugins --&gt;
+    &lt;plugin name=&quot;cordova-plugin-camera&quot; /&gt;
+    &lt;plugin name=&quot;cordova-plugin-media-capture&quot; /&gt;
+    &lt;plugin name=&quot;cordova-plugin-console&quot; /&gt;
+    &lt;plugin name=&quot;cordova-plugin-device&quot; /&gt;
+    &lt;plugin name=&quot;cordova-plugin-device-orientation&quot; /&gt;
+    &lt;plugin name=&quot;cordova-plugin-dialogs&quot; /&gt;
+	&lt;plugin name=&quot;cordova-plugin-vibration&quot; /&gt;
+    &lt;plugin name=&quot;cordova-plugin-geolocation&quot; /&gt;
+    &lt;plugin name=&quot;cordova-plugin-inappbrowser&quot; /&gt;
+    &lt;plugin name=&quot;cordova-plugin-media&quot; /&gt;
+    &lt;plugin name=&quot;cordova-plugin-network-information&quot; /&gt;
+    &lt;plugin name=&quot;cordova-plugin-splashscreen&quot; /&gt;
+	&lt;plugin name=&quot;phonegap-plugin-push&quot; /&gt;
+	
+    &lt;!-- Third party plugins --&gt;
+    &lt;!-- A list of available plugins are available at https://build.phonegap.com/plugins
+	THE BELOW IS AN EXAMPLE OF EXTRA SETTINGS FOR IOS1O SECURITY --&gt;
+    &lt;plugin name=&quot;phonegap-plugin-barcodescanner&quot; &gt;
+	&lt;variable name=&quot;CAMERA_USAGE_DESCRIPTION&quot; value=&quot;To scan barcodes&quot; /&gt;
+	&lt;/plugin&gt;
+    &lt;!-- Third party plugins --&gt;
+ 
+
+	&lt;!--//these are generic not good enough for a live build - you will need to be os and device specific (android can use 9 slice png)--&gt;
+	&lt;icon src=&quot;icon.png&quot; /&gt;
+
+  &lt;splash src=&quot;splash.png&quot; /&gt;
+  &lt;platform name=&quot;ios&quot;&gt;
+  &lt;icon src=&quot;icon.png&quot; /&gt;
+  &lt;!-- iOS 8.0+ --&gt;
+  &lt;!-- iPhone 6 Plus  --&gt;
+  &lt;icon src=&quot;ASSETS/icons/apple/Icon-60@3x.png&quot; width=&quot;180&quot; height=&quot;180&quot; /&gt;
+  &lt;!-- iOS 7.0+ --&gt;
+  &lt;!-- iPhone / iPod Touch  --&gt;
+  &lt;icon src=&quot;ASSETS/icons/apple/Icon-60.png&quot; width=&quot;60&quot; height=&quot;60&quot; /&gt;
+  &lt;icon src=&quot;ASSETS/icons/apple/Icon-60@2x.png&quot; width=&quot;120&quot; height=&quot;120&quot; /&gt;
+  &lt;!-- iPad --&gt;
+  &lt;icon src=&quot;ASSETS/icons/apple/Icon-76.png&quot; width=&quot;76&quot; height=&quot;76&quot; /&gt;
+  &lt;icon src=&quot;ASSETS/icons/apple/Icon-76@2x.png&quot; width=&quot;152&quot; height=&quot;152&quot; /&gt;
+  &lt;!-- iOS 6.1 --&gt;
+  &lt;!-- Spotlight Icon --&gt;
+  &lt;icon src=&quot;ASSETS/icons/apple/Icon-40.png&quot; width=&quot;40&quot; height=&quot;40&quot; /&gt;
+  &lt;icon src=&quot;ASSETS/icons/apple/Icon-40@2x.png&quot; width=&quot;80&quot; height=&quot;80&quot; /&gt;
+  &lt;!-- iPhone / iPod Touch --&gt;
+  &lt;icon src=&quot;ASSETS/icons/apple/icon.png&quot; width=&quot;57&quot; height=&quot;57&quot; /&gt;
+  &lt;icon src=&quot;ASSETS/icons/apple/icon@2x.png&quot; width=&quot;114&quot; height=&quot;114&quot; /&gt;
+  &lt;!-- iPad --&gt;
+  &lt;icon src=&quot;ASSETS/icons/apple/Icon-72.png&quot; width=&quot;72&quot; height=&quot;72&quot; /&gt;
+  &lt;icon src=&quot;ASSETS/icons/apple/Icon-72@2x.png&quot; width=&quot;144&quot; height=&quot;144&quot; /&gt;
+  &lt;!-- iPhone Spotlight and Settings Icon --&gt;
+  &lt;icon src=&quot;ASSETS/icons/apple/Icon-small.png&quot; width=&quot;29&quot; height=&quot;29&quot; /&gt;
+  &lt;icon src=&quot;ASSETS/icons/apple/Icon-small@2x.png&quot; width=&quot;58&quot; height=&quot;58&quot; /&gt;
+  &lt;!-- iPad Spotlight and Settings Icon --&gt;
+  &lt;icon src=&quot;ASSETS/icons/apple/Icon-50.png&quot; width=&quot;50&quot; height=&quot;50&quot; /&gt;
+  &lt;icon src=&quot;ASSETS/icons/apple/Icon-50@2x.png&quot; width=&quot;100&quot; height=&quot;100&quot; /&gt;
+
+	
+&lt;!-- iPhone and iPod touch --&gt;
+&lt;splash src=&quot;ASSETS/splash/apple/iOS-Launch-Images_Default~iphone.png&quot; platform=&quot;ios&quot; width=&quot;320&quot; height=&quot;480&quot; /&gt;
+&lt;splash src=&quot;ASSETS/splash/apple/iOS-Launch-Images_Default~iphone-landscape.png&quot; platform=&quot;ios&quot; width=&quot;480&quot; height=&quot;320&quot; /&gt;
+&lt;splash src=&quot;ASSETS/splash/apple/iOS-Launch-Images_Default@2x~iphone.png&quot; platform=&quot;ios&quot; width=&quot;640&quot; height=&quot;960&quot; /&gt;
+&lt;splash src=&quot;ASSETS/splash/apple/iOS-Launch-Images_Default@2x~iphone-landscape.png&quot; platform=&quot;ios&quot; width=&quot;960&quot; height=&quot;640&quot; /&gt;
+
+&lt;!-- iPhone 5 / iPod Touch (5th Generation) --&gt;
+&lt;splash src=&quot;ASSETS/splash/apple/iOS-Launch-Images_Default-568h@2x.png&quot; platform=&quot;ios&quot; width=&quot;640&quot; height=&quot;1136&quot; /&gt;
+&lt;splash src=&quot;ASSETS/splash/apple/iOS-Launch-Images_Default-568h@2x-landscape.png&quot; platform=&quot;ios&quot; width=&quot;1136&quot; height=&quot;640&quot; /&gt;
+
+&lt;!-- iPhone 6 --&gt;
+&lt;splash src=&quot;ASSETS/splash/apple/iOS-Launch-Images_Default-667h@2x-landscape.png&quot; platform=&quot;ios&quot; width=&quot;750&quot; height=&quot;1334&quot; /&gt;
+&lt;!--&lt;splash src=&quot;ASSETS/splash/apple/iOS-Launch-Images_Default-667h@2x-landscape.png&quot; platform=&quot;ios&quot; width=&quot;1334&quot; height=&quot;750&quot; /&gt;--&gt;
+&lt;splash src=&quot;ASSETS/splash/apple/iOS-Launch-Images_Default-Portrait-736h@3x.png&quot; platform=&quot;ios&quot; width=&quot;1242&quot; height=&quot;2208&quot; /&gt;
+&lt;splash src=&quot;ASSETS/splash/apple/iOS-Launch-Images_Default-Landscape-736h@3x.png&quot; platform=&quot;ios&quot; width=&quot;2208&quot; height=&quot;1242&quot; /&gt;
+
+&lt;!-- iPad --&gt;
+&lt;splash src=&quot;ASSETS/splash/apple/iOS-Launch-Images_Default-Portrait~ipad.png&quot; platform=&quot;ios&quot; width=&quot;768&quot; height=&quot;1024&quot; /&gt;
+&lt;splash src=&quot;ASSETS/splash/apple/iOS-Launch-Images_Default-Landscape~ipad.png&quot; platform=&quot;ios&quot; width=&quot;1024&quot; height=&quot;768&quot; /&gt;
+
+&lt;!-- Retina iPad --&gt;
+&lt;splash src=&quot;ASSETS/splash/apple/iOS-Launch-Images_Default-Portrait@2x~ipad.png&quot; platform=&quot;ios&quot; width=&quot;1536&quot; height=&quot;2048&quot; /&gt;
+&lt;splash src=&quot;ASSETS/splash/apple/iOS-Launch-Images_Default-Landscape@2x~ipad.png&quot; platform=&quot;ios&quot; width=&quot;2048&quot; height=&quot;1536&quot; /&gt;
+	
+&lt;/platform&gt;
+&lt;splash src=&quot;splash.png&quot; /&gt;
+    &lt;access origin=&quot;*&quot;/&gt;
+    &lt;!-- Added the following intents to support the removal of whitelist code from base cordova to a plugin --&gt;
+    &lt;!-- Whitelist configuration. Refer to https://cordova.apache.org/docs/en/edge/guide_appdev_whitelist_index.md.html --&gt;
+    &lt;plugin name=&quot;cordova-plugin-whitelist&quot; version=&quot;1&quot; /&gt;
+    &lt;allow-intent href=&quot;http://*/*&quot; /&gt;
+    &lt;allow-intent href=&quot;https://*/*&quot; /&gt;
+    &lt;allow-intent href=&quot;tel:*&quot; /&gt;
+    &lt;allow-intent href=&quot;sms:*&quot; /&gt;
+    &lt;allow-intent href=&quot;mailto:*&quot; /&gt;
+    &lt;allow-intent href=&quot;geo:*&quot; /&gt;
+    &lt;platform name=&quot;android&quot;&gt;
+        &lt;allow-intent href=&quot;market:*&quot; /&gt;
+    &lt;/platform&gt;
+    &lt;platform name=&quot;ios&quot;&gt;
+        &lt;allow-intent href=&quot;itms:*&quot; /&gt;
+        &lt;allow-intent href=&quot;itms-apps:*&quot; /&gt;
+	&lt;/platform&gt;
+&lt;/widget&gt;
+</code> </pre>
+            </section>
+    <section data-menu-title="native vs hybrid 94" data-background="assets/week1assets/nativevshybrid_94.png" data-background-size="950px" data-background-color="#363E40"></section>
+    <section data-menu-title="native vs hybrid 95" data-background="assets/week1assets/nativevshybrid_95.png" data-background-size="950px" data-background-color="#363E40"></section>
+    <section data-menu-title="native vs hybrid 96" data-background="assets/week1assets/nativevshybrid_96.png" data-background-size="950px" data-background-color="#363E40"></section>
+    <section data-menu-title="native vs hybrid 97" data-background="assets/week1assets/nativevshybrid_97.png" data-background-size="950px" data-background-color="#363E40"></section>
+    <section data-menu-title="native vs hybrid 98" data-background="assets/week1assets/nativevshybrid_98.png" data-background-size="950px" data-background-color="#363E40"></section>
+    <section data-menu-title="native vs hybrid 99" data-background="assets/week1assets/nativevshybrid_99.png" data-background-size="950px" data-background-color="#363E40"></section>
+    <section data-menu-title="native vs hybrid 100" data-background="assets/week1assets/nativevshybrid_100.png" data-background-size="cover" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 101" data-background="assets/week1assets/nativevshybrid_101.png" data-background-size="cover" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 102" data-background="assets/week1assets/nativevshybrid_102.png" data-background-size="cover" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 103" data-background="assets/week1assets/nativevshybrid_103.png" data-background-size="cover" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 104" data-background="assets/week1assets/nativevshybrid_104.png" data-background-size="cover" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 105" data-background="assets/week1assets/nativevshybrid_105.png" data-background-size="cover" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 106" data-background="assets/week1assets/nativevshybrid_106.png" data-background-size="cover" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 107" data-background="assets/week1assets/nativevshybrid_107.png" data-background-size="cover" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 108" data-background="assets/week1assets/nativevshybrid_108.png" data-background-size="cover" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 109" data-background="assets/week1assets/nativevshybrid_109.png" data-background-size="cover" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 110" data-background="assets/week1assets/nativevshybrid_110.png" data-background-size="cover" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 111" data-background="assets/week1assets/nativevshybrid_111.png" data-background-size="cover" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 112" data-background="assets/week1assets/nativevshybrid_112.png" data-background-size="cover" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 113" data-background="assets/week1assets/nativevshybrid_113.png" data-background-size="cover" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 114" data-background="assets/week1assets/nativevshybrid_114.png" data-background-size="cover" data-background-color="#ffffff"></section>
+    <section data-menu-title="native vs hybrid 115" data-background="assets/week1assets/nativevshybrid_115.png" data-background-size="cover" data-background-color="#ffffff"></section>
+    <section data-menu-title="workshop" data-background="">
+              <h3>Thursdays Session</h3>
+              <p class="fragment">Setting up PG Build</p>
+              <p class="fragment">Looking at the config</p>
+              <p class="fragment">Basic HTML set up</p>
+            </section>
+    <section data-menu-title="finish" data-background="">
+              <h2>BOOM!</h2>
+            </section>
+  </div>
+        </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+<script src="lib/js/head.min.js"></script> 
+<script src="js/reveal.js"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+<script src="https://code.highcharts.com/highcharts.js"></script> 
+<script src="https://code.highcharts.com/highcharts-more.js"></script> 
+<script src="https://code.highcharts.com/modules/solid-gauge.js"></script> 
+<script src="js/themes/mypbtheme.js"></script> 
+<script src="js/jquery.animateNumber.min.js"></script> 
+<script src="js/main.js"></script> 
+<script>
+	var link = document.createElement( 'link' );
+	link.rel = 'stylesheet';
+	link.type = 'text/css';
+	link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+	document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+</body>
+</html>

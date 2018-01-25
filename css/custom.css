@@ -1,0 +1,193 @@
+@charset "UTF-8";
+/* CSS Document */
+
+html.jobs .slide-background, html.salary .slide-background, html.start .slide-background {
+	opacity: 0.7 !important;
+}
+	span.small, p.small, h1.small{
+		    font-size: 50%;
+	
+	}
+	.tiny{
+		        font-size: 30%;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 5px;
+	
+	}
+	ul.dark{
+	list-style: none;
+	}
+	ul.dark li{
+	list-style: none;
+		height: auto;
+		line-height: normal;
+		margin-top: .1em!important;
+    margin-bottom: .1em!important;
+	}
+	.dark-back{
+		list-style: none;
+		background-color: #111;
+		padding: .1em!important;
+	}
+	.info{
+		    position: fixed;
+    z-index: 9999;
+    left: 0;
+    bottom: 60px;
+		color: #fff;
+	}
+	div.line{
+		width: 50%;
+		border-right: #fff 1px solid;
+		height: 10px;
+		box-sizing: border-box;
+			
+	}
+	.grey{
+		background-color:#d5d6d8!important;
+	}
+	.white{
+		background-color:#fff!important;
+	}
+	.contain{
+		background-size:contain!important;
+	}
+	.agile{
+	background-size:38%!important;
+	}
+.flexbox-container {
+	display: -ms-flex;
+	display: -webkit-flex;
+	display: flex;
+}
+
+.flexbox-container > div {
+	width: 33%;
+	padding: 0px;
+	box-sizing: border-box;
+	float: left;
+}
+.collumn p{
+	font-size: 30%;
+}
+p.tight{margin: 0; 
+	line-height: normal;}
+.reveal p.bullet{
+	list-style:disc inside none;
+     display:list-item; 
+}
+.reveal section img {
+	box-shadow: none!important;
+	max-width: 50%;
+	margin: 0;
+    background: transparent;
+    border: none;
+}
+.PDS_Poll{
+    left: 50%!important;
+    position: absolute!important;
+    transform: translateX(-50%)!important;
+}
+
+
+.exwrapper .sidebar {
+        grid-area: sidebar;
+    }
+
+.exwrapper    .sidebar2 {
+        grid-area: sidebar2;
+    }
+
+ .exwrapper   .content {
+        grid-area: content;
+    }
+
+  .exwrapper  .header {
+        grid-area: header;
+    }
+
+  .exwrapper  .footer {
+        grid-area: footer;
+    }
+
+.exwrapper {
+        background-color: #fff;
+        color: #444;
+	position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    }
+
+  .exwrapper {
+   
+    display: grid;
+    grid-gap: 1em;
+    grid-template-areas:
+     "header"
+     "sidebar"
+     "content"
+     "sidebar2"
+     "footer"
+  }
+
+    @media only screen and (min-width: 500px)  {
+    .exwrapper {
+
+        grid-template-columns: 20% auto;
+        grid-template-areas:
+    "header   header"
+        "sidebar  content"
+        "sidebar2 sidebar2"
+        "footer   footer";
+    }
+    }
+
+    @media only screen and (min-width: 600px)   {
+        .exwrapper {
+      grid-gap: 20px;
+            grid-template-columns: 120px auto 120px;
+            grid-template-areas:
+      "header  header  header"
+            "sidebar content sidebar2"
+            "footer  footer  footer";
+            max-width: 600px;
+        }
+    }
+
+.exwrapper .box {
+  background-color: #444;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 50%; 
+}
+
+.exwrapper .header,
+.exwrapper .footer {
+  background-color: #999;
+}
+
+.exwrapper .sidebar2 {
+  background-color: #ccc;
+  color: #444;
+}
+div.half{
+width: 50%;
+}
+.reveal h1, .reveal h2, .reveal h3,.reveal  h4{
+	text-transform: capitalize;
+}
+
+.reveal .smallcode{
+	font-size: 50%;
+	line-height: normal;
+	
+}
+.reveal .absolute{
+position: absolute;
+	z-index: 999;
+	    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
