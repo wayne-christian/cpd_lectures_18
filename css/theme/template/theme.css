@@ -1,7 +1,7 @@
 /*
 Error: Undefined mixin 'bodyBackground'.
-        on line 8 of /Users/wayne/OneDrive - University of Lincoln/17-18/com science/Cross Platform Development/lectures_reveal_js/cpd_lectures/css/theme/template/theme.scss, in `bodyBackground'
-        from line 8 of /Users/wayne/OneDrive - University of Lincoln/17-18/com science/Cross Platform Development/lectures_reveal_js/cpd_lectures/css/theme/template/theme.scss
+        on line 8 of /Users/wayne/OneDrive - University of Lincoln/17-18/com science/Cross Platform Development/lectures_reveal_js/cpd_lectures_18/css/theme/template/theme.scss, in `bodyBackground'
+        from line 8 of /Users/wayne/OneDrive - University of Lincoln/17-18/com science/Cross Platform Development/lectures_reveal_js/cpd_lectures_18/css/theme/template/theme.scss
 
 3: /*********************************************
 4:  * GLOBAL STYLES
@@ -16,8 +16,8 @@ Error: Undefined mixin 'bodyBackground'.
 13: 	font-family: $mainFont;
 
 Backtrace:
-/Users/wayne/OneDrive - University of Lincoln/17-18/com science/Cross Platform Development/lectures_reveal_js/cpd_lectures/css/theme/template/theme.scss:8:in `bodyBackground'
-/Users/wayne/OneDrive - University of Lincoln/17-18/com science/Cross Platform Development/lectures_reveal_js/cpd_lectures/css/theme/template/theme.scss:8
+/Users/wayne/OneDrive - University of Lincoln/17-18/com science/Cross Platform Development/lectures_reveal_js/cpd_lectures_18/css/theme/template/theme.scss:8:in `bodyBackground'
+/Users/wayne/OneDrive - University of Lincoln/17-18/com science/Cross Platform Development/lectures_reveal_js/cpd_lectures_18/css/theme/template/theme.scss:8
 /Applications/Adobe Dreamweaver CC 2017/Adobe Dreamweaver CC 2017.app/Contents/Resources/gems/rubygems/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:349:in `block in visit_mixin'
 /Applications/Adobe Dreamweaver CC 2017/Adobe Dreamweaver CC 2017.app/Contents/Resources/gems/rubygems/gems/sass-3.4.19/lib/sass/stack.rb:98:in `block in with_mixin'
 /Applications/Adobe Dreamweaver CC 2017/Adobe Dreamweaver CC 2017.app/Contents/Resources/gems/rubygems/gems/sass-3.4.19/lib/sass/stack.rb:115:in `with_frame'
@@ -65,4 +65,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'bodyBackground'.\A         on line 8 of /Users/wayne/OneDrive - University of Lincoln/17-18/com science/Cross Platform Development/lectures_reveal_js/cpd_lectures/css/theme/template/theme.scss, in `bodyBackground'\A         from line 8 of /Users/wayne/OneDrive - University of Lincoln/17-18/com science/Cross Platform Development/lectures_reveal_js/cpd_lectures/css/theme/template/theme.scss\A \A 3: /*********************************************\A 4:  * GLOBAL STYLES\A 5:  *********************************************/\A 6: \A 7: body {\A 8: 	@include bodyBackground();\A 9: 	background-color: $backgroundColor;\A 10: }\A 11: \A 12: .reveal {\A 13: 	font-family: $mainFont;"; }
+  content: "Error: Undefined mixin 'bodyBackground'.\A         on line 8 of /Users/wayne/OneDrive - University of Lincoln/17-18/com science/Cross Platform Development/lectures_reveal_js/cpd_lectures_18/css/theme/template/theme.scss, in `bodyBackground'\A         from line 8 of /Users/wayne/OneDrive - University of Lincoln/17-18/com science/Cross Platform Development/lectures_reveal_js/cpd_lectures_18/css/theme/template/theme.scss\A \A 3: /*********************************************\A 4:  * GLOBAL STYLES\A 5:  *********************************************/\A 6: \A 7: body {\A 8: 	@include bodyBackground();\A 9: 	background-color: $backgroundColor;\A 10: }\A 11: \A 12: .reveal {\A 13: 	font-family: $mainFont;"; }
