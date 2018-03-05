@@ -5,9 +5,9 @@
 var backcolors = ['red', 'green', 'blue', 'orange', 'yellow'];
 var sections ='';
 		
-		for(i = 1; i < 114; i++){
+		for(i = 1; i < 70; i++){
 			//console.log(i);
-			sections += '<section data-menu-title="slide'+i+'" data-background="assets/week1assets/nativevshybrid_'+i+'.png" data-background-size="900px" data-background-color="#ffffff"></section>'
+			sections += '<section data-menu-title="slide'+i+'" data-background="assets/week6assets/Featureslecture'+i+'.png" data-background-size="950px" data-background-color="#212121"></section>'
 		}
 
 

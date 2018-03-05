@@ -1,0 +1,308 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Week 6 (23): Features</title>
+<link rel="stylesheet" href="css/reveal.css">
+<link rel="stylesheet" href="css/theme/night.css">
+
+<!-- Theme used for syntax highlighting of code -->
+<link rel="stylesheet" href="lib/css/zenburn.css">
+<link rel="stylesheet" href="css/custom.css">
+
+<!-- Printing and PDF exports -->
+<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+<style>
+.reveal h4 {
+	color: #f28e19
+}
+</style>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+    <section data-background-transition="convex" data-background="#333333">
+      <h2 >Hello</h2>
+      <p style="color:#F8AA00">Cross Platform Development (CMP3035M)</p>
+    </section>
+    <section data-background-transition="convex" data-background-video="assets/week1assets/rainingcode.mp4" data-background-video-loop="loop">
+      <h3 >Wayne Christian</h3>
+      <p style="color:#F8AA00">Designer, Developer, Director & Senior Lecturer</p>
+    </section>
+    <section data-menu-title="CPD" data-background-transition="convex" data-background="assets/week1assets/start.jpg" data-background-size="900px" data-background-color="#333333" > </section>
+    <section data-menu-title="stickies" data-background-transition="convex" data-background="assets/week1assets/sticky4.JPG" data-background-size="cover" >
+      <h4>Feedback</h4>
+      <p>(Stickies: Rules)</p>
+    </section>
+    <section data-menu-title="stickies" data-background-transition="convex" data-background="#333333">
+      <h4 class="bullet" >Happy</h4>
+      <h4 class=" bullet" >Meh? </h4>
+      <h4 class="bullet" >Unhappy</h4>
+      <p class="small">If you are unhappy or unsure on something, please explain on the back</p>
+    </section>
+    <section data-menu-title="stickies website" data-background-iframe="https://wayne-christian.github.io/WEB-AUTH-PRESENTATIONS/webauth_stickies/plane/index.html" data-background-interactive> </section>
+    
+
+    <section data-menu-title="team" data-background-transition="convex" >
+      <h4>Module Goals</h4>
+      <p class="fragment small bullet"><strong>Design</strong> => Focus on user experience</p>
+      <p class="fragment small bullet"><strong>Develop</strong> => Using cross-platform tools</p>
+      <p class="fragment small bullet"><strong>Reflect</strong> => On the whole process </p>
+    </section>
+    <section class="" data-background="assets/week1assets/brain.jpg" style="">
+      <h3 style=" text-shadow: black 1px 1px;">It requires logical and creative thinking</h3>
+    </section>
+    <section data-background-transition="convex" data-background-video="https://assets.awwwards.com/awards/external/2017/02/58ac00a531a84.mp4" data-background-video-loop="loop"> </section>
+    <section data-background-transition="convex" >
+      <h4>Where you should be!</h4>
+      <p class="fragment small bullet">Idea/ Concept finalised (this is always ongoing)</p>
+      <p class="fragment small bullet">Initial UX designs completed (this is always ongoing)</p>
+      <p class="fragment small bullet">Prototypes (on balsamiq) finished and evaluated</p>
+      <p class="fragment small bullet">Features anticipated/loosely researched (this is always ongoing) </p>
+    </section>
+    <section data-menu-title="RAF1" data-background-transition="convex" data-background-video="assets/mov1.mp4"> </section>
+
+    <section data-menu-title="RAF2" data-background-transition="convex" data-background-video="assets/mov2.mp4"> </section>
+
+    <section data-menu-title="RAF3" data-background-transition="convex" data-background-video="assets/mov3.mp4"> </section>
+    
+    <section data-background-transition="convex" >
+      <h4>*Next 5 weeks (programming features)</h4>
+      <p class="fragment small bullet" style="text-decoration: line-through">Week 5: Intro to jquery, page events, graphs js ()</p>
+      <p class="fragment small bullet"><strong>Week 6: Image capture, gestures js, canvas and saving images</strong></p>
+      <p class="fragment small bullet">Week 7: barcode scanner, ajax, api calls</p>
+      <p class="fragment small bullet">Week 8: Geo location and local storage and google maps,</p>
+      <p class="fragment small bullet">Week 9: push notifications, using apis</p>
+      <p class="fragment small bullet">*Subject to change (may do some AR depending how far we get)</p>
+    </section>
+    <section data-menu-title="LAST WORKSHOP OVERVIEW" data-background-transition="convex" >
+      <h1 style="color: red">Warning</h1>
+      <p class="">Less pictures, more code today!</p>
+    </section>
+    <section data-menu-title="jquery mobile 3" data-background="assets/week5assets/jqmlecture3.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="LAST WORKSHOP OVERVIEW" data-background-transition="convex" >
+      <h1 style="">Recap</h1>
+      <p class="">Looking at last weeks workshop</p>
+    </section>
+    <section data-menu-title="LAST WORKSHOP OVERVIEW" data-background-transition="convex" >
+      <h4>We looked at</h4>
+      <p class="fragment small bullet">Creating an initial site structure and functionality using html 5 and jquery mobile. </p>
+      <p class="fragment small bullet">Define Jquery defaults</p>
+      <p class="fragment small bullet">Added Event Listeners</p>
+      <p class="fragment small bullet">Use high charts library to animate graphs</p>
+    </section>
+    <section data-menu-title="LAST WORKSHOP OVERVIEW" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>Observations</h4>
+      <p class="fragment small bullet">Upto 30% of you did not attend or not actually do the workshop </p>
+      <p class="fragment small bullet">Use workshop time to do work, ask question and get feedback on ideas</p>
+      <p class="fragment small bullet">Many are making basic mistakes like using the wrong html tags</p>
+      <p>
+      <pre class="fragment" style="font-size: 70%"><code data-trim data-noescape>
+<strong>Link CSS</strong>
+&lt;link <mark>rel</mark>=&quot;stylesheet&quot; <mark>href</mark>=&quot;css/custom.css&quot; /&gt; 
+
+<strong>Link JS</strong>
+&lt;script <mark>type</mark>=&quot;text/javascript&quot; <mark>src</mark>=&quot;cordova.js&quot;&gt;&lt;/script&gt;
+	 	
+     
+     	
+     </code></pre>
+      </p>
+    </section>
+    <section data-menu-title="LAST WORKSHOP OVERVIEW" data-background-transition="convex" >
+      <h4>Common mistakes</h4>
+      <p class="fragment small bullet">Incorrect HTML Markup</p>
+      <p class="fragment small bullet">Not linking to stylesheets correctly</p>
+      <p class="fragment small bullet">Jquery/JS syntax issues</p>
+      <p class="fragment small bullet">Basic issues can be resolved by...</p>
+    </section>
+    <section data-menu-title="jquery mobile 15" data-background="assets/week5assets/jqmlecture15.png" data-background-size="cover" data-background-color="#ffffff"></section>
+    <section>
+      <h4>Me: Have you checked the console..</h4>
+      <h4 class="fragment" style="color: darkcyan">Student: The what?</h4>
+    </section>
+    <section data-background-transition="convex" data-background-video="assets/kick.mp4"> </section>
+    <section>
+      <h4>For those struggling with HTML mark up</h4>
+      <p style="">I have found a video tutorial in death metal!</p>
+    </section>
+    <section data-background-transition="convex" data-background-video="assets/satan.mp4"> </section>
+    <section data-menu-title="LAST WORKSHOP OVERVIEW 2" data-background-transition="convex" >
+      <h4>It worked in the browser, not on the device!</h4>
+      <p class="fragment small bullet">Jquery/JS syntax issues in the device ready function</p>
+      <p class="fragment small bullet">JQM injects mark up for styles and js(covered in a moment)</p>
+      <p class="fragment small bullet">"device ready" is not fired on a browser so will not exit the js</p>
+      <p class="fragment small bullet">On the phone it breaks, exits, and does not call JQM</p>
+      <p class="fragment small bullet">Work around...</p>
+    </section>
+    <section data-menu-title="LAST WORKSHOP OVERVIEW 3" data-background-transition="convex" >
+      <h4>Use doc ready and device ready </h4>
+      <p class="fragment small bullet">The browser will only fire $( document ).ready</p>
+      <p class="fragment small bullet">Phonegap will only fire "deviceready"</p>
+    </section>
+    <section data-menu-title="slide5" data-background="assets/week6assets/Featureslecture5.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide6" data-background="assets/week6assets/Featureslecture6.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="jquery mobile 49" data-background="assets/week5assets/jqmlecture49.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-background-transition="convex" data-background-video="assets/week1assets/logical.mp4"> </section>
+    <section data-menu-title="jquery mobile 73" data-background="assets/week5assets/jqmlecture73.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="jquery mobile 74" data-background="assets/week5assets/jqmlecture74.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="jquery mobile 75" data-background="assets/week5assets/jqmlecture75.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="jquery mobile 76" data-background="assets/week5assets/jqmlecture76.png" data-background-size="contain" data-background-color="#f7f7f7"></section>
+    <section data-menu-title="jquery mobile 77" data-background="assets/week5assets/jqmlecture77.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="jquery mobile 78" data-background="assets/week5assets/jqmlecture78.png" data-background-size="contain" data-background-color="#2D3639"></section>
+    <section data-menu-title="jquery mobile 79" data-background="assets/week5assets/jqmlecture79.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="LAST WORKSHOP OVERVIEW" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>#ID & JQM</h4>
+      <p>
+      <pre class="smallcode" style="font-size: 70%"><code data-trim data-noescape>
+&lt;!--sound--&gt;
+&lt;div data-role=&quot;page&quot; <mark>id=&quot;sound&quot;</mark> data-theme=&quot;b&quot;&gt;
+  &lt;div data-role=&quot;header&quot;&gt; 
+  	&lt;a href=&quot;#menu&quot; data-icon=&quot;bars&quot; data-iconpos=&quot;notext&quot; class=&quot;&quot; data-theme=&quot;b&quot; title=&quot;Menu&quot;&gt;Menu&lt;/a&gt; 
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;!--sound--&gt;
+
+js
+
+$(document).on('pagecreate', <mark>'#sound'</mark>, function () {
+	console.log("pagecreate sound");	
+    });
+     
+     	
+     </code></pre>
+      </p>
+    </section>
+    <section data-menu-title="" data-background-transition="convex" >
+      <h4>Today we will discuss:</h4>
+      <p class="fragment small bullet">Features</p>
+      <p class="fragment small bullet">Basic plugins with code snippets (will impliment later)</p>
+      <p class="fragment small bullet">End on ed waite app </p>
+      <p class="fragment small bullet">Demonstrate accessing camera to take a photo, manipulat through gestures and store base64 image data</p>
+    </section>
+    <section data-menu-title="slide14" data-background="assets/week6assets/Featureslecture14.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide15" data-background="assets/week6assets/Featureslecture15.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide16" data-background="assets/week6assets/Featureslecture16.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide17" data-background="assets/week6assets/Featureslecture17.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide18" data-background="assets/week6assets/Featureslecture18.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide19" data-background-transition="convex" >
+      <h4>Access Features to bring users back!</h4>
+      <p class="small">(accessed using cordova plugins)</p>
+    </section>
+    <section data-menu-title="slide20" data-background="assets/week6assets/Featureslecture20.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide21" data-background="assets/week6assets/Featureslecture21.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide22" data-background="assets/week6assets/Featureslecture22.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide23" data-background="assets/week6assets/Featureslecture23.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide24" data-background="assets/week6assets/Featureslecture24.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide25" data-background="assets/week6assets/Featureslecture25.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide26" data-background="assets/week6assets/Featureslecture26.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide27" data-background="assets/week6assets/Featureslecture27.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide28" data-background="assets/week6assets/Featureslecture28.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide29" data-background="assets/week6assets/Featureslecture29.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide30" data-background="assets/week6assets/Featureslecture30.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide31" data-background="assets/week6assets/Featureslecture31.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide32" data-background="assets/week6assets/Featureslecture32.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide33" data-background="assets/week6assets/Featureslecture33.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide34" data-background="assets/week6assets/Featureslecture34.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide35" data-background="assets/week6assets/Featureslecture35.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide36" data-background="assets/week6assets/Featureslecture36.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide37" data-background="assets/week6assets/Featureslecture37.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide38" data-background="assets/week6assets/Featureslecture38.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide39" data-background="assets/week6assets/Featureslecture39.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide40" data-background="assets/week6assets/Featureslecture40.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide41" data-background="assets/week6assets/Featureslecture41.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide42" data-background="assets/week6assets/Featureslecture42.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide43" data-background="assets/week6assets/Featureslecture43.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide44" data-background="assets/week6assets/Featureslecture44.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide45" data-background="assets/week6assets/Featureslecture45.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide46" data-background="assets/week6assets/Featureslecture46.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide47" data-background="assets/week6assets/Featureslecture47.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide48" data-background="assets/week6assets/Featureslecture48.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide49" data-background="assets/week6assets/Featureslecture49.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide50" data-background="assets/week6assets/Featureslecture50.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide51" data-background="assets/week6assets/Featureslecture51.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide52" data-background="assets/week6assets/Featureslecture52.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide53" data-background="assets/week6assets/Featureslecture53.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide54" data-background="assets/week6assets/Featureslecture54.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide55" data-background="assets/week6assets/Featureslecture55.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide56" data-background="assets/week6assets/Featureslecture56.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide57" data-background="assets/week6assets/Featureslecture57.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide58" data-background="assets/week6assets/Featureslecture58.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide59" data-background="assets/week6assets/Featureslecture59.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide60" data-background="assets/week6assets/Featureslecture60.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide61" data-background="assets/week6assets/Featureslecture61.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide62" data-background="assets/week6assets/Featureslecture62.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide63" data-background="assets/week6assets/Featureslecture63.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide64" data-background="assets/week6assets/Featureslecture64.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide65" data-background="assets/week6assets/Featureslecture65.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide66" data-background="assets/week6assets/Featureslecture66.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide67" data-background="assets/week6assets/Featureslecture67.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide68" data-background="assets/week6assets/Featureslecture68.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide69" data-background="assets/week6assets/Featureslecture69.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="workshop" data-background="">
+      <h3>Steps</h3>
+      <p class="bullet small">Add Cordova plugins to your config.xml</p>
+      <p class="fragment bullet small">Create a button to open camera</p>
+      <p class="fragment bullet small">Save the picture to a html5 canvas</p>
+      <p class="fragment bullet small">Create a second button to select a painting</p>
+      <p class="fragment bullet small">Add an eventlistener to trigger adding the selected picture on top of the canvas</p>
+      <p class="fragment bullet small">Activate positional gestures on object (Gestures JS library)</p>
+      <p class="fragment bullet small">Convert the canvas composition as a jpg (take a screen shot)</p>
+      <p class="fragment bullet small">Store on the device</p>
+    </section>
+    <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>Add Plugins to config.xml</h4>
+      <p>
+      <pre class="smallcode" style="font-size: 35%"><code style="width: 100%" data-trim >
+&lt;plugin name=&quot;cordova-plugin-camera&quot; &gt;
+ &lt;param name=&quot;CAMERA_USAGE_DESCRIPTION&quot; value=&quot;App would like to access the camera.&quot; /&gt;
+ &lt;param name=&quot;PHOTOLIBRARY_USAGE_DESCRIPTION&quot; value=&quot;App would like to access the library.&quot; /&gt;
+&lt;/plugin&gt;
+&lt;plugin name=&quot;cordova-plugin-media-capture&quot; &gt;
+ &lt;param name=&quot;CAMERA_USAGE_DESCRIPTION&quot; value=&quot;We'd like to access your camera to let you take a photo&quot;/&gt;
+ &lt;param name=&quot;PHOTOLIBRARY_USAGE_DESCRIPTION&quot; value=&quot;We'd like to access your photo library to let you pick a photo&quot;/&gt;
+ &lt;param name=&quot;MICROPHONE_USAGE_DESCRIPTION&quot; value=&quot;We'd like to access your microphone to let you record an audio&quot;/&gt;
+&lt;/plugin&gt;    
+&lt;plugin spec=&quot;https://github.com/devgeeks/Canvas2ImagePlugin.git&quot; source=&quot;git&quot; /&gt;
+&lt;plugin spec=&quot;https://github.com/gitawego/cordova-screenshot.git&quot; source=&quot;git&quot; /&gt;
+</code></pre>
+      </p>
+    </section>
+    <section data-menu-title="workshop1" data-background="">
+      <h3>The rest will be covered in the workshop</h3>
+    </section>
+    <section data-menu-title="workshop2" data-background="">
+      <h3>Thursdays Session</h3>
+      <p class="">Build this!</p>
+    </section>
+    <section data-menu-title="finish" data-background="">
+      <h2>BOOM!</h2>
+    </section>
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+<script src="lib/js/head.min.js"></script> 
+<script src="js/reveal.js"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+<script src="https://code.highcharts.com/highcharts.js"></script> 
+<script src="https://code.highcharts.com/highcharts-more.js"></script> 
+<script src="https://code.highcharts.com/modules/solid-gauge.js"></script> 
+<script src="js/themes/mypbtheme.js"></script> 
+<script src="js/jquery.animateNumber.min.js"></script> 
+<script src="js/main.js"></script> 
+<script>
+	var link = document.createElement( 'link' );
+	link.rel = 'stylesheet';
+	link.type = 'text/css';
+	link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+	document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+</body>
+</html>
