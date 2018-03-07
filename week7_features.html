@@ -465,8 +465,8 @@ $(":mobile-pagecontainer").pagecontainer("change", 'my-wall-edit.html', {
     </section>
     <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
       <h4>my-wall-edit.html</h4>
-      <p class="small">Loads a new HTML document</p>
-      <pre class="smallcode" style="font-size: 35%"><code style="width: 100%" data-trim >
+      <p class="small">HTML Mark up</p>
+      <pre class="smallcode" style="font-size: 35%; margin: 0; width: 100%"><code style="width: 100%" data-trim >
 &lt;div data-role=&quot;page&quot; class=&quot;pageHolder&quot; id=&quot;wall_edit&quot;&gt; 
   
   &lt;!-- Another sub menu --&gt;
@@ -479,41 +479,35 @@ $(":mobile-pagecontainer").pagecontainer("change", 'my-wall-edit.html', {
     &lt;li class=&quot;saveBtn createwall&quot;&gt; &lt;a class=&quot;ui-link&quot; data-ajax=&quot;false&quot;&gt; Save &lt;/a&gt; &lt;/li&gt;
   &lt;/ul&gt;
   &lt;div id=&quot;london_menu&quot; class=&quot;gallery-choice&quot;&gt; 
-    
-    &lt;!-- note data src is a different image - we wil use this to load a larger image and use a smaller image for the thumbnail--&gt;
+
     // repeat
-     &lt;figure class=&quot;wall-thumbnail-wrap clear&quot;&gt; &lt;img class=&quot;wall-thumbnail&quot; src=&quot;ASSETS/Fiery-Skies-Over-Westminster-40x4022-186x138.jpg&quot; data-name=&quot;Fiery Skies Over Westminster&quot;  data-src=&quot;ASSETS/Fiery-Skies-Over-Westminster-40x4022.jpg&quot; width=&quot;186&quot; height=&quot;138&quot;/&gt;
-      &lt;figcaption class=&quot;wall-thumbnail-caption&quot;&gt; Fiery Skies Over Westminster&lt;br /&gt;
-        40&quot; x 40&quot; &lt;/figcaption&gt;
-    &lt;/figure&gt;
-    &lt;!--wall-thumbnail-wrap--&gt;
-    
-    //repeat
-    //rest of the figures are hidden for space in presentation
-    
+ <!-- note data src is a different image - we wil luse this to load a larger image and use a smaller image for the tumbnail-->
+    <figure class="wall-thumbnail-wrap clear"> 
+     <img class="wall-thumbnail" src="ASSETS/Fiery-Skies-Over-Westminster-40x4022-186x138.jpg" data-name="Fiery Skies Over Westminster"  data-src="ASSETS/Fiery-Skies-Over-Westminster-40x4022.jpg" width="186" height="138"/>
+      <figcaption class="wall-thumbnail-caption"> Fiery Skies Over Westminster<br />40" x 40" </figcaption>
+    </figure>
+    <!--wall-thumbnail-wrap-->   
+    //repeat rest of the figures are hidden for space in presentation   
   &lt;/div&gt;
   
-  &lt;!-- This is a div placholder - we will use jquery to get and set the background image using tge image data
-  &lt;div  id=&quot;wall_image_holder&quot;&gt;&lt;/div&gt;--&gt;
+<!-- This is a div placholder - We will use jquery to get and set the background image using the image data
+  Originally used Canvas in lecture-->
+  <div  id="wall_image_holder"></div>
   
-  &lt;!-- blank canvas to draw large bground image too--&gt;
-  &lt;canvas id=&quot;canvas_wall_image&quot;&gt;&lt;/canvas&gt;
-  
-  &lt;!-- temp art work holder but the image src will change depending on selection 
-  Mark up needed for gestures library--&gt;
-  &lt;div id=&quot;artworkholder&quot;&gt;
-    &lt;div id=&quot;rotate-holder&quot;&gt; &lt;img id=&quot;artwork_image&quot; src=&quot;ASSETS/Piccadilly-Corner-36x60-186x138.jpg&quot; alt=&quot;wallimage&quot; /&gt; &lt;/div&gt;
-  &lt;/div&gt;
-  
+  <!-- temp art work holder but the image src will change depending on selection 
+  Mark up needed for gestures library-->
+  <div id="artworkholder">
+    <div id="rotate-holder"> <img id="artwork_image" src="ASSETS/Piccadilly-Corner-36x60-186x138.jpg" alt="wallimage" /> </div>
+  </div>
 &lt;/div&gt;
 &lt;!-- /page --&gt;
-
 </code></pre>
     </section>
-    <section data-menu-title="example" data-background-iframe="http://edwaite.fuse-clients.co.uk/" data-background-interactive> </section>
+    <section data-menu-title="example" data-background-iframe="https://wayne-christian.github.io/cpd_lectures_18/w3/" data-background-interactive> </section>
     <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
       <h4>Add #wall_edit page load listener</h4>
       <pre class="smallcode" style="font-size: 35%"><code style="width: 100%" data-trim >
+ 
  
 $(document).on('pagecreate', '#wall_edit', function() {
 	console.log("page create #wall_edit'");
@@ -526,66 +520,51 @@ $(document).on('pagecreate', '#wall_edit', function() {
       <h4>Key elements</h4>
       <pre class="smallcode" style="font-size: 35%"><code style="width: 100%" data-trim >
  
-&lt;!-- This is a div placholder - we will use jquery to get and set the background image using tge image data
-&lt;div  id=&quot;wall_image_holder&quot;&gt;&lt;/div&gt;--&gt;
+<!-- This is a div placholder - We will use jquery to get and set the background image using the image data
+Originally used Canvas in lecture-->
+<div  id="wall_image_holder"></div>
 
-&lt;!-- blank canvas to draw large bground image too--&gt;
-&lt;canvas id=&quot;canvas_wall_image&quot;&gt;&lt;/canvas&gt;
-
-&lt;!-- temp art work holder but the image src will change depending on selection 
-Mark up needed for gestures library--&gt;
-&lt;div id=&quot;artworkholder&quot;&gt;
-&lt;div id=&quot;rotate-holder&quot;&gt; &lt;img id=&quot;artwork_image&quot; src=&quot;ASSETS/Piccadilly-Corner-36x60-186x138.jpg&quot; alt=&quot;wallimage&quot; /&gt; &lt;/div&gt;
-&lt;/div&gt;
+<!-- temp art work holder but the image src will change depending on selection 
+Mark up needed for gestures library-->
+<div id="artworkholder">
+ <div id="rotate-holder"> 
+ <img id="artwork_image" src="ASSETS/Piccadilly-Corner-36x60-186x138.jpg" alt="wallimage" /> 
+</div>
+</div>
 
 
 </code></pre>
     </section>
-    <section data-menu-title="example" data-background-iframe="http://edwaite.fuse-clients.co.uk/" data-background-interactive> </section>
+   
 
     <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
       <h4>Get image and copy to background</h4>
+		<p class="small">This has been updated from canvas to using an image example</p>
       <pre class="smallcode" style="font-size: 35%"><code style="width: 100%" data-trim >
-//console.log('#wall_edit');
+$(document).on('pagecreate', '#wall_edit', function () {
+console.log("page create #wall_edit'");
+
 // for testing. if we want to test the page we can load an placeholder image 
-//otherwise the edit wall page relies on a previous image selection
+//other wise the edit wall page relies on a previous image selection
 
 if (!wallimagedata) {
-  wallimagedata = 'ASSETS/wall-temp.jpg';
+wallimagedata = 'ASSETS/wall-temp.jpg';
 }
-
-//gets the image date and used it as a background image (data uri - base 64)
-//uncomment below to simply update the back ground css - good for speed, NOT good to manipulate
-//$('#wall_image_holder').css('background-image', 'url(' + wallimagedata + ')');
 //console.log(wallimagedata);
+//gets the image data and uses it as a background image (data uri - base 64)
+//simply updates the back ground css - good for speed, NOT good to manipulate
+// can be position via css
 
-//get a canvas element already in the page, better to use js than jquery here.
-//easier to get a pre styled element than inject back into the dom
-wall_bg_image = document.getElementById("canvas_wall_image");
+$('#wall_image_holder').css('background-image', 'url(' + wallimagedata + ')');
 
-//set width and height to the screen size. look at the top of the page
-wall_bg_image.width = w;
-wall_bg_image.height = h;
-
-//we draw to the ctx not canvas... remember level 1
-var imgctx = wall_bg_image.getContext("2d");
-
-//create an image object
-var imageObj = new Image();
-imageObj.onload = function() {
-
-//don't worry too much about this but we need to redraw the photo in proportion.. why?
-drawImageProp(imgctx, imageObj, 0, 0, w, h);
-};
-
-//set the src of the image object to the photo taken which will then fire the load event above
-imageObj.src = wallimagedata;
-
+//add click events after this
+}
 </code></pre>
     </section>
     
         <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
       <h4>Click event for location menu</h4>
+      <p class="small">in 'pagecreate' for '#wall_edit add click/touch events</p>
       <pre class="smallcode" style="font-size: 35%"><code style="width: 100%" data-trim > 
 // adds a click event for the right hand side submenu to show based on the location button i.e london
 
@@ -606,21 +585,22 @@ $(location_menu).show();
     </section>
     <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
       <h4>Click event for selected image</h4>
+      <p class="small">in 'pagecreate' for '#wall_edit submenu click/touch events</p>
       <pre class="smallcode" style="font-size: 35%"><code style="width: 100%" data-trim >
 // add click events to all submenus although they are hidden
 $('.wall-thumbnail').on("click", function() {
 console.log("wall click");
 
 //store the associated image to show in the edit wall area
-//get the src of the image
+//get the data-src attribute, note this is NOT the src of the clicked item as the thubmnails are smaller
 var wall_link = $(this).data('src');
 
-//custom function PASSING THE SELECTED IMAGE and changes page
+//custom function USING THE SELECTED IMAGE and then change page
 <mark>add_wall_image(wall_link);</mark>
 //HIDE SUBMENU
 $('.gallery-choice').hide();
 
-//Shows a save icon to store 
+//Shows a save icon to initiate the screenshot plugin 
 $('.createwall').show();
 
 });
@@ -636,7 +616,7 @@ $('.createwall').show();
 $('.saveBtn').on("click", function() {
   // custom function to create an image and save
   //shown in later slide
- <mark> createwallcanvas();</mark>
+ <mark> createwallimage();</mark>
 });
 
 </code></pre>
@@ -737,7 +717,7 @@ window.dragMoveListener = dragMoveListener;
     
     
      <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
-      <h4>createwallcanvas()</h4>
+      <h4>createwallimage()</h4>
 		 <p class="small">Takes a screen shot of the screen.</p>
       <pre class="smallcode" style="font-size: 35%"><code style="width: 100%" data-trim >
 // this takes a screen shot of the screen. So will be low res
@@ -765,8 +745,11 @@ navigator.screenshot.save(function (error, res) {
 }
 </code></pre>
     </section>
- 
-     <section data-menu-title="workshop2" data-background="">
+ <section  data-background="">
+      <h4>Send to PG BUild </h4>
+      <p class="">To test camera and screenshot functionality you will need to zip up and send to PG Build</p>
+    </section>
+     <section  data-background="">
       <h4>Image is now stored on your device </h4>
       <p class="">You could store the location and create an interface to access them through your app instead of exiting it.</p>
     </section>
