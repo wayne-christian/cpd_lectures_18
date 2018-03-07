@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns   = "http://www.w3.org/ns/widgets"
+    xmlns:gap   = "http://phonegap.com/ns/1.0"
+    id          = "com.adigitalengagement.edwaites"
+    versionCode = "1"
+    version     = "1.0.1" >
+  
+  <!-- versionCode is optional and Android only -->
+  <name>Image capture test</name>
+  <description>Image capture test.</description>
+  <author href="http://interactivedesignlincoln.co.uk" email="wchristian@lincoln.ac.uk">Wayne Christian</author>
+  <!--
+      This allows your app to load ASSETS from all *.phongap.com domains
+    -->
+  <access origin="*" />
+  
+  <!--
+        If you do not want any permissions to be added to your app, add the
+        following tag to your config.xml; you will still have the INTERNET
+        permission on your app, which PhoneGap requires.
+    -->
+  <preference name="keepRunning" 				  value="true" />
+  <preference name="DisallowOverscroll" 			videoholdervalue="true"/>
+  <preference name="stay-in-webview" 			  value="false" />
+  <preference name="AllowInlineMediaPlayback" 	  value="true"/>
+  <preference name="permissions"                value="none"/>
+  
+  <!-- Customize your app and platform with the preference element. -->
+  <preference name="orientation"                value="landscape" />
+  <!-- all: default means both landscape and portrait are enabled -->
+  <preference name="target-device"              value="universal" />
+  <!-- all: possible values handset, tablet, or universal -->
+  <preference name="fullscreen"                 value="true" />
+  <!-- all: hides the status bar at the top of the screen -->
+  <preference name="webviewbounce"              value="true" />
+  <!-- ios: control whether the screen 'bounces' when scrolled beyond the top -->
+  <preference name="prerendered-icon"           value="true" />
+  <!-- ios: if icon is prerendered, iOS will not apply it's gloss to the app's icon on the user's home screen -->
+  <preference name="stay-in-webview"            value="true" />
+  <!-- ios: external links should open in the default browser, 'true' would use the webview the app lives in -->
+  <preference name="ios-statusbarstyle"         value="black-opaque" />
+  <!-- ios: black-translucent will appear black because the PhoneGap webview doesn't go beneath the status bar -->
+  <preference name="detect-data-types"          value="true" />
+  <!-- ios: controls whether data types (such as phone no. and dates) are automatically turned into links by the system -->
+  <preference name="exit-on-suspend"            value="true" />
+  <!-- ios: if set to true, app will terminate when home button is pressed -->
+  <preference name="show-splash-screen-spinner" value="true" />
+  <!-- ios: if set to false, the spinner won't appear on the splash screen during app loading -->
+  <preference name="auto-hide-splash-screen"    value="true" />
+  <!-- ios: if set to false, the splash screen must be hidden using a JavaScript API -->
+  <preference name="disable-cursor"             value="false" />
+  <!-- blackberry: prevents a mouse-icon/cursor from being displayed on the app -->
+  <preference name="android-installLocation"    value="auto" />
+  <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
+  <!--<preference name="splash-screen-delay" 		  value="5000" />
+    
+        Define a specific version of PhoneGap to build into your app. 
+        <preference name="phonegap-version"       value="3.7.0" />-->
+  
+  <!-- Plugins -->
+  
+  <!-- Core plugins -->
+  <plugin name="cordova-plugin-camera" >
+    <param name="CAMERA_USAGE_DESCRIPTION" value="App would like to access the camera." />
+    <param name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="App would like to access the library." />
+  </plugin>
+  
+  <plugin name="cordova-plugin-media-capture" >
+    <param name="CAMERA_USAGE_DESCRIPTION" value="We'd like to access your camera to let you take a photo"/>
+    <param name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="We'd like to access your photo library to let you pick a photo"/>
+    <param name="MICROPHONE_USAGE_DESCRIPTION" value="We'd like to access your microphone to let you record an audio"/>
+  </plugin>
+  
+  <plugin name="cordova-plugin-console" />
+  <plugin name="cordova-plugin-device" />
+  <plugin name="cordova-plugin-device-orientation" />
+  <plugin name="cordova-plugin-dialogs" />
+  <plugin name="cordova-plugin-vibration" />
+  <plugin name="cordova-plugin-inappbrowser" />
+  <plugin name="cordova-plugin-network-information" />
+  <plugin name="cordova-plugin-file" />
+  <plugin name="cordova-plugin-file-transfer" />
+  <!-- Third party plugins -->
+  <plugin spec="https://github.com/devgeeks/Canvas2ImagePlugin.git" source="git" />
+  <plugin spec="https://github.com/gitawego/cordova-screenshot.git" source="git" />
+  
+   
+   
+   
+   <platform name="ios">
+    <icon src="icon.png" />
+    <!-- iOS 8.0+ -->
+    <!-- iPhone 6 Plus  -->
+    <icon src="ASSETS/icons/apple/Icon-60@3x.png" width="180" height="180" />
+    <!-- iOS 7.0+ -->
+    <!-- iPhone / iPod Touch  -->
+    <icon src="ASSETS/icons/apple/Icon-60.png" width="60" height="60" />
+    <icon src="ASSETS/icons/apple/Icon-60@2x.png" width="120" height="120" />
+    <!-- iPad -->
+    <icon src="ASSETS/icons/apple/Icon-76.png" width="76" height="76" />
+    <icon src="ASSETS/icons/apple/Icon-76@2x.png" width="152" height="152" />
+    <!-- iOS 6.1 -->
+    <!-- Spotlight Icon -->
+    <icon src="ASSETS/icons/apple/Icon-40.png" width="40" height="40" />
+    <icon src="ASSETS/icons/apple/Icon-40@2x.png" width="80" height="80" />
+    <!-- iPhone / iPod Touch -->
+    <icon src="ASSETS/icons/apple/icon.png" width="57" height="57" />
+    <icon src="ASSETS/icons/apple/icon@2x.png" width="114" height="114" />
+    <!-- iPad -->
+    <icon src="ASSETS/icons/apple/Icon-72.png" width="72" height="72" />
+    <icon src="ASSETS/icons/apple/Icon-72@2x.png" width="144" height="144" />
+    <!-- iPhone Spotlight and Settings Icon -->
+    <icon src="ASSETS/icons/apple/Icon-small.png" width="29" height="29" />
+    <icon src="ASSETS/icons/apple/Icon-small@2x.png" width="58" height="58" />
+    <!-- iPad Spotlight and Settings Icon -->
+    <icon src="ASSETS/icons/apple/Icon-50.png" width="50" height="50" />
+    <icon src="ASSETS/icons/apple/Icon-50@2x.png" width="100" height="100" />
+    
+    <!-- iPhone and iPod touch -->
+    <splash src="ASSETS/splash/apple/Default~iphone.png" platform="ios" width="320" height="480" />
+    <splash src="ASSETS/splash/apple/Default~iphone-landscape.png" platform="ios" width="480" height="320" />
+    <splash src="ASSETS/splash/apple/Default@2x~iphone.png" platform="ios" width="640" height="960" />
+    <splash src="ASSETS/splash/apple/Default@2x~iphone-landscape.png" platform="ios" width="960" height="640" />
+    
+    <!-- iPhone 5 / iPod Touch (5th Generation) -->
+    <splash src="ASSETS/splash/apple/Default-568h@2x.png" platform="ios" width="640" height="1136" />
+    <splash src="ASSETS/splash/apple/Default-568h@2x-landscape.png" platform="ios" width="1136" height="640" />
+    
+    <!-- iPhone 6 -->
+    <splash src="ASSETS/splash/apple/Default-667h@2x-landscape.png" platform="ios" width="750" height="1334" />
+    <!--<splash src="ASSETS/splash/apple/Default-667h@2x-landscape.png" platform="ios" width="1334" height="750" />-->
+    <splash src="ASSETS/splash/apple/Default-Portrait-736h@3x.png" platform="ios" width="1242" height="2208" />
+    <splash src="ASSETS/splash/apple/Default-Landscape-736h@3x.png" platform="ios" width="2208" height="1242" />
+    
+    <!-- iPad -->
+    <splash src="ASSETS/splash/apple/Default-Portrait~ipad.png" platform="ios" width="768" height="1024" />
+    <splash src="ASSETS/splash/apple/Default-Landscape~ipad.png" platform="ios" width="1024" height="768" />
+    
+    <!-- Retina iPad -->
+    <splash src="ASSETS/splash/apple/Default-Portrait@2x~ipad.png" platform="ios" width="1536" height="2048" />
+    <splash src="ASSETS/splash/apple/Default-Landscape@2x~ipad.png" platform="ios" width="2048" height="1536" />
+    <splash src="splash.png" />
+  </platform>
+  <platform name="android">
+    <icon src="icon.png" />
+    <icon src="ASSETS/icons/android/48.png"   platform="android"    qualifier="mdpi" />
+    <icon src="ASSETS/icons/android/72.png"   platform="android"    qualifier="hdpi" />
+    <icon src="ASSETS/icons/android/96.png"  platform="android"    qualifier="xhdpi" />
+    <icon src="ASSETS/icons/android/144.png"  platform="android"    qualifier="xxhdpi" />
+    <icon src="ASSETS/icons/android/192.png"  platform="android"    qualifier="xxxhdpi" />
+    <icon src="ASSETS/icons/android/512.png"  platform="android"    />
+    <splash src="splash.9.png" />
+    <splash src="ASSETS/splash/drawable-hdpi/splash2.9.png" density="land-hdpi"/>
+    <splash src="ASSETS/splash/drawable-hdpi/splash2.9.png" density="land-ldpi"/>
+    <splash src="ASSETS/splash/drawable-mdpi/splash2.9.png" density="land-mdpi"/>
+    <splash src="ASSETS/splash/drawable-xhdpi/splash2.9.png" density="land-xhdpi"/>
+    <splash src="ASSETS/splash/drawable-hdpi/splash2.9.png" density="port-hdpi"/>
+    <splash src="ASSETS/splash/drawable-hdpi/splash2.9.png" density="port-ldpi"/>
+    <splash src="ASSETS/splash/drawable-mdpi/splash2.9.png" density="port-mdpi"/>
+    <splash src="ASSETS/splash/drawable-xhdpi/splash2.9.png" density="port-xhdpi"/>
+  </platform>
+  <access origin="*"/>
+  <!-- Added the following intents to support the removal of whitelist code from base cordova to a plugin -->
+  <!-- Whitelist configuration. Refer to https://cordova.apache.org/docs/en/edge/guide_appdev_whitelist_index.md.html -->
+  <plugin name="cordova-plugin-whitelist" version="1" />
+  <allow-intent href="http://*/*" />
+  <allow-intent href="https://*/*" />
+  <allow-intent href="tel:*" />
+  <allow-intent href="sms:*" />
+  <allow-intent href="mailto:*" />
+  <allow-intent href="geo:*" />
+  <platform name="android">
+    <allow-intent href="market:*" />
+  </platform>
+  <platform name="ios">
+    <allow-intent href="itms:*" />
+    <allow-intent href="itms-apps:*" />
+  </platform>
+  <allow-navigation href="*://*youtube.com" />
+</widget>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Camera example</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+<!-- css styles -->
+<link rel="stylesheet" href="css/jquery.mobile-1.4.5.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/global.css">
+<link href="css/jquery.bxslider.css" rel="stylesheet" />
+
+<!-- Js thst hs to be loaded in the head -->
+<script src="js/modernizr-3.0.0.min.js"></script>
+<script src="cordova.js"></script>
+
+</head>
+
+<body  >
+ <!-- This is out side of the role page and will be accessible through out the whole app -->
+<ul id="mainNav" class="closed">
+  <li class="menuBtn"><a data-transition="slide" href=""></a></li>
+  <li class="menuCloseBtn"><a data-transition="slide" href=""></a></li>
+  <li class="studioBtn"><a data-transition="slide" href="#">Studio</a></li>
+  <li class="easelBtn"><a class="online" data-transition="slide" href="#" rel="">On the Easel</a></li>
+  <li class="createBtn"><a data-transition="slide" href="#">Create your own</a></li>
+  <li class="exhibitionsBtn"><a class="online" data-transition="slide" href="#">Exhibitions</a></li>
+  <li class="wallBtn selected"><a data-transition="slide" href="#">my Art, Your Wall</a></li>
+  <li class="menuLogo"></li>
+</ul>
+
+ <!-- This will be removed or hidden by JQM with new pages -->
+<div data-role="page" class="contentHolder" id="my-wall">
+  <div id="container">
+    <main id="content" class="content" role="main">
+      <div class="inner margin">
+        <header class="page_header">
+          <h1>Camera test</h1>
+          <p> <span class="mobile-only"> Tap the image to start</span></p>
+          <a class="wallinfoBtn">Using this feature</a> </header>
+          
+        <div class="wallholder">
+         <!-- this is a bx slider marku up look in the js to see when we call it -->
+          <ul id="wallExamples" class="">
+            <li><img src="ASSETS/images-01.jpg" /></li>
+            <li><img src="ASSETS/images-02.jpg" /></li>
+            <li><img src="ASSETS/images-03.jpg" /></li>
+            <li><img src="ASSETS/images-04.jpg" /></li>
+            <li><img src="ASSETS/images-05.jpg" /></li>
+          </ul>
+        </div>
+        
+        <!-- NEED A BTN TO CALL THE CAMERA - NOTE DATA-AJAX FALSE // NO AJAX-->
+        <!-- ALSO USE IMAGES AS A BTN  -->
+        <a id="getImage" data-ajax="false" class="ghost-btn right" href="#">Start</a> </div>
+      <!--inner--> 
+      
+    </main>
+    <!-- #content --> 
+    
+  </div>
+  
+  <!-- ANOTHER SLIDER IN A HODDEN OVERLAY THIS IS SHOWN WHEN THE INFO ICON IS CLICKED -->
+  <div id="wallinfo" class="overlay">
+    <div class="sliderHolder"> <a class="overlayCloseBtn"></a>
+      <div id="wallInfoSlider">
+        <div class="slide">
+          <h1>Taking your wall picture</h1>
+          <h2><strong>STEP 01</strong><br>
+            TAKE A PICTURE OF A EMPTY SPACE ON YOUR WALL, OR SELECT PICTURE FROM YOUR IMAGE
+            LIBRARY TO USE.</h2>
+          <img class="pop-illustration" src="ASSETS/my-wall-step1.jpg"/>
+          <p>For best results, when taking a picture of your wall, make sure you take
+            it square on and at 90 degrees.</p>
+        </div>
+        <div class="slide">
+          <h1>Choose artwork</h1>
+          <h2><strong>STEP 02</strong><br>
+            CHOOSE A PIECE OF ARTWORK FROM ANY OF THE CATEGORIES ON THE RIGHT HAND SIDE
+            MENU.</h2>
+          <img src="ASSETS/my-wall-step2.jpg"/>
+          <p>If you want to swap the artwork, simply choose a different category and select a new image.</p>
+        </div>
+        <div class="slide">
+          <h1>Position artwork</h1>
+          <h2><strong>STEP 03</strong><br>
+            POSITION THE ARTWORK BY DRAGGING, RESIZED AND ROTATING. ROTATE BY PUTTING BOTH
+            YOUR FINGER AND THUMB ON THE ARTWORK AND ROTATE THE ARTWORK AROUND.</h2>
+          <img src="ASSETS/my-wall-step3.jpg" />
+          <p>Once happy with the artwork, save your image or send Edward an enquiry.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END OVERLAY - NOTE IT IS IN THE PAGE DIV -->
+  
+</div>
+<!-- /page --> 
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="js/jquery-1.11.2.min.js"></script> 
+<!--note jqm defaults defines preferences for JQM so needs to be declared before the library--> 
+<script src="js/jqm_defaults.js"></script> 
+<script src="js/jquery.mobile-1.4.5.min.js"></script> 
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="js/jquery.bxslider.min.js"></script> 
+<!-- GESTURES LIBRARY--> 
+<script src="js/interact.min.js"></script> 
+<!-- canvas to image and save in file--> 
+<script src="js/html2canvas.js"></script>
+<!-- OUR JS TO INSTANTIATE EVERYTHING--> 
+<script src="js/main.js"></script> 
+<!-- FOR DEBUGGING PG DESKTOP : UPDATE IP TO YOUR OWN--> 
+<script src="http://192.168.1.64:8080/target/target-script-min.js#anonymous"></script>
+</body>
+</html>

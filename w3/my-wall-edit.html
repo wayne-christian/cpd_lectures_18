@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Ed Waites</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+<link rel="stylesheet" href="css/jquery.mobile-1.4.5.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/global.css">
+<script src="js/modernizr-3.0.0.min.js"></script>
+</head>
+<body class="">
+
+<!-- NOTHING ABOVE GETS LOADED IN WHEN USING JQM TO GET THE PAGE- IT IS ONLY IN FOR TESTING VISUALLY -->
+
+<div data-role="page" class="pageHolder" id="wall_edit"> 
+  
+  <!-- Another sub menu -->
+  <ul id="drawNav" class="create1 closed wallmenu">
+    <li class="changeMenu wallBtn step1"></li>
+    <li class="location london" data-location="london_menu"> <a class="location_btn ui-link" data-ajax="false"> London </a> </li>
+    <li class="location newyork" data-location="newyork_menu"> <a class="location_btn ui-link" data-ajax="false"> New York </a> </li>
+    <li class="location paris" data-location="paris_menu"> <a class="location_btn ui-link" data-ajax="false"> Paris </a> </li>
+    <li class="location other" data-location="other_menu"> <a class="location_btn ui-link" data-ajax="false"> Other </a> </li>
+    <li class="saveBtn createwall"> <a class="ui-link" data-ajax="false"> Save </a> </li>
+  </ul>
+  <div id="london_menu" class="gallery-choice"> 
+    
+    <!-- note data src is a different image - we wil luse this to load a larger image and use a smaller image for the tumbnail-->
+    <figure class="wall-thumbnail-wrap clear"> <img class="wall-thumbnail" src="ASSETS/Fiery-Skies-Over-Westminster-40x4022-186x138.jpg" data-name="Fiery Skies Over Westminster"  data-src="ASSETS/Fiery-Skies-Over-Westminster-40x4022.jpg" width="186" height="138"/>
+      <figcaption class="wall-thumbnail-caption"> Fiery Skies Over Westminster<br />
+        40" x 40" </figcaption>
+    </figure>
+    <!--wall-thumbnail-wrap-->
+    
+    <figure class="wall-thumbnail-wrap clear"> <img class="wall-thumbnail" src="ASSETS/London-Skyline-Montage-24x24--186x138.jpg" data-name="London Montage Skyline"  data-src="ASSETS/London-Skyline-Montage-24x24-.jpg" width="186" height="138"/>
+      <figcaption class="wall-thumbnail-caption"> London Montage Skyline<br />
+        24" x 72" </figcaption>
+    </figure>
+    <!--wall-thumbnail-wrap-->
+    
+    <figure class="wall-thumbnail-wrap clear"> <img class="wall-thumbnail" src="ASSETS/Late-for-work-40x4022-186x138.jpg" data-name="Late for Work"  data-src="ASSETS/Late-for-work-40x4022.jpg" width="186" height="138"/>
+      <figcaption class="wall-thumbnail-caption"> Late for Work<br />
+        40" x 40" </figcaption>
+    </figure>
+    <!--wall-thumbnail-wrap-->
+    
+    <figure class="wall-thumbnail-wrap clear"> <img class="wall-thumbnail" src="ASSETS/Piccadilly-Corner-36x60-186x138.jpg" data-name="Piccadilly Circus"  data-src="ASSETS/Piccadilly-Corner-36x60.jpg" width="186" height="138"/>
+      <figcaption class="wall-thumbnail-caption"> Piccadilly Circus<br />
+        36" x 60" </figcaption>
+    </figure>
+    <!--wall-thumbnail-wrap--> 
+    
+  </div>
+  
+  <!-- This is a div placholder - we will use jquery to get and set the background image using tge inage data
+  <div  id="wall_image_holder"></div>-->
+  
+  <!-- blank canvas to draw large bground image too-->
+  <canvas id="canvas_wall_image"></canvas>
+  
+  <!-- temp art work holder but the image src will change depending on selection 
+  Mark up needed for gestures library-->
+  <div id="artworkholder">
+    <div id="rotate-holder"> <img id="artwork_image" src="ASSETS/Piccadilly-Corner-36x60-186x138.jpg" alt="wallimage" /> </div>
+  </div>
+  
+</div>
+<!-- /page -->
+
+</body>
+</html>
