@@ -192,3 +192,10 @@ position: absolute;
     top: 50%;
     transform: translate(-50%,-50%);
 }
+.reveal #tracker{
+text-align: center;
+	
+}
+.reveal #tracker iframe{
+	width: 30%!important;
+}
