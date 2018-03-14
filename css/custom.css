@@ -199,3 +199,6 @@ text-align: center;
 .reveal #tracker iframe{
 	width: 30%!important;
 }
+.reveal mark{
+	background-color: black !important;
+}

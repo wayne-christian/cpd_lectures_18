@@ -49,11 +49,32 @@
     </section>
     <section data-menu-title="stickies website" data-background-iframe="https://wayne-christian.github.io/WEB-AUTH-PRESENTATIONS/webauth_stickies/plane/index.html" data-background-interactive> </section>
 
+<section>
+	<h4>Slight Change in Schedule</h4>
+	<p class="small">Week 1 (18): Slides (Intro to CPD & PhoneGap)</p>
+<p class="small">Week 2 (19): Mobile Moments / Assessment</p>
+<p class="small">Week 3 (20): Features overview</p>
+<p class="small">Week 4 (21): UX,  User scenarios and requirements</p>
+<p class="small">Week 5 (22): Programming js refresh / debugging</p>
+<p class="small">Week 6 (23): SNOW DAY!- Overview of features</p>
+<p class="small">Week 7 (24): Programming Features/ Camera, saving images and interface</p>
+<p class="small">Week 8 (25): Programming Features/ Geolocation</p>
+<strong><p class="small">Week 9 (26): Programming Features/ using api's ( was evaluation)</p></strong>
+<p class="small">Easter (27-28)</p>
+<p class="small">Week 10 (29):  Evaluation</p>
+<p class="small">Week 11 (30):  Guest Lecture</p>
 
+</section>
+  <section>
+		  <h4>Thats one extra week of coding...</h4>
+	  </section> 
+<section data-background-transition="convex" data-background-video="assets/facepalm2.mp4"></section>
+	  <section>
+		  <h4>but its with me</h4>
+	  </section> 
+ <section data-background-transition="convex" data-background-video="assets/celebration.mp4"></section>
     
-     <section data-menu-title="sprint" data-background="assets/week1assets/agile-sprints.svg" data-background-size="950px" data-background-color="#1b1b1b">
-
-            </section>
+  
     
     <section data-menu-title="" data-background-transition="convex" >
       <h4>Last week we looked at:</h4>
@@ -63,6 +84,9 @@
       <p class="fragment small bullet">Took a screen shot and saved to the device (we ditched Canvas) </p>
 
     </section>
+     <section data-menu-title="sprint" data-background="assets/week1assets/agile-sprints.svg" data-background-size="950px" data-background-color="#1b1b1b">
+
+            </section>
     
     <section data-background-transition="convex" data-background-video="https://assets.awwwards.com/awards/external/2017/10/59f89ca9b6d2c.mp4" data-background-video-loop="loop">
 		<h4>Geolocation, JSON and Local Storage</h4>
@@ -101,16 +125,16 @@
       <p class="fragment bullet small">Create the HTML pages</p>
       <p class="fragment bullet small">Create a button to start tracking</p>
       <p class="fragment bullet small">Use Navigator.watch to check for movements</p>
-      <p class="fragment bullet small">store the name, long, lat, timestamp of those movements into an array</p>
+      <p class="fragment bullet small">Store the name, long, lat, timestamp of those movements into an array</p>
       <p class="fragment bullet small">Convert the JS object to a JSON string (level 1)</p>
       <p class="fragment bullet small">Save into Local storage on the device</p>
-      <p class="fragment bullet small">convert JSON back into a JS object (array)</p>
+      <p class="fragment bullet small">Convert JSON back into a JS object (array)</p>
       <p class="fragment bullet small">Loop through each long, lat</p>
       <p class="fragment bullet small">Instantiate a google map</p>
       <p class="fragment bullet small">Plot polylines on the google map</p>
     </section>
     <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
-      <pre class="smallcode" style="font-size: 35%"><code style="width: 100%" data-trim >
+      <pre class="smallcode" style=""><code style="width: 100%" data-trim >
       
 &lt;plugin name=&quot;cordova-plugin-geolocation&quot; /&gt;
 </code></pre>
@@ -174,7 +198,7 @@
 
     <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
       <h4>HTML Structure (Home)</h4>
-   <p class="small">Usual JQM Page setup (multipage page)</p>
+   <p class="small">Usual JQM Page setup (multi-page page)</p>
 <pre class="smallcode" style="font-size: 35%"><code style="width: 100%" data-trim >
 
 <!-- Start of Home page -->
@@ -203,7 +227,7 @@
     
      <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
       <h4>HTML Structure (Track location Page)</h4>
-   <p class="small">Usual JQM Page setup (multipage page)</p>
+   <p class="small">Usual JQM Page setup (multi-page page)</p>
 <pre class="smallcode" style="font-size: 35%"><code style="width: 100%" data-trim >
 
 <!-- Start of Track location Out page -->
@@ -236,7 +260,7 @@
     
       <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
       <h4>HTML Structure (History Page)</h4>
-   <p class="small">Usual JQM Page setup (multipage page)</p>
+   <p class="small">Usual JQM Page setup (multi-page page)</p>
 <pre class="smallcode" style="font-size: 35%"><code style="width: 100%" data-trim >
 
 <!-- Start of the History page -->
@@ -264,7 +288,7 @@
  
   <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
       <h4>HTML Structure (Track Info Page)</h4>
-   <p class="small">Usual JQM Page setup (multipage page)</p>
+   <p class="small">Usual JQM Page setup (multi page page)</p>
 <pre class="smallcode" style="font-size: 35%"><code style="width: 100%" data-trim >
 
 <!-- Track Info page -->
@@ -314,7 +338,7 @@ $(document).ready(function () {
     
     <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
       <h4>setup();</h4>
-		<p class="small">Check we are on line and chnage text</p>
+		<p class="small">Check we are on line and change text</p>
 
       <pre class="smallcode" style="font-size: 35%"><code style="width: 100%" data-noescape data-trim >
       
@@ -325,7 +349,7 @@ function setup() {
 
 	// check if we are online
     if (window.navigator.offLine) {
-		//set the button - notice we can daisy chain events dothis().thenthis().thenthis()
+		//set the button - notice we can daisy chain events do this().thenthis().thenthis()
         $("#home_network_button").text('No Internet Access').attr("data-icon", "delete").button('refresh');
     } else {
         console.log('online');
@@ -352,7 +376,7 @@ watch_id = navigator.geolocation.watchPosition(
 
 // Success
 function (position) {
-	//temp var coolecting data in an array
+	//temp var collecting data in an array
 	var g = {
 		timestamp: position.timestamp,
 		coords: {
@@ -374,7 +398,7 @@ function (position) {
 // Error
 function (error) {
 	console.log(error);
-	//shoud do something graceful here!
+	//should do something graceful here!
 },
 
 // Settings
@@ -382,7 +406,7 @@ function (error) {
 	enableHighAccuracy: true
 });
 
-// Tidy up the UI - hide any text that has been inpitted earlier
+// Tidy up the UI - hide any text that has been inputted earlier
 track_id = $("#track_id").val();
 // hide it
 $("#track_id").hide();
@@ -430,7 +454,7 @@ $("#startTracking_stop").on('click', function () {
 
       <pre class="smallcode" style="font-size: 35%"><code style="width: 100%" data-noescape data-trim >
       
-	//Here is some set data for you to add to use in lesson - check your google maps api is working
+	//Here is some set data for you to add to use in lesson - check your Google maps api is working
     $("#home_seedgps_button").on('click', function () {
         console.log('add storage');
         window.localStorage.setItem('LINCOLN', '[{"timestamp":1335700802000,"coords":{"heading":null,"altitude":null,"longitude":-0.544279 ,"accuracy":0,"latitude":53.226664,"speed":null,"altitudeAccuracy":null}},{"timestamp":1335700803000,"coords":{"heading":null,"altitude":null,"longitude":-0.549027,"accuracy":0,"latitude":53.227855,"speed":null,"altitudeAccuracy":null}}]');
@@ -491,7 +515,7 @@ $(document).on('pagecreate', '#history', function () {
 
     // Iterate over all of the recorded tracks, populating the list
     for (i = 0; i &lt; tracks_recorded; i++) {
-       //append to an elemenent (inside)
+       //append to an element (inside)
        // see the html mark up and data ajax - makes an internal link
        // i increments the localStorage.key(i) which we will use when clicked
         $("#history_tracklist").append("<li><a href='#track_info' data-ajax='false'>" + window.localStorage.key(i) + "</a></li>");
@@ -544,7 +568,7 @@ $(document).on('pagecreate', '#track_info', function () {
 			// Turn the stringified GPS data back into a JS object
 			data = JSON.parse(data);
 
-			// Calculate the total distance travelled
+			// Calculate the total distance traveled
 			total_km = 0;
 
 			for (i = 0; i &lt; data.length; i++) {
