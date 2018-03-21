@@ -308,7 +308,8 @@ success: function (response) {
 		//console.log(id, name, image);
 		//add the vars into a large string we can holding all the html we need
 		//there are alternative ways to do this via append() etc
-		resultsintohtml += '<div style="background-image:url(' + image + ')" data-album-id="' + id + '" class="cover"></div>';
+		// NOTE we create html div tag as a string 
+		<mark>resultsintohtml += '&lt;div style=&quot;background-image:url(' + image + ')&quot; data-album-id=&quot;' + id + '&quot; class=&quot;cover&quot;&gt;&lt;/div&gt;';</mark>
 	});
 	// once we have iterated through the array and create the html mark up
 	// insert it into the results div via the html() method;
