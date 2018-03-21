@@ -327,7 +327,13 @@ $('#results').html(resultsintohtml);
 };
 </code></pre>
     </section>
-      
+       <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>Genrate HTML markup</h4>
+		   <p class="small">Note the data-album-id attribute</p>
+<pre class="smallcode" style="font-size:"><code style="width: 100%" data-noescape data-trim >
+<mark>resultsintohtml += '&lt;div style=&quot;background-image:url(' + image + ')&quot; data-album-id=&quot;' + id + '&quot; class=&quot;cover&quot;&gt;&lt;/div&gt;';</mark>
+</code></pre>
+    </section>
       <section>
 		  <h4>The returned JSON</h4>
 		  <p class="small">this is only 1 album imagine x 20! Paste the json below into https://jsoneditoronline.org/</p>
