@@ -201,4 +201,5 @@ text-align: center;
 }
 .reveal mark{
 	background-color: black !important;
+	color: aqua;
 }
