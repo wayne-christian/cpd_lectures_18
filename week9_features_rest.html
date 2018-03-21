@@ -36,6 +36,7 @@
       <h3 >Wayne Christian</h3>
       <p style="color:#F8AA00">Designer, Developer, Director & Senior Lecturer</p>
     </section>
+    
     <section data-menu-title="CPD" data-background-transition="convex" data-background="assets/week1assets/start.jpg" data-background-size="900px" data-background-color="#333333" > </section>
     <section data-menu-title="stickies" data-background-transition="convex" data-background="assets/week1assets/sticky4.png" data-background-size="cover" >
       <h4>Feedback</h4>
@@ -177,7 +178,7 @@ $.get( "www.url.com", function( data ) {
       <p class="fragment bullet small">POST requests have no restrictions on data length</p>
     </section>
     
-   <section data-menu-title="" data-background-transition="convex" >
+   <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
       <h4>$load()</h4>
       <p class="bullet small"><strong>.load()</strong> is similar to <strong>$.get()</strong> but adds functionality which allows you to define where in the document the returned data is to be inserted. Really only usable when the call only will result in HTML. 
 It is called slightly differently than the other, global, calls, as it is a method tied to a particular jQuery-wrapped DOM element. </p>
@@ -253,7 +254,9 @@ if (window.navigator.offLine) {
      <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
       <h4>Get track Page</h4>
 <pre class="smallcode" style="font-size: 35%"><code style="width: 100%" data-noescape data-trim >
-<a href="#gettrack" data-transition="none" data-icon="plus">Get spotify playlist</a>
+//button that links the page
+&lt;a href=&quot;#gettrack&quot; data-transition=&quot;none&quot; data-icon=&quot;plus&quot;&gt;Get spotify playlist&lt;/a&gt;
+
 // When the user views the get track page
 $(document).on('pagecreate', '#'get track', function () {
 console.log('spotify page');
@@ -294,30 +297,30 @@ data: {
 	type: 'album'
 },
 success: function (response) {
-	console.log(response);
-	var items = response.albums.items;
-	var resultsintohtml = '';
+console.log(response);
+var items = response.albums.items;
+var resultsintohtml = '';
 
-	$.each(items, function (index) {
-		// get the id from the items array
-		var id = items[index].id;
-		// get the name from the items array
-		var name = items[index].name;
-		// get the image from the items array - note this is a nested array
-		var image = items[index].images[1].url;
-		//console.log(id, name, image);
-		//add the vars into a large string we can holding all the html we need
-		//there are alternative ways to do this via append() etc
-		// NOTE we create html div tag as a string 
-		<mark>resultsintohtml += '&lt;div style=&quot;background-image:url(' + image + ')&quot; data-album-id=&quot;' + id + '&quot; class=&quot;cover&quot;&gt;&lt;/div&gt;';</mark>
-	});
-	// once we have iterated through the array and create the html mark up
-	// insert it into the results div via the html() method;
-	$('#results').html(resultsintohtml);
+$.each(items, function (index) {
+	// get the id from the items array
+	var id = items[index].id;
+	// get the name from the items array
+	var name = items[index].name;
+	// get the image from the items array - note this is a nested array
+	var image = items[index].images[1].url;
+	//console.log(id, name, image);
+	//add the vars into a large string we can holding all the html we need
+	//there are alternative ways to do this via append() etc
+	// NOTE we create html div tag as a string 
+	<mark>resultsintohtml += '&lt;div style=&quot;background-image:url(' + image + ')&quot; data-album-id=&quot;' + id + '&quot; class=&quot;cover&quot;&gt;&lt;/div&gt;';</mark>
+});
+// once we have iterated through the array and create the html mark up
+// insert it into the results div via the html() method;
+$('#results').html(resultsintohtml);
 
-	// call a new function that applies new click events.
-	// we have to do this because on pagecreate the images are not in the dom
-	<mark>addclickevents();</mark>
+// call a new function that applies new click events.
+// we have to do this because on pagecreate the images are not in the dom
+<mark>addclickevents();</mark>
 
 }
 });
