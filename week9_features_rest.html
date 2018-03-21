@@ -327,6 +327,133 @@ $('#results').html(resultsintohtml);
 };
 </code></pre>
     </section>
+      
+      <section>
+		  <h4>The returned JSON</h4>
+		  <p class="small">this is only 1 album imagine x 20! Paste the json below into https://jsoneditoronline.org/</p>
+		  <pre class="smallcode" style="font-size: 35%"><code style="width: 100%" data-noescape data-trim >
+		  {
+  "albums": {
+    "href": "https://api.spotify.com/v1/search?query=oasis&type=album&market=GB&offset=0&limit=1",
+    "items": [
+      {
+        "album_type": "album",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/2DaxqgrOhkeH0fpeiQq2f4"
+            },
+            "href": "https://api.spotify.com/v1/artists/2DaxqgrOhkeH0fpeiQq2f4",
+            "id": "2DaxqgrOhkeH0fpeiQq2f4",
+            "name": "Oasis",
+            "type": "artist",
+            "uri": "spotify:artist:2DaxqgrOhkeH0fpeiQq2f4"
+          }
+        ],
+        "available_markets": [
+          "AD",
+          "AR",
+          "AT",
+          "AU",
+          "BE",
+          "BG",
+          "BO",
+          "BR",
+          "CA",
+          "CH",
+          "CL",
+          "CO",
+          "CR",
+          "CY",
+          "CZ",
+          "DE",
+          "DK",
+          "DO",
+          "EC",
+          "EE",
+          "ES",
+          "FI",
+          "FR",
+          "GB",
+          "GR",
+          "GT",
+          "HK",
+          "HN",
+          "HU",
+          "ID",
+          "IE",
+          "IL",
+          "IS",
+          "IT",
+          "JP",
+          "LI",
+          "LT",
+          "LU",
+          "LV",
+          "MC",
+          "MT",
+          "MX",
+          "MY",
+          "NI",
+          "NL",
+          "NO",
+          "NZ",
+          "PA",
+          "PE",
+          "PH",
+          "PL",
+          "PT",
+          "PY",
+          "RO",
+          "SE",
+          "SG",
+          "SK",
+          "SV",
+          "TH",
+          "TR",
+          "TW",
+          "US",
+          "UY",
+          "VN",
+          "ZA"
+        ],
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/0PTVq4kaAAuROnfvfA7bHG"
+        },
+        "href": "https://api.spotify.com/v1/albums/0PTVq4kaAAuROnfvfA7bHG",
+        "id": "0PTVq4kaAAuROnfvfA7bHG",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/6aa32e708bb0c0619dbb1a45756c2cade01a39b5",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/0e4f88a3e831fc069e966771ed015e1f252db096",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/e65ed6ad88fc33bd644fe068aab185a19099a5cb",
+            "width": 64
+          }
+        ],
+        "name": "(What's the Story) Morning Glory?",
+        "release_date": "1995-10-02",
+        "release_date_precision": "day",
+        "type": "album",
+        "uri": "spotify:album:0PTVq4kaAAuROnfvfA7bHG"
+      }
+    ],
+    "limit": 1,
+    "next": "https://api.spotify.com/v1/search?query=oasis&type=album&market=GB&offset=1&limit=1",
+    "offset": 0,
+    "previous": null,
+    "total": 2949
+  }
+}
+	</code></pre>  </section>
        
       <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
       <h4>addclickevents()</h4>
@@ -334,12 +461,11 @@ $('#results').html(resultsintohtml);
 var addclickevents = function () {
 $('.cover').click(function (e) {
 console.log('get song');
-// identify the cover which as been clicked
-var target = $(this);
-// if the target has the class playing pause the audio
-// note the audio var is global, is this was local we 
-// would play sounds on top of each other
+// identify the cover which as been clicked using a referent and store as a var
+<mark>var target = $(this);</mark>
+// if the target has the class 'playing', pause the audio
 if (target.hasClass('playing')) {
+// note the audio var is global, if this was local we would play sounds on top of each other
 	audioObject.pause();
 } else {
 	// if an audio object has already been defined, pause it
@@ -379,7 +505,10 @@ $.ajax({
 		Authorization: 'Bearer ' + spotifyAccessToken
 	},
 	success: function (response) {
-		callback(response);
+	//note callback is a js method of passing information back not a custom function.
+	//A callback is a function that is to be executed after another function has finished executing — hence the name ‘call back’.
+	// see https://codeburst.io/javascript-what-the-heck-is-a-callback-aba4da2deced
+	<mark>callback(response);</mark>
 	}
 });
 };
