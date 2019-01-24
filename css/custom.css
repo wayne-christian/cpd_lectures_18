@@ -174,7 +174,6 @@ p.tight{margin: 0;
 }
 div.half{
 width: 50%;
-	float: left;
 }
 .reveal h1, .reveal h2, .reveal h3,.reveal  h4{
 	text-transform: capitalize;
@@ -192,14 +191,11 @@ position: absolute;
     top: 50%;
     transform: translate(-50%,-50%);
 }
-.reveal #tracker{
-text-align: center;
-	
+@media only screen and (max-width: 800px) {
+   .reveal #myElement8 p.mq {
+  background-color: red;
+  }
 }
-.reveal #tracker iframe{
-	width: 30%!important;
-}
-.reveal mark{
-	background-color: black !important;
-	color: aqua;
+.red{
+	color: crimson;
 }
