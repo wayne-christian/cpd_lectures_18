@@ -153,19 +153,19 @@ Highcharts.chart('assessmentcontainer', {
         name: 'types',
         colorByPoint: true,
         data: [{
-            name: 'Concept (15%)',
+            name: 'Concept and design  (15%)',
             y: 15
         }, {
-            name: 'Prototyping (20%)',
-            y: 20
+            name: 'Prototyping (30%)',
+            y: 30
+        },
+			   {
+            name: 'Final App (50%)',
+            y: 50
         },
 			   {
             name: 'Reflection (5%)',
-            y: 5
-        },
-			   {
-            name: 'Final App (60%)',
-            y: 60,
+            y: 5,
             sliced: true,
             selected: true
         }]
@@ -225,10 +225,10 @@ Reveal.addEventListener('npmstats', function () {
 				y: 27887
 			}, {
 				name: 'downloads in the last week',
-				y: 164798
+				y: 222226
 			}, {
 				name: 'downloads in the last month',
-				y: 646855
+				y: 1001952
 			}]
 		}]
 	});
