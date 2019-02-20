@@ -88,10 +88,18 @@
                   <h4>Quick examples live demo</h4>
                   <p class="small bullet">Edward Waite, Sound Lincs, MYPB</p>
                 </section>
-    <section data-background-transition="convex" >
-                  <h4>***** APP</h4>
-                  <p class="small bullet">Hopefully can show you more as we develop it. (same timescales)</p>
-                </section>
+    <section data-menu-title="ed" data-background-transition="convex" data-background="assets/week5assets/examples_1.jpg" data-background-size="cover" >
+				  </section>
+				  <section data-menu-title="ed" data-background-transition="convex" data-background="assets/week5assets/examples_2.jpg" data-background-size="cover" >
+				  </section>
+				  <section data-menu-title="sound" data-background-transition="convex" data-background="assets/week5assets/examples_3.jpg" data-background-size="cover" >
+				  </section>
+				  <section data-menu-title="sound" data-background-transition="convex" data-background="assets/week5assets/examples_4.png" data-background-size="contain" >
+				  </section>
+				  <section data-menu-title="mypb" data-background-transition="convex" data-background="assets/week5assets/examples_5.jpg" data-background-size="cover" >
+				  </section>
+				  <section data-menu-title="mypb" data-background-transition="convex" data-background="assets/week5assets/examples_6.jpg" data-background-size="cover" >
+				  </section>
    <!-- <section data-menu-title="wireframe example" data-background-iframe="assets/week5assets/RAF100-App.pdf"> </section>-->
     <section data-background-transition="convex" data-background-video="assets/week5assets/TEST_TRACK_01.mp4"> </section>
     
@@ -104,7 +112,10 @@
                   <p class="">Less pictures, more code today!</p>
                 </section>
     <section data-menu-title="jquery mobile 3" data-background="assets/week5assets/jqmlecture3.png" data-background-size="950px" data-background-color="#212121"></section>
-    <section data-menu-title="jquery mobile 4" data-background="assets/week5assets/jqmlecture4.png" data-background-size="950px" data-background-color="#212121"></section>
+  
+    <section data-background-transition="convex" data-background="assets/week5assets/eye.gif" data-background-size="300px">
+      <h3 style="color: red">Recap/observations of the first session</h3>
+    </section>
     <section data-menu-title="LAST WORKSHOP OVERVIEW" data-background-transition="convex" >
                   <h4>We looked at</h4>
                   <p class="fragment small bullet">Setting a config.xml for your build settings</p>
@@ -118,7 +129,46 @@
                 </section>
     <section data-menu-title="jquery mobile 6" data-background="assets/week5assets/jqmlecture6.png" data-background-size="contain" data-background-color="#2D3639"></section>
     <section data-menu-title="jquery mobile 7" data-background="assets/week5assets/jqmlecture7.png" data-background-size="contain" data-background-color="#2D3639"></section>
+    
+
     <section data-menu-title="jquery mobile 8" data-background="assets/week5assets/jqmlecture8.png" data-background-size="contain" data-background-color="#2D3639"></section>
+    
+        <section data-background="#3f3f3f">
+    <pre>
+    <code style="font-size: 50%; line-height: normal">
+ &lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;new app&lt;/title&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;!--SOME APPLE SEETINGS--&gt;
+&lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot;&gt;
+&lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot; content=&quot;black-translucent&quot;&gt;
+&lt;!--You need this although you do not need a physical reference as build will inject it in--&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;cordova.js&quot;&gt;&lt;/script&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/jquery.mobile-1.4.5.css&quot; /&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/custom.css&quot; /&gt;
+&lt;!--JQUERY Dependencies are are just before the closing &lt;/body&gt;--&gt;
+&lt;/head&gt;
+    </code>
+    </pre>
+</section>
+
+    <section data-background="#3f3f3f">
+     <pre>
+ <code style="font-size: 50%; line-height: normal">
+&lt;!--scripts at the bottom of the page--&gt;
+&lt;script src=&quot;js/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;!--note jqm defaults defines preferences for JQM so needs to be declared before jqm--&gt; 
+&lt;script src=&quot;js/jqm_defaults.js&quot;&gt;&lt;/script&gt; 
+&lt;script src=&quot;js/jquery.mobile-1.4.5.min.js&quot;&gt;&lt;/script&gt; 
+
+&lt;!--our js file goes last so we know all dependencies are loaded first--&gt; 
+&lt;script type=&quot;text/javascript&quot; src=&quot;js/main.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+    </code>
+    </pre>
+</section>  
     <section data-menu-title="jquery mobile 9" data-background="assets/week5assets/jqmlecture9.png" data-background-size="contain" data-background-color="#2D3639"></section>
     
     <!--    <section data-menu-title="jquery mobile 11" data-background="assets/week5assets/jqmlecture11.png" data-background-size="950px" data-background-color="#212121"></section>
@@ -132,7 +182,28 @@
                   <p class="fragment small bullet">Jquery/JS syntax issues</p>
                   <p class="fragment small bullet">Basic issues can be resolved by...</p>
                 </section>
-    <section data-menu-title="jquery mobile 15" data-background="assets/week5assets/jqmlecture15.png" data-background-size="cover" data-background-color="#ffffff"></section>
+   
+    <section data-background-transition="convex" data-background-video="assets/week3assets/facepalm2.mp4"> </section>
+   
+   <section data-menu-title="console" data-background-transition="convex" data-background="#3f3f3f">
+	   <p>Remember</p>
+	   <h3>If at first you don't succeed...</h3>
+		
+	  </section>
+	  
+	     <section data-menu-title="console" data-background-transition="convex" data-background="#FF0000">
+	   <h1>NO!</h1>
+		
+	  </section>
+    
+    <section data-menu-title="console" data-background-transition="convex" data-background="assets/week5assets/error.jpg">
+      <h3 style="color: red">Check F**king the console!<br>
+<br>
+<br>
+<br>
+</h3>
+	  </section>
+	  
     <section data-menu-title="LAST WORKSHOP OVERVIEW 2" data-background-transition="convex" >
                   <h4>It worked in the browser, not on the device!</h4>
                   <p class="fragment small bullet">Jquery/JS syntax issues in the device ready function</p>
@@ -158,7 +229,11 @@
                   <p class="fragment small bullet">When you have tested enough - deploy to PGbuild for cross platform saas</p>
                   <p class="fragment small bullet">Build for other device and then test again and again and again.</p>
                 </section>
-    <section data-menu-title="jquery mobile 17" data-background="assets/week5assets/jqmlecture17.png" data-background-size="contain" data-background-color="#ffffff"></section>
+
+    <section data-background-transition="convex" data-background="assets/week5assets/cow-dancing.gif" data-background-size="300px" >
+      <h3>JS/JQuery Refresher</h3>
+
+    </section>
     <section data-menu-title="jquery mobile 18" data-background="assets/week5assets/jqmlecture18.png" data-background-size="950px" data-background-color="#212121"></section>
     <section data-menu-title="jquery mobile 19" data-background="assets/week5assets/jqmlecture19.png" data-background-size="950px" data-background-color="#212121"></section>
     <section data-menu-title="jquery mobile 20" data-background="assets/week5assets/jqmlecture20.png" data-background-size="950px" data-background-color="#212121"></section>
@@ -173,15 +248,64 @@
     <section data-menu-title="jquery mobile 29" data-background="assets/week5assets/jqmlecture29.png" data-background-size="950px" data-background-color="#212121"></section>
     <section data-menu-title="jquery mobile 30" data-background="assets/week5assets/jqmlecture30.png" data-background-size="950px" data-background-color="#212121"></section>
     <section data-menu-title="jquery mobile 31" data-background="assets/week5assets/jqmlecture31.png" data-background-size="950px" data-background-color="#212121"></section>
+   
     <section data-menu-title="jquery mobile 32" data-background="assets/week5assets/jqmlecture32.png" data-background-size="950px" data-background-color="#212121"></section>
     <section data-menu-title="jquery mobile 33" data-background="assets/week5assets/jqmlecture33.png" data-background-size="950px" data-background-color="#212121"></section>
+     <section data-menu-title="coding steps" data-background-transition="convex" data-background="#3f3f3f">
+		   <p>Traversing the dom actions</p>
+		  
+		  <code style="font-size: 80%">
+$(this).parents('.holder').show();
+</code>
+<p class="small fragment">// go up until you find class holder and show it</p>
+
+		 <code style="font-size: 80%">$(this).find('#findme').show(); </code>
+		 	 <p class="small fragment">// find id named "findme" inside the referent.</p>
+		 <code style="font-size: 80%">$(this).children().css( "background-color", "red" );</code>	 
+		   <p class="small fragment">// make all children of referent background red.</p>
+		<p class="small"><a  href="https://api.jquery.com/category/traversing/" target="_blank">More on traversing in jquery</a></p>
+	  </section>
     <section data-menu-title="jquery mobile 34" data-background="assets/week5assets/jqmlecture34.png" data-background-size="950px" data-background-color="#212121"></section>
     <section data-menu-title="jquery mobile 35" data-background="assets/week5assets/jqmlecture35.png" data-background-size="950px" data-background-color="#212121"></section>
     <section data-menu-title="jquery mobile 36" data-background="assets/week5assets/jqmlecture36.png" data-background-size="950px" data-background-color="#212121"></section>
     <section data-menu-title="jquery mobile 37" data-background="assets/week5assets/jqmlecture37.png" data-background-size="950px" data-background-color="#212121"></section>
-    <section data-menu-title="jquery mobile 38" data-background="assets/week5assets/jqmlecture38.png" data-background-size="950px" data-background-color="#212121"></section>
-    <section data-menu-title="jquery mobile 40" data-background="assets/week5assets/jqmlecture40.png" data-background-size="950px" data-background-color="#212121"></section>
+  
+        <section data-background="#3f3f3f">
+			<h3>Order is important</h3>
+			<p class="small">Seperate files are easier to maintain</p>
+     <pre>
+ <code style="font-size: 50%; line-height: normal">
+&lt;!--scripts at the bottom of the page--&gt;
+&lt;script src=&quot;js/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;!--note jqm defaults defines preferences for JQM so needs to be declared before jqm--&gt; 
+&lt;script src=&quot;js/jqm_defaults.js&quot;&gt;&lt;/script&gt; 
+&lt;script src=&quot;js/jquery.mobile-1.4.5.min.js&quot;&gt;&lt;/script&gt; 
+
+&lt;!--high charts stuff with custom theme for today!--&gt;
+&lt;script src=&quot;js/highcharts.js&quot;&gt;&lt;/script&gt; 
+&lt;script src=&quot;js/modules/no-data-to-display.js&quot;&gt;&lt;/script&gt; 
+&lt;script src=&quot;js/themes/mypbtheme.js&quot;&gt;&lt;/script&gt;
+&lt;!--high charts stuff--&gt;
+ 
+&lt;!--our js file goes last so we know all dependencies are loaded first--&gt; 
+&lt;script type=&quot;text/javascript&quot; src=&quot;js/main.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+    </code>
+    </pre>
+</section>
+
+
     <section data-menu-title="jquery mobile 41" data-background="assets/week5assets/jqmlecture41.png" data-background-size="950px" data-background-color="#212121"></section>
+        <section data-background="#3f3f3f">
+			<h3>Jquery Basic Syntax</h3>
+     <pre>
+ <code style="font-size:; line-height: normal">
+JQUERY('selector').action();
+or
+$('selector').action();  
+    </code>
+    </pre>
+</section>
     <section data-menu-title="jquery mobile 42" data-background="assets/week5assets/jqmlecture42.png" data-background-size="950px" data-background-color="#212121"></section>
     <section data-menu-title="jquery mobile 43" data-background="assets/week5assets/jqmlecture43.png" data-background-size="950px" data-background-color="#212121"></section>
     <section data-menu-title="jquery mobile 44" data-background="assets/week5assets/jqmlecture44.png" data-background-size="950px" data-background-color="#212121"></section>
