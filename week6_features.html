@@ -47,7 +47,10 @@
       <h4 class="bullet" >Unhappy</h4>
       <p class="small">If you are unhappy or unsure on something, please explain on the back</p>
     </section>
-    <section data-menu-title="stickies website" data-background-iframe="https://wayne-christian.github.io/WEB-AUTH-PRESENTATIONS/webauth_stickies/plane/index.html" data-background-interactive> </section>
+    <section data-menu-title="postie1" data-background="assets/week6assets/postie_19_1.jpg" data-background-size="450px" data-background-color="#212121"></section>
+    <section data-menu-title="postie1" data-background="assets/week6assets/postie_19_2.jpg" data-background-size="450px" data-background-color="#212121"></section>
+    <section data-menu-title="postie1" data-background="assets/week6assets/postie_19_3.jpg" data-background-size="450px" data-background-color="#212121"></section>
+    <section data-menu-title="postie1" data-background="assets/week6assets/postie_19_4.jpg" data-background-size="450px" data-background-color="#212121"></section>
     
 
     <section data-menu-title="team" data-background-transition="convex" >
@@ -145,6 +148,32 @@
     </section>
     <section data-menu-title="slide5" data-background="assets/week6assets/Featureslecture5.png" data-background-size="950px" data-background-color="#212121"></section>
     <section data-menu-title="slide6" data-background="assets/week6assets/Featureslecture6.png" data-background-size="950px" data-background-color="#212121"></section>
+     <section data-menu-title="LAST WORKSHOP OVERVIEW" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>JQM DEFAULTS</h4>
+ 
+      <pre class="smallcode" style="font-size: 50%"><code data-trim data-noescape>
+jQuery(document).bind("mobileinit", function () {
+
+	console.log('mobile init');
+	//look these up as they will have an effect on performence
+	jQuery.mobile.changePage.defaults.changeHash = true;
+	jQuery.mobile.hashListeningEnabled = true;
+	jQuery.mobile.pushStateEnabled = false;
+	jQuery.support.cors = true;
+	jQuery.mobile.allowCrossDomainPages = true;
+	jQuery.mobile.changePage.defaults.allowSamePageTransition = false;
+
+	//IMPORTANT
+	jQuery.mobile.phonegapNavigationEnabled = true;
+	//IMPORTANT
+	jQuery.mobile.defaultPageTransition = 'flow';
+	/*
+	fade pop flip turn flow slidefade slide slideup slidedown
+	*/
+});   	
+     </code></pre>
+ 
+    </section>
     <section data-menu-title="jquery mobile 49" data-background="assets/week5assets/jqmlecture49.png" data-background-size="950px" data-background-color="#212121"></section>
     <section data-background-transition="convex" data-background-video="assets/week1assets/logical.mp4"> </section>
     <section data-menu-title="jquery mobile 73" data-background="assets/week5assets/jqmlecture73.png" data-background-size="950px" data-background-color="#212121"></section>
@@ -183,11 +212,11 @@ $(document).on('pagecreate', <mark>'#sound'</mark>, function () {
       <p class="fragment bullet">End on ed waite app </p>
       <p class="fragment bullet">Demonstrate accessing camera to take a photo, manipulate through gestures and store base64 image data</p>
     </section>
-    <section data-menu-title="slide14" data-background="assets/week6assets/Featureslecture14.png" data-background-size="950px" data-background-color="#212121"></section>
-    <section data-menu-title="slide15" data-background="assets/week6assets/Featureslecture15.png" data-background-size="950px" data-background-color="#212121"></section>
-    <section data-menu-title="slide16" data-background="assets/week6assets/Featureslecture16.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide14" data-background="assets/week6assets/Featureslecture14.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="slide15" data-background="assets/week6assets/Featureslecture15.png" data-background-size="950px" data-background-color="#FFFFFF"></section>
+    <section data-menu-title="slide16" data-background="assets/week6assets/Featureslecture16.png" data-background-size="950px" data-background-color="#FFFFFF"></section>
     <section data-menu-title="slide17" data-background="assets/week6assets/Featureslecture17.png" data-background-size="950px" data-background-color="#212121"></section>
-    <section data-menu-title="slide18" data-background="assets/week6assets/Featureslecture18.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide18" data-background="assets/week6assets/Featureslecture18.png" data-background-size="950px" data-background-color="#FFFFFF"></section>
     <section data-menu-title="slide19" data-background-transition="convex" >
       <h4>Access Features to bring users back!</h4>
       <p class="small">(accessed using cordova plugins)</p>
