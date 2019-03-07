@@ -199,3 +199,10 @@ position: absolute;
 .red{
 	color: crimson;
 }
+
+mark{
+	background-color: black!important;
+    padding: 5px!important;
+	    color: white;
+	
+}
