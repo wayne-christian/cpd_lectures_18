@@ -1,0 +1,803 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Week 7 (24): Camera</title>
+<link rel="stylesheet" href="css/reveal.css">
+<link rel="stylesheet" href="css/theme/night.css">
+
+<!-- Theme used for syntax highlighting of code -->
+<link rel="stylesheet" href="lib/css/zenburn.css">
+<link rel="stylesheet" href="css/custom.css">
+
+<!-- Printing and PDF exports -->
+<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+<style>
+.reveal h4 {
+	color: #f28e19
+}
+</style>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+    <section data-background-transition="convex" data-background="#333333">
+      <h2 >Hello</h2>
+      <p style="color:#F8AA00">Cross Platform Development (CMP3035M)</p>
+    </section>
+    <section data-background-transition="convex" data-background-video="assets/week1assets/rainingcode.mp4" data-background-video-loop="loop">
+      <h3 >Wayne Christian</h3>
+      <p style="color:#F8AA00">Designer, Developer, Director & Senior Lecturer</p>
+    </section>
+    <section data-menu-title="CPD" data-background-transition="convex" data-background="assets/week1assets/start.jpg" data-background-size="900px" data-background-color="#333333" > </section>
+    <section data-menu-title="stickies" data-background-transition="convex" data-background="assets/week1assets/sticky4.JPG" data-background-size="cover" >
+      <h4>Feedback</h4>
+      <p>(Stickies: Rules)</p>
+    </section>
+    <section data-menu-title="stickies" data-background-transition="convex" data-background="#333333">
+      <h4 class="bullet" >Happy</h4>
+      <h4 class=" bullet" >Meh? </h4>
+      <h4 class="bullet" >Unhappy</h4>
+      <p class="small">If you are unhappy or unsure on something, please explain on the back</p>
+    </section>
+    <section data-menu-title="stickies website" data-background-iframe="https://wayne-christian.github.io/WEB-AUTH-PRESENTATIONS/webauth_stickies/plane/index.html" data-background-interactive> </section>
+
+<section>
+	<h4>Slight Change in Schedule</h4>
+	<p class="small tight">Week 1 (18): Slides (Intro to CPD & PhoneGap)</p>
+<p class="small tight">Week 2 (19): Mobile Moments / Assessment</p>
+<p class="small tight">Week 3 (20): Features overview</p>
+<p class="small tight">Week 4 (21): UX,  User scenarios and requirements</p>
+<p class="small tight">Week 5 (22): Programming js refresh / debugging</p>
+<p class="small tight">Week 6 (23): Programming Features/ Camera, saving images and interface</p>
+<p class="small tight"><strong>Week 7 (24): Programming Features/ Geolocation</strong></p>
+<p class="small tight">Week 8 (25): Programming Features/ API'S</p>
+<p class="small tight red">Week 9 (26): Programming Features/ Augmented Reality</p>
+<p class="small tight">Week 10 (27):  Evaluation</p>
+<p class="small tight">Week 11 (28):  Guest Lecture</p>
+<p class="small tight">Week 12 (29):  Module Wrap Up</p>
+<p class="small tight"> Easter</p>
+<p class="small tight">Week 13 (30):  Module Wrap Up</p>
+
+</section>
+  <section>
+		  <h4>Thats one extra week of coding...</h4>
+	  </section> 
+<section data-background-transition="convex" data-background-video="assets/facepalm2.mp4"></section>
+	  <section>
+		  <h4>but its with me</h4>
+	  </section> 
+ <section data-background-transition="convex" data-background-video="assets/celebration.mp4"></section>
+    
+  
+    
+    <section data-menu-title="" data-background-transition="convex" >
+      <h4>Last week we looked at:</h4>
+      <p class="fragmentbullet">Combining Features</p>
+      <p class="fragment bullet">Manipulate a picture through gestures (interact.js)</p>
+       <p class="fragment bullet">Applied "Click" events (should be vclick)</p>
+      <p class="fragment bullet">Took a screen shot and saved to the device (we ditched Canvas) </p>
+
+    </section>
+     <section data-menu-title="sprint" data-background="assets/week1assets/agile-sprints.svg" data-background-size="950px" data-background-color="#1b1b1b">
+
+            </section>
+            
+      <section data-background-transition="convex" data-background="assets/week5assets/eye.gif" data-background-size="300px">
+      <h3 style="color: red">Recap/observations</h3>
+    </section>     
+    
+	  <section data-background-color="#3f3f3f">
+	  	<pre>
+	  	<code style="font-size: 60%;line-height: normal">
+//write a function.	  	
+function myfunctionname(){
+// execute code
+}
+
+//call function
+myfunctionname();
+	  		  	
+	  	</code>
+	  	</pre>
+	  	
+	  </section>
+	  
+	   <section  data-background-color="#3f3f3f">
+	  	<pre>
+	  	<code style="font-size: 60%;line-height: normal">
+//write a function that requires parameters.	  	
+function myfunctionname(parameter1, parameter2){
+
+// execute code
+console.log(parameter1, parameter2);
+//outputs pass data
+}
+
+//call function and pass parameters
+myfunctionname('pass','data' );
+	  		  	
+	  	</code>
+	  	</pre>
+	  	
+	  </section>
+    
+    <section data-background-transition="convex" data-background-video="https://assets.awwwards.com/awards/external/2017/10/59f89ca9b6d2c.mp4" data-background-video-loop="loop">
+		<h4>Geolocation, JSON and Local Storage</h4>
+      
+    </section>
+    
+     <section style="max-width: 50%" data-menu-title="cordova geoloaction" data-background-iframe="https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-geolocation/" data-background-interactive> </section>
+     
+     <section>
+		  <h4 style="color: red">Warning</h4>
+		  <p class="">Issues with geolocation data?</p>
+	  	
+	  </section>
+
+	  <section>
+		  <h4 style="color: red">Warning</h4>
+		  <p class=""><strong>Collection and use of geolocation data raises important privacy issues.</strong> Your app's privacy policy should discuss how the app uses geolocation data, whether it is shared with any other parties, and the level of precision of the data (for example, coarse, fine, ZIP code level, etc.). </p>
+		  <p class=" fragment">Geolocation data is generally considered sensitive because it can reveal user's whereabouts and, if stored, the history of their travels.</p>
+		  <p class=" fragment"><strong>This is not built in like a browser</strong></p>
+	  	
+	  </section>
+	  <section>
+		  <h4 style="">Get permission!</h4>
+		  <p class="">You should provide a just-in-time notice before the app accesses geolocation data. That notice should provide information about what and why, as well as obtaining the user's permission (e.g., by presenting choices for OK and No Thanks). </p>
+		 
+	  	
+	  </section>
+    <section  data-background="">
+      <h3>Today will be all coding!</h3>
+      <p class="">With explanations of logic, JQM functions and custom functions</p>
+      <p class="fragment bullet ">Please ask questions as normal</p>
+      <p class="fragment bullet ">I will be asking you questions!</p>
+      <p class="fragment bullet ">It should look something like this..</p>
+    </section>
+    
+
+    <section id="tracker" style="max-width: 50%" data-menu-title="Geolocation and JSON" data-background-iframe="http://adigitalengagement.co.uk/tracker/www/" data-background-interactive> </section>
+    
+    <section data-menu-title="workshop" data-background="">
+      <h4>Steps</h4>
+      <p class="bullet small tight">Add Cordova plugins to your config.xml (geolocation)</p>
+      <p class="fragment bullet small tight">Create the HTML pages</p>
+      <p class="fragment bullet small tight">Create a button to start tracking</p>
+      <p class="fragment bullet small tight">Use Navigator.watch to check for movements</p>
+      <p class="fragment bullet small tight">Store the name, long, lat, timestamp of those movements into an array</p>
+      <p class="fragment bullet small tight">Convert the JS object to a JSON string (level 1)</p>
+      <p class="fragment bullet small tight">Save into Local storage on the device</p>
+      <p class="fragment bullet small tight">Convert JSON back into a JS object (array)</p>
+      <p class="fragment bullet small tight">Loop through each long, lat</p>
+      <p class="fragment bullet small tight">Instantiate a google map</p>
+      <p class="fragment bullet small tight">Plot polylines on the google map</p>
+    </section>
+    
+    <section data-menu-title="workshop" data-background="">
+      <h4>Easy</h4>
+	  </section>
+    <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <pre class="smallcode" style=""><code style="width: 100%" data-trim >
+      
+&lt;plugin name=&quot;cordova-plugin-geolocation&quot; /&gt;
+</code></pre>
+    </section>
+    <section data-menu-title="workshop1" data-background="">
+      <h3>NOTE: Using the PG APP only has PG plugins installed</h3>
+      <p class="">Third party plugins will not work and will have to be deployed through PG Build for testing</p>
+      <p class=" fragment">Geolocation is now native to a browser so should work online too</p>
+    </section>
+    <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>Dependencies!</h4>
+      <p>
+      <pre class="smallcode" style="font-size: 55%"><code style="width: 100%" data-trim >
+<!-- css styles -->
+<link rel="stylesheet" href="css/jquery.mobile-1.4.5.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/global.css">
+
+<!-- Js this has to be loaded in the head -->
+<script src="js/modernizr-3.0.0.min.js"></script>
+<script src="cordova.js"></script>
+</code></pre>
+      </p>
+    </section>
+    <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>Js Dependencies!</h4>
+      <p>
+      <pre class="smallcode" style="font-size: 55%"><code style="width: 100%" data-noescape data-trim >
+&lt;script src=&quot;js/jquery-1.11.2.min.js&quot;&gt;&lt;/script&gt; 
+&lt;!--note jqm defaults defines preferences for JQM so needs to be declared before the library--&gt; 
+&lt;script src=&quot;js/jqm_defaults.js&quot;&gt;&lt;/script&gt; 
+&lt;script src=&quot;js/jquery.mobile-1.4.5.min.js&quot;&gt;&lt;/script&gt; 
+&lt;!-- Include all compiled plugins (below), or include individual files as needed --&gt; 
+
+&lt;!-- OUR JS TO INSTANTIATE EVERYTHING--&gt; 
+<mark>&lt;script type=&quot;text/javascript&quot; src=&quot;http://maps.googleapis.com/maps/api/js?key=YOURKEY&amp;sensor=false&quot;&gt;&lt;/script&gt; </mark>
+&lt;script src=&quot;js/exercisetracker.js&quot;&gt;&lt;/script&gt; 
+&lt;!-- FOR DEBUGGING PG DESKTOP : UPDATE IP TO YOUR OWN--&gt; 
+&lt;script src=&quot;http://192.168.1.64:8080/target/target-script-min.js#anonymous&quot;&gt;&lt;/script&gt;
+
+</code></pre>
+      </p>
+    </section>
+    
+      <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>Google Maps!</h4>
+		  <p class="You will need an api key"></p>
+      <pre class="smallcode" style="font-size: 35%">
+      <code style="width: 100%" data-noescape data-trim >
+
+<mark>&lt;script type=&quot;text/javascript&quot; src=&quot;http://maps.googleapis.com/maps/api/js?key=YOURKEY&amp;sensor=false&quot;&gt;&lt;/script&gt; </mark>
+
+
+</code></pre>
+     
+    </section>
+     <section>
+		  <h4>Google maps is not free anymore!</h4>
+		  </section>
+    <section data-background-transition="convex" data-background-video="assets/facepalm2.mp4"></section>
+    <section>
+		  <h4>We have you covered</h4>
+		<p>API key will be in the workshop</p>
+		  </section>
+		  
+		  
+  <!--  <section style="max-width: 50%" data-menu-title="Geolocation and JSON" data-background-iframe="https://developers.google.com/maps/documentation/javascript/get-api-key" data-background-interactive> </section>-->
+
+   
+       
+
+    <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>HTML Structure (Home)</h4>
+   <p class="small">Usual JQM Page setup (multi-page page)<br>
+Note the data-icon attribute, and #links</p>
+<pre class="" style="font-size: 35%"><code style="width: 100%" data-noescape data-trim>
+
+<!-- Start of Home page -->
+&lt;div <mark>data-role=&quot;page&quot; id=&quot;home&quot;</mark> data-theme=&quot;b&quot;&gt;
+  &lt;div data-role=&quot;header&quot;&gt;
+    &lt;h1&gt;Home&lt;/h1&gt;
+    &lt;div data-role=&quot;navbar&quot;&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&quot;<mark>#home</mark>&quot; data-transition=&quot;none&quot;<mark>data-icon=&quot;home&quot;</mark>&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#startTracking&quot; data-transition=&quot;none&quot; <mark>data-icon=&quot;plus&quot;</mark>&gt;Track Workout&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#history&quot; data-transition=&quot;none&quot; <mark>data-icon=&quot;star&quot;</mark>&gt;History&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div data-role=&quot;content&quot;&gt;
+    &lt;p&gt;Welcome to the &lt;em&gt;ExerciseTracker&lt;/em&gt; app. By clicking &lt;em&gt;Track Workout&lt;/em&gt; &lt;br&gt;
+you can record your workouts using the GPS feature on your phone.&lt;/p&gt;
+    &lt;button id=&quot;home_network_button&quot; <mark>data-icon=&quot;check&quot;</mark>&gt;Internet Access Enabled&lt;/button&gt;
+    &lt;button id=&quot;home_clearstorage_button&quot;&gt;Clear local storage&lt;/button&gt;
+    &lt;button id=&quot;home_seedgps_button&quot;&gt;Load Test Data&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+<!-- End of Home page --> 
+</code></pre>
+ 
+    </section>
+    
+     <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>HTML Structure (Track location Page)</h4>
+   <p class="small">Usual JQM Page setup (multi-page page)<br>
+Note placeholders and input field with no form tag</p>
+<pre class="" style="font-size: 35%"><code style="width: 100%" data-noescape data-trim >
+
+&lt;!-- Start of Track location Out page --&gt;
+&lt;div data-role=&quot;page&quot; <mark>id=&quot;startTracking&quot;</mark> data-theme='b'&gt;
+  &lt;div data-role=&quot;header&quot;&gt;
+    &lt;h1&gt;Track Location&lt;/h1&gt;
+    &lt;div data-role=&quot;navbar&quot;&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&quot;#home&quot; data-transition=&quot;none&quot; data-icon=&quot;home&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#startTracking&quot; data-transition=&quot;none&quot; data-icon=&quot;plus&quot;&gt;Track Workout&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#history&quot; data-transition=&quot;none&quot; data-icon=&quot;star&quot;&gt;History&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div data-role=&quot;content&quot;&gt;
+    &lt;p <mark>id=&quot;startTracking_status&quot;</mark>&gt;&lt;!-- place holder to add content via JQ --&gt;&lt;/p&gt;
+    &lt;div data-role=&quot;fieldcontain&quot; class=&quot;ui-hide-label&quot;&gt;
+      &lt;label for=&quot;track_id&quot;&gt;Track ID/Name:&lt;/label&gt;
+      <mark>&lt;input type=&quot;text&quot; name=&quot;track_id&quot; id=&quot;track_id&quot; placeholder=&quot;Workout ID/Name&quot;/&gt;</mark>
+    &lt;/div&gt;
+    &lt;button data-role=&quot;button&quot; id=&quot;startTracking_start&quot;&gt;Start Tracking&lt;/button&gt;
+    &lt;button data-role=&quot;button&quot; id=&quot;startTracking_stop&quot;&gt;Stop Tracking&lt;/button&gt;
+   &lt;p <mark> id=&quot;startTracking_info&quot;</mark>&gt;&lt;!-- place holder to add content via JQ --&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- /page --&gt; 
+</code></pre>
+ 
+    </section>   
+    
+      <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>HTML Structure (History Page)</h4>
+   <p class="small">Note place holders and empty UL tag (unordered list)</p>
+<pre class="" style="font-size: 35%"><code style="width: 100%" data-noescape data-trim >
+
+&lt;!-- Start of the History page --&gt;
+&lt;div data-role=&quot;page&quot; <mark>id=&quot;history&quot;</mark> data-theme='b'&gt;
+  &lt;div data-role=&quot;header&quot;&gt;
+    &lt;h1&gt;History&lt;/h1&gt;
+    &lt;div data-role=&quot;navbar&quot;&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&quot;#home&quot; data-transition=&quot;none&quot; data-icon=&quot;home&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#startTracking&quot; data-transition=&quot;none&quot; data-icon=&quot;plus&quot;&gt;Track Workout&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#history&quot; data-transition=&quot;none&quot; data-icon=&quot;star&quot;&gt;History&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div data-role=&quot;content&quot;&gt;
+    &lt;p <mark>id=&quot;tracks_recorded&quot;</mark>&gt;&lt;!-- place holder to add content via JQ --&gt;&lt;/p&gt;
+    &lt;ul <mark>data-role=&quot;listview&quot; id=&quot;history_tracklist&quot;</mark>&gt;
+    &lt;!-- place holder, we will add list elements as we create tracks (&lt;li&gt;) --&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- /page --&gt;  
+</code></pre>
+ 
+    </section>   
+ 
+  <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>HTML Structure (Track Info Page)</h4>
+   <p class="small">Note place holders for google map</p>
+<pre class="" style="font-size: 35%"><code style="width: 100%" data-noescape data-trim >
+
+&lt;!-- Track Info page --&gt;
+&lt;div data-role=&quot;page&quot; <mark>id=&quot;track_info&quot;</mark> data-theme=&quot;b&quot;&gt;
+  &lt;div data-role=&quot;header&quot;&gt;
+    &lt;h1&gt;Viewing Single Workout&lt;/h1&gt;
+    &lt;div data-role=&quot;navbar&quot;&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&quot;#home&quot; data-transition=&quot;none&quot; data-icon=&quot;home&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#startTracking&quot; data-transition=&quot;none&quot; data-icon=&quot;plus&quot;&gt;Track Workout&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#history&quot; data-transition=&quot;none&quot; data-icon=&quot;star&quot;&gt;History&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div data-role=&quot;content&quot;&gt;
+    &lt;p <mark>id=&quot;track_info_info&quot;</mark>&gt;&lt;/p&gt;
+    &lt;div <mark>id=&quot;map_canvas&quot;</mark> style=&quot;<mark>position:absolute;bottom:0;left:0;width:100%;height:300px;</mark>&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- /page --&gt;  
+</code></pre>
+ 
+    </section>    
+    
+    <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>Device Ready!</h4>
+		<p class="small">Why both?</p>
+
+      <pre class="" style="font-size: 45%"><code style="width: 100%" data-noescape data-trim >
+      
+document.addEventListener(<mark>"deviceready"</mark>, function () {
+    console.log('device ready');
+    //create neat functions for readability
+    setup();
+
+});
+
+// use when  in browser
+$(document).ready(function () {
+    console.log('ready');
+    setup();
+
+});
+</code></pre>
+    
+    </section>
+    
+    
+    <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>setup();</h4>
+		<p class="small">Check we are on line and change text<br>
+Note daisy chaining of jq methods and the button refresh method</p>
+
+      <pre class="" style="font-size: 45%"><code style="width: 100%" data-noescape data-trim >
+      
+function setup() {
+ var track_id = '';
+<mark>var tracking_data = [];</mark>
+ var watch_id = null; // ID of the geolocation.
+ 
+ // check if we are online
+ if (window.navigator.offLine) {
+  //set the button - notice we can daisy chain events do this().thenthis().thenthis()
+  // call JQM method button("refresh") if you manipulate a
+  //&lt;button&gt; tag (not  &lt;a&gt;) via javascript
+  <mark>$("#home_network_button").text('No Internet Access').attr("data-icon", "delete").button('refresh');</mark>
+ } else {
+	console.log('online');
+ }   
+}//end set up
+</code></pre>
+    
+    </section>
+    <section>
+		<h4>Tracking the User's Movements</h4>
+		<p class="small">We can monitor the user's location using the PhoneGap Geolocation API. It provides two
+			main functions: <strong>getCurrentPosition()</strong> and <strong>watchPosition()</strong>.</p>
+			<p class="small fragment">
+<strong>The getCurrentPosition()</strong> function would be used when you want to get a one-off fix on the user's location (such as saving the location of the user when they take a photo).</p>
+<p class="small fragment">Our app will use <strong>watchPosition()</strong>, which regularly polls the GPS feature of the phone and
+receives constant updates on the user's location.</p>
+	</section>
+	<section>
+		<h4>The watchPosition()</h4>
+		<p class="small"><strong>The watchPosition()</strong> accepts three arguments. The first is a function which is called every
+time the phone successfully returns a GPS location, the second is a function which is called
+			when there is a GPS error, and the third is an object of settings.</p>
+<p class="small fragment">Every time the <strong>"success"</strong> function is called, it is passed a <strong>Position object</strong>. This contains
+	information about the user's GPS position, such as their latitude, longitude, and altitude.</p>
+<p class="small fragment">Whenever the <strong>"success"</strong> function is called in our ExerciseTracker, we append the latest Position
+object to the array tracking_data .<br>
+When the Stop tracking is clicked this will store as local storage so we can access it later.</p>
+		
+	</section>
+        <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>setup();</h4>
+		<p class="">Start tracking (in setup function) - scroll down!</p>
+
+      <pre class="" style="font-size: 35%"><code style="width: 100%" data-noescape data-trim >
+      
+$("#startTracking_start").on('click', function () {
+
+console.log('start tracking');
+// Start tracking the User
+//watchPosition- Returns the device's current position when a change in position is detected
+watch_id = navigator.geolocation.<mark>watchPosition</mark>(
+
+// Success (paremeter 1)
+function (<mark>position</mark>) {
+	//temp var collecting data in an array
+	var g = {
+		timestamp: position.timestamp,
+		coords: {
+			heading: null,
+			altitude: null,
+			longitude: <mark>position</mark>.coords.longitude,
+			accuracy: <mark>position</mark>.coords.accuracy,
+			latitude: <mark>position</mark>.coords.latitude,
+			speed: <mark>position</mark>.coords.speed,
+			altitudeAccuracy: null
+		}
+	};
+	//push an array into an array (multidimensional)
+	tracking_data.<mark>push(g)</mark>;
+	console.log(g, tracking_data.length);
+
+},
+// Error (paremeter 2)
+function (error) {
+	console.log(error);
+	//should do something graceful here!
+},
+// Settings, (paremeter 3)
+{
+	<mark>enableHighAccuracy: true</mark>
+	//When enableHighAccuracy is set to true, the platform would try to get the location using the best method, 
+	//which would be GPS, if GPS is disabled, it will fall to WiFi or mobile data.
+});
+
+// Tidy up the UI - hide any text that has been inputted earlier
+track_id = $("#track_id").val();
+// hide it
+$("#track_id").hide();
+//update the html in an element
+$("#startTracking_status").<mark>html("Tracking workout: <strong>" + track_id + "</strong>")</mark>;
+});
+</code></pre>
+    
+    </section>
+  <section>
+	  <h4>Stop Tracking and Store Data</h4>
+	  <p class="small">PhoneGap provides both browser-based <strong>Local Storage</strong> and a <strong>SQLite</strong> database as methods of storing data on the phone. The SQL database is a lot more powerful (due to the fact you can specify table schemas), but comes at the cost of code complexity. Local Storage is a simple key/value store that is easy to setup and use. </p>
+		  <p class="small">Data is stored using the <strong>setItem(key,value)</strong> method, and retrieved using the <strong>getItem(key)</strong> method.</p>
+	  <p class="small fragment">We need to convert our 'tracking_data' array value to a JSON object. <strong>Why?</strong></p>
+	  <p class="small fragment"> We are forced to convert
+this array to JSON because Local Storage can only store strings.</p>
+	</section>
+
+  <section data-menu-title="slide25" data-background="assets/week8assets/ls25.jpg" data-background-size="900px" data-background-color="#1b1b1b"></section>
+   
+   <section data-background-transition="convex" data-menu-title="jones" data-background-video="assets/week8assets/jones.mp4"> </section>
+   
+    <section data-menu-title="slide27" data-background="assets/week8assets/ls27.jpg" data-background-size="900px" data-background-color="#1b1b1b"></section>
+    <section data-menu-title="slide28" data-background="assets/week8assets/ls28.jpg" data-background-size="900px" data-background-color="#1b1b1b"></section>
+    <section data-menu-title="slide29" data-background="assets/week8assets/ls29.jpg" data-background-size="900px" data-background-color="#1b1b1b"></section>
+    <section data-menu-title="slide30" data-background="assets/week8assets/ls30.jpg" data-background-size="900px" data-background-color="#1b1b1b"></section>
+    <section data-menu-title="slide31" data-background="assets/week8assets/ls31.jpg" data-background-size="900px" data-background-color="#1b1b1b"></section>
+    <section data-menu-title="slide32" data-background="assets/week8assets/ls32.jpg" data-background-size="900px" data-background-color="#1b1b1b"></section>
+    <section data-menu-title="slide33" data-background="assets/week8assets/ls33.jpg" data-background-size="900px" data-background-color="#1b1b1b"></section>
+    <section data-menu-title="slide34" data-background="assets/week8assets/ls34.jpg" data-background-size="900px" data-background-color="#1b1b1b"></section>
+    <section data-menu-title="slide35" data-background="assets/week8assets/ls35.jpg" data-background-size="900px" data-background-color="#1b1b1b"></section>
+    <section data-menu-title="json" data-background="assets/week8assets/ls36.jpg" data-background-size="900px" data-background-color="#1b1b1b">
+    	
+    	<audio data-autoplay src="assets/week8assets/hal.mp3"></audio>
+    </section>
+   
+    <section data-menu-title="slide38" data-background="assets/week8assets/ls38.jpg" data-background-size="900px" data-background-color="#1b1b1b"></section>
+    <section data-menu-title="slide39" data-background="assets/week8assets/ls39.jpg" data-background-size="900px" data-background-color="#1b1b1b"></section>
+    	<section>
+		<h4>JSON data</h4>
+		<p class="small">
+		[{"timestamp":1335700802000,"coords":{"heading":null,"altitude":null,"longitude":-0.544279 ,"accuracy":0,"latitude":53.226664,"speed":null,"altitudeAccuracy":null}},{"timestamp":1335700803000,"coords":{"heading":null,"altitude":null,"longitude":-0.549027,"accuracy":0,"latitude":53.227855,"speed":null,"altitudeAccuracy":null}},{"timestamp":1335700804000,"coords":{"heading":null,"altitude":null,"longitude":-0.549128,"accuracy":0,"latitude":53.227976,"speed":null,"altitudeAccuracy":null}},{"timestamp":1335700805000,"coords":{"heading":null,"altitude":null,"longitude":-0.548734,"accuracy":0,"latitude":53.228507,"speed":null,"altitudeAccuracy":null}},{"timestamp":1335700806000,"coords":{"heading":null,"altitude":null,"longitude":-0.546915,"accuracy":0,"latitude":53.228008,"speed":null,"altitudeAccuracy":null}},{"timestamp":1335700807000,"coords":{"heading":null,"altitude":null,"longitude":-0.546687,"accuracy":0,"latitude":53.228063,"speed":null,"altitudeAccuracy":null}},{"timestamp":1335700808000,"coords":{"heading":null,"altitude":null,"longitude":-0.546556,"accuracy":0,"latitude":53.228150,"speed":null,"altitudeAccuracy":null}},{"timestamp":1335700809000,"coords":{"heading":null,"altitude":null,"longitude":-0.543826,"accuracy":0,"latitude":53.227356,"speed":null,"altitudeAccuracy":null}}]
+		</p>
+	</section>
+ <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>setup();</h4>
+		<p class="small">Stop tracking (in setup function)</p>
+
+      <pre class="" style="font-size: 35%"><code style="width: 100%" data-noescape data-trim >
+      
+$("#startTracking_stop").on('click', function () {
+
+	// Stop tracking the user
+	//Stop watching for changes to the device's location referenced by the watchID parameter.
+	navigator.geolocation.<mark>clearWatch(watch_id)</mark>;
+	console.log('stop tracking', tracking_data, tracking_data.length, JSON.stringify(tracking_data));
+	
+	// track_id is a global var
+	if(track_id==''){
+	//could be handled better
+	 track_id='No Name'+DATE();
+	 }
+	 
+	window.localStorage.<mark>setItem</mark>(track_id, <mark>JSON.stringify(tracking_data)</mark>);
+	// Reset watch_id and tracking_data 
+	watch_id = null;
+	tracking_data = null;
+	console.log('removed');
+
+	// Tidy up the UI
+	$("#track_id").val("").show();
+
+	$("#startTracking_status").html("Stopped tracking workout: <strong>" + track_id + "</strong>");
+
+});
+
+</code></pre>
+    
+    </section>
+    
+    
+   <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>setup();</h4>
+		<p class="">Add some data to check map (in setup function)</p>
+
+      <pre class="" style="font-size: 35%"><code style="width: 100%" data-noescape data-trim >
+      
+//Here is some set data for you to add to use in lesson - check your Google maps api is working
+$("#home_seedgps_button").on('click', function () {
+	console.log('add storage');
+	window.localStorage.setItem('LINCOLN', '[{"timestamp":1335700802000,"coords":{"heading":null,"altitude":null,"longitude":-0.544279 ,"accuracy":0,"latitude":53.226664,"speed":null,"altitudeAccuracy":null}},{"timestamp":1335700803000,"coords":{"heading":null,"altitude":null,"longitude":-0.549027,"accuracy":0,"latitude":53.227855,"speed":null,"altitudeAccuracy":null}}]');
+
+});
+
+</code></pre>
+    
+    </section>
+
+   
+   <section>
+		<h4>'pagecreate', '#history'</h4>
+	   <p class="">Here there are a few key steps</p>
+	   <p class=" fragment bullet">Get local storage (any recorded gps data)</p>
+	    <p class=" fragment bullet">Iterate through each saved item to create a list</p>
+	    <p class=" fragment bullet">Add a click event for some tidying (note href='#track_info' is applied to the html in js)</p>
+	</section>
+   <section data-background-transition="convex" data-background-video="assets/week1assets/logical.mp4"> </section>
+    
+      <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>'pagecreate', '#history'</h4>
+		<p class="small">Listen for History Page</p>
+
+      <pre class="smallcode" style="font-size: 35%"><code style="width: 100%" data-noescape data-trim >
+      
+$(document).on('pagecreate', <mark>'#history'</mark>, function () {
+    console.log('history page');
+
+// Count the number of entries in localStorage and display this information to the user
+tracks_recorded = window.localStorage.<mark>length</mark>;
+$("#tracks_recorded").html("<strong>" + tracks_recorded + "</strong> workout(s) recorded");
+
+// Empty the list of recorded tracks
+$("#history_tracklist").empty();
+
+// Iterate over all of the recorded tracks, populating the list
+<mark>for (i = 0; i &lt; tracks_recorded; i++) {</mark>
+   //append to an element (inside)
+   // see the html mark up and data ajax - makes an internal link
+   // i increments the localStorage.key(i) which we will use when clicked
+  $("#history_tracklist").append("&lt;li&gt;&lt;a href='#track_info' data-ajax='false'&gt;&quot; + window.localStorage.key(<mark>i</mark>) + &quot;&lt;/a&gt;&lt;/li&gt;");
+}
+
+// Tell jQueryMobile to refresh the list
+$("#history_tracklist").<mark>listview('refresh');</mark>
+
+// When the user clicks a link to view track info, set/change the track_id attribute on the track_info page.
+$("#history_tracklist li a").on('click', function () {
+	console.log('click track');
+	$("#track_info").attr("track_id", $(this).text());
+
+});
+
+});
+</code></pre>
+    
+    </section>
+    
+   <section>
+		<h4>'pagecreate', '#track_info'</h4>
+	   <p class="">Here there are a few key steps</p>
+	   <p class=" fragment bullet">Get local storage key - so we get the selected gps data set</p>
+	    <p class=" fragment bullet">Turn the stringified GPS data back into a JS object</p>
+	    <p class=" fragment bullet">loop through array to..</p>
+	    <p class=" fragment bullet">Use function to calculate distance</p>
+	    <p class=" fragment bullet">Plot a line to a Google map</p>
+	</section>
+   <section data-background-transition="convex" data-background-video="assets/week1assets/logical.mp4"> </section>
+    
+      <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>'pagecreate', '#track_info'</h4>
+		<p class="small">Listen for History Page, get local storage and plot to map</p>
+
+      <pre class="smallcode" style="font-size: 35%"><code style="width: 100%" data-noescape data-trim >
+      
+// When the user views the Track Info page
+$(document).on('pagecreate', '#track_info', function () {
+
+	// Find the track_id of the workout they are viewing ( could of used data attr)
+	var key = $(this).attr("track_id");
+	console.log('track info', key);
+	// Update the Track Info page header to the track_id
+	$("#track_info div[data-role=header] h1").text(key);
+
+	// Get all the GPS data for the specific workout
+	var data = window.localStorage.<mark>getItem(key)</mark>;
+
+	// Turn the stringified GPS data back into a JS object
+	<mark>data = JSON.parse(data);</mark>
+
+	// Calculate the total distance traveled
+	total_km = 0;
+
+	for (i = 0; i &lt; data.length; i++) {
+
+		if (i == (data.length - 1)) {
+			break;
+		}
+
+		total_km += gps_distance(data[i].coords.latitude, data[i].coords.longitude, data[i + 1].coords.latitude, data[i + 1].coords.longitude);
+	}
+
+	total_km_rounded = total_km.toFixed(2);
+
+	// Calculate the total time taken for the track
+	start_time = new Date(data[0].timestamp).getTime();
+	end_time = new Date(data[data.length - 1].timestamp).getTime();
+
+	total_time_ms = end_time - start_time;
+	total_time_s = total_time_ms / 1000;
+
+	final_time_m = Math.floor(total_time_s / 60);
+	final_time_s = total_time_s - (final_time_m * 60);
+
+	// Display total distance and time
+	$("#track_info_info").html('Travelled <strong>' + total_km_rounded + '</strong> km in <strong>' + final_time_m + 'm</strong> and <strong>' + final_time_s + 's</strong>');
+
+	// Set the initial Lat and Long of the Google Map
+	//takes the first co ords of your tracking you could mannually set this 53.227732, -0.547074 (centre test data)
+	var myLatLng = new google.maps.LatLng(data[0].coords.latitude, data[0].coords.longitude);
+
+	// Google Map options
+	<mark>var myOptions = {
+		zoom: 16, // how much to we want to zoom in
+		center: myLatLng,
+		mapTypeId: google.maps.MapTypeId.ROADMAP
+	};</mark>
+
+	// Create the Google Map, set options // look up google maps api
+	var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+var trackCoords = [];
+
+// Add each GPS entry to an array
+for (i = 0; i &lt; data.length; i++) {
+trackCoords.push(new google.maps.LatLng(data[i].coords.latitude, data[i].coords.longitude));
+}
+
+// Plot the GPS entries as a line on the Google Map
+// look up google maps api
+var trackPath = new google.maps.Polyline({
+path: trackCoords,
+//geodesic: true,
+strokeColor: "#FF0000",
+strokeOpacity: 1.0,
+strokeWeight: 2
+});
+
+// Apply the line to the map
+trackPath.setMap(map);
+
+
+});
+</code></pre>
+    
+    </section>
+    
+     <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>Distance function</h4>
+		<p class="small">Haversine formula - you do not need to know this as it is will be provided</p>
+
+      <pre class="smallcode" style="font-size: 35%"><code style="width: 100%" data-noescape data-trim >
+// Array containing GPS position objects     // Name/ID of the exercise
+
+function gps_distance(<mark>lat1, lon1, lat2, lon2</mark>) {
+    // if you like gps maths look at http://www.movable-type.co.uk/scripts/latlong.html
+	//Haversine formula
+	
+    var R = 6371; // Radius of the earth in km
+    var dLat = (lat2 - lat1) * (Math.PI / 180);
+    var dLon = (lon2 - lon1) * (Math.PI / 180);
+    var lat1 = lat1 * (Math.PI / 180);
+    var lat2 = lat2 * (Math.PI / 180);
+
+    var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.sin(dLon / 2) * Math.sin(dLon / 2) * Math.cos(lat1) * Math.cos(lat2);
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    var d = R * c;
+
+    return d;
+}
+</code></pre>
+    
+    </section>
+    
+	<section data-background="assets/week8assets/mindblown.gif" data-background-size="900px">
+		 
+	</section>  
+    
+   
+    
+    <section data-menu-title="workshop2" data-background="">
+      <h3>Todays Session</h3>
+      <p class="">Build this!</p>
+    </section>
+    <section data-menu-title="finish" data-background="">
+      <h2>BOOM!</h2>
+    </section>
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+<script src="lib/js/head.min.js"></script> 
+<script src="js/reveal.js"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+<script src="https://code.highcharts.com/highcharts.js"></script> 
+<script src="https://code.highcharts.com/highcharts-more.js"></script> 
+<script src="https://code.highcharts.com/modules/solid-gauge.js"></script> 
+<script src="js/themes/mypbtheme.js"></script> 
+<script src="js/jquery.animateNumber.min.js"></script> 
+<script src="js/main.js"></script> 
+<script>
+	var link = document.createElement( 'link' );
+	link.rel = 'stylesheet';
+	link.type = 'text/css';
+	link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+	document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+</body>
+</html>

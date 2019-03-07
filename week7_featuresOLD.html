@@ -1,0 +1,784 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Week 7 (24): Camera</title>
+<link rel="stylesheet" href="css/reveal.css">
+<link rel="stylesheet" href="css/theme/night.css">
+
+<!-- Theme used for syntax highlighting of code -->
+<link rel="stylesheet" href="lib/css/zenburn.css">
+<link rel="stylesheet" href="css/custom.css">
+
+<!-- Printing and PDF exports -->
+<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+<style>
+.reveal h4 {
+	color: #f28e19
+}
+</style>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+    <section data-background-transition="convex" data-background="#333333">
+      <h2 >Hello</h2>
+      <p style="color:#F8AA00">Cross Platform Development (CMP3035M)</p>
+    </section>
+    <section data-background-transition="convex" data-background-video="assets/week1assets/rainingcode.mp4" data-background-video-loop="loop">
+      <h3 >Wayne Christian</h3>
+      <p style="color:#F8AA00">Designer, Developer, Director & Senior Lecturer</p>
+    </section>
+    <section data-menu-title="CPD" data-background-transition="convex" data-background="assets/week1assets/start.jpg" data-background-size="900px" data-background-color="#333333" > </section>
+    <section data-menu-title="stickies" data-background-transition="convex" data-background="assets/week1assets/sticky4.JPG" data-background-size="cover" >
+      <h4>Feedback</h4>
+      <p>(Stickies: Rules)</p>
+    </section>
+    <section data-menu-title="stickies" data-background-transition="convex" data-background="#333333">
+      <h4 class="bullet" >Happy</h4>
+      <h4 class=" bullet" >Meh? </h4>
+      <h4 class="bullet" >Unhappy</h4>
+      <p class="small">If you are unhappy or unsure on something, please explain on the back</p>
+    </section>
+    <section data-menu-title="stickies website" data-background-iframe="https://wayne-christian.github.io/WEB-AUTH-PRESENTATIONS/webauth_stickies/plane/index.html" data-background-interactive> </section>
+    <section data-menu-title="team" data-background-transition="convex" >
+      <h4>Module Goals</h4>
+      <p class="fragment small bullet"><strong>Design</strong> => Focus on user experience</p>
+      <p class="fragment small bullet"><strong>Develop</strong> => Using cross-platform tools</p>
+      <p class="fragment small bullet"><strong>Reflect</strong> => On the whole process </p>
+    </section>
+    <section class="" data-background="assets/week1assets/brain.jpg" style="">
+      <h3 style=" text-shadow: black 1px 1px;">It requires logical and creative thinking</h3>
+    </section>
+    <section data-background-transition="convex" >
+      <h4>Technical VS conceptual</h4>
+      <p class="fragment small bullet">Your wire frames should show all features and potential interactions</p>
+      <p class="fragment small bullet"><strong>ALL DO NOT</strong> have to be fully developed</p>
+      <p class="fragment small bullet">This is about technical proficiency and user experience (test and iterate)</p>
+      <p class="fragment small bullet">Do not base your user experience on your own technical ability </p>
+      <p class="fragment small bullet">Expand on components in your report if not functional</p>
+    </section>
+    <section data-menu-title="wireframe example" data-background-iframe="assets/week7assets/RAF100-App_v3.pdf"> </section>
+    <section data-menu-title="/modernizr" data-background-iframe="http://arflypast.com" data-background-interactive> </section>
+    <section data-background-transition="convex" >
+      <h4>What would I look to develop from this</h4>
+      <p class="fragment small bullet">Can I access the camera?</p>
+      <p class="fragment small bullet">Can I create a button that switches from AR view to grid View</p>
+      <p class="fragment small bullet">Can I produce drag and drop functionality of aircraft and store the co-ordinates</p>
+      <p class="fragment small bullet">How will I store them - local or cloud</p>
+      <p class="fragment small bullet">Can I get the geolocation and put my position centre screen with a 10m radius?</p>
+      <p class="fragment small bullet">How do I make the experience more engaging, filters, searches, swipes to go back?</p>
+    </section>
+    
+     <section data-menu-title="sprint" data-background="assets/week1assets/agile-sprints.svg" data-background-size="950px" data-background-color="#1b1b1b">
+
+            </section>
+    
+    <section data-menu-title="" data-background-transition="convex" >
+      <h4>Last we looked at:</h4>
+      <p class="fragment small bullet">Features</p>
+      <p class="fragment small bullet">Basic plug-ins with code snippets (will implement later)</p>
+      <p class="fragment small bullet">End on ed Waite app </p>
+      <p class="fragment small bullet"><del>Demonstrate accessing camera to take a photo, manipulate through gestures and store base64 image data</del></p>
+    </section>
+    <section data-menu-title="slide48" data-background="assets/week6assets/Featureslecture48.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide49" data-background="assets/week6assets/Featureslecture49.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide50" data-background="assets/week6assets/Featureslecture50.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide51" data-background="assets/week6assets/Featureslecture51.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide52" data-background="assets/week6assets/Featureslecture52.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide53" data-background="assets/week6assets/Featureslecture53.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide54" data-background="assets/week6assets/Featureslecture54.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide55" data-background="assets/week6assets/Featureslecture55.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide56" data-background="assets/week6assets/Featureslecture56.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide57" data-background="assets/week6assets/Featureslecture57.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide58" data-background="assets/week6assets/Featureslecture58.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide59" data-background="assets/week6assets/Featureslecture59.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide60" data-background="assets/week6assets/Featureslecture60.png" data-background-size="950px" data-background-color="#212121"></section>
+
+    <section data-menu-title="slide67" data-background="assets/week6assets/Featureslecture67.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide68" data-background="assets/week6assets/Featureslecture68.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide69" data-background="assets/week6assets/Featureslecture69.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section  data-background="">
+      <h3>Today will be all coding!</h3>
+      <p class="small">With explanations of logic, JQM functions and custom functions</p>
+      <p class="fragment bullet small">Please ask questions as normal</p>
+      <p class="fragment bullet small">I will be asking you questions!</p>
+    </section>
+    <section  data-background="">
+      <h4>We will be utilising some Js Libraries/plug-ins</h4>
+    </section>
+    <section data-menu-title="/modernizr" data-background-iframe="https://modernizr.com/docs/#using-modernizr-with-javascript" data-background-interactive> </section>
+    <section data-menu-title="bxslider" data-background-iframe="https://bxslider.com/" data-background-interactive> </section>
+    <section data-menu-title="interactjs" data-background-iframe="http://interactjs.io/" data-background-interactive> </section>
+    <section data-menu-title="jquery-lazyload" data-background-iframe="https://www.npmjs.com/package/jquery-lazyload" data-background-interactive> </section>
+    <section  data-background="">
+      <h4>And some PG plugins</h4>
+      <p class="fragment bullet small">Always review the documentation</p>
+    </section>
+    <section data-menu-title="cordova-plugin-camera" data-background-iframe="https://github.com/apache/cordova-plugin-camera" data-background-interactive> </section>
+    <section data-menu-title="Canvas2ImagePlugin" data-background-iframe="https://github.com/devgeeks/Canvas2ImagePlugin" data-background-interactive> </section>
+    <section data-menu-title="cordova-screenshot" data-background-iframe="https://github.com/gitawego/cordova-screenshot" data-background-interactive> </section>
+    <section data-menu-title="workshop" data-background="">
+      <h4>Steps</h4>
+      <p class="bullet small">Add Cordova plugins to your config.xml</p>
+      <p class="fragment bullet small">Create a button to open camera</p>
+      <p class="fragment bullet small">Save the image data and update elements CSS background</p>
+      <p class="fragment bullet small">Create click events on button to open a submenu</p>
+      <p class="fragment bullet small">Create click events to trigger adding the selected picture on top of the background image</p>
+      <p class="fragment bullet small">Activate rotate, scale and position gestures on object (interact.js library)</p>
+      <p class="fragment bullet small">Take a screen shot of the composition // removed canvas for speed</p>
+      <p class="fragment bullet small">Store on the device</p>
+    </section>
+    <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>Add Plugins to config.xml</h4>
+      <p>
+      <pre class="smallcode" style="font-size: 35%"><code style="width: 100%" data-trim >
+&lt;plugin name=&quot;cordova-plugin-camera&quot; &gt;
+ &lt;param name=&quot;CAMERA_USAGE_DESCRIPTION&quot; value=&quot;App would like to access the camera.&quot; /&gt;
+ &lt;param name=&quot;PHOTOLIBRARY_USAGE_DESCRIPTION&quot; value=&quot;App would like to access the library.&quot; /&gt;
+&lt;/plugin&gt;
+&lt;plugin name=&quot;cordova-plugin-media-capture&quot; &gt;
+ &lt;param name=&quot;CAMERA_USAGE_DESCRIPTION&quot; value=&quot;We'd like to access your camera to let you take a photo&quot;/&gt;
+ &lt;param name=&quot;PHOTOLIBRARY_USAGE_DESCRIPTION&quot; value=&quot;We'd like to access your photo library to let you pick a photo&quot;/&gt;
+ &lt;param name=&quot;MICROPHONE_USAGE_DESCRIPTION&quot; value=&quot;We'd like to access your microphone to let you record an audio&quot;/&gt;
+&lt;/plugin&gt;    
+&lt;plugin spec=&quot;https://github.com/devgeeks/Canvas2ImagePlugin.git&quot; source=&quot;git&quot; /&gt;
+&lt;plugin spec=&quot;https://github.com/gitawego/cordova-screenshot.git&quot; source=&quot;git&quot; /&gt;
+</code></pre>
+      </p>
+    </section>
+    <section data-menu-title="workshop1" data-background="">
+      <h3>NOTE: Using the PG APP only has PG plugins installed</h3>
+      <p>Third party plugins will not work and will have to be deployed through PG Build for testing</p>
+    </section>
+    <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>Dependencies!</h4>
+      <p>
+      <pre class="smallcode" style="font-size: 35%"><code style="width: 100%" data-trim >
+<!-- css styles -->
+<link rel="stylesheet" href="css/jquery.mobile-1.4.5.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/global.css">
+<link href="css/jquery.bxslider.css" rel="stylesheet" />
+
+<!-- Js this has to be loaded in the head -->
+<script src="js/modernizr-3.0.0.min.js"></script>
+<script src="cordova.js"></script>
+</code></pre>
+      </p>
+    </section>
+    <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>Js Dependencies!</h4>
+      <p>
+      <pre class="smallcode" style="font-size: 35%"><code style="width: 100%" data-noescape data-trim >
+&lt;script src=&quot;js/jquery-1.11.2.min.js&quot;&gt;&lt;/script&gt; 
+&lt;!--note jqm defaults defines preferences for JQM so needs to be declared before the library--&gt; 
+&lt;script src=&quot;js/jqm_defaults.js&quot;&gt;&lt;/script&gt; 
+&lt;script src=&quot;js/jquery.mobile-1.4.5.min.js&quot;&gt;&lt;/script&gt; 
+&lt;!-- Include all compiled plugins (below), or include individual files as needed --&gt; 
+&lt;script src=&quot;js/jquery.bxslider.min.js&quot;&gt;&lt;/script&gt; 
+&lt;!-- GESTURES LIBRARY--&gt; 
+&lt;script src=&quot;js/interact.min.js&quot;&gt;&lt;/script&gt; 
+&lt;!-- canvas to image and save in file--&gt; 
+&lt;script src=&quot;js/html2canvas.js&quot;&gt;&lt;/script&gt;
+&lt;!-- OUR JS TO INSTANTIATE EVERYTHING--&gt; 
+&lt;script src=&quot;js/main.js&quot;&gt;&lt;/script&gt; 
+&lt;!-- FOR DEBUGGING PG DESKTOP : UPDATE IP TO YOUR OWN--&gt; 
+<strong>&lt;script src=&quot;http://192.168.1.64:8080/target/target-script-min.js#anonymous&quot;&gt;&lt;/script&gt;</strong>
+
+</code></pre>
+      </p>
+    </section>
+    <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>Script</h4>
+      <p>
+      <pre class="smallcode" style="font-size: 35%"><code style="width: 100%" data-noescape data-trim >
+&lt;script src=&quot;js/jquery-1.11.2.min.js&quot;&gt;&lt;/script&gt; 
+&lt;!--note jqm defaults defines preferences for JQM so needs to be declared before the library--&gt; 
+&lt;script src=&quot;js/jqm_defaults.js&quot;&gt;&lt;/script&gt; 
+&lt;script src=&quot;js/jquery.mobile-1.4.5.min.js&quot;&gt;&lt;/script&gt; 
+&lt;!-- Include all compiled plugins (below), or include individual files as needed --&gt; 
+&lt;script src=&quot;js/jquery.bxslider.min.js&quot;&gt;&lt;/script&gt; 
+&lt;!-- GESTURES LIBRARY--&gt; 
+&lt;script src=&quot;js/interact.min.js&quot;&gt;&lt;/script&gt; 
+&lt;!-- canvas to image and save in file--&gt; 
+&lt;script src=&quot;js/html2canvas.js&quot;&gt;&lt;/script&gt;
+&lt;!-- OUR JS TO INSTANTIATE EVERYTHING--&gt; 
+&lt;script src=&quot;js/main.js&quot;&gt;&lt;/script&gt; 
+&lt;!-- FOR DEBUGGING PG DESKTOP : UPDATE IP TO YOUR OWN--&gt; 
+<strong>&lt;script src=&quot;http://192.168.1.64:8080/target/target-script-min.js#anonymous&quot;&gt;&lt;/script&gt;</strong>
+
+</code></pre>
+      </p>
+    </section>
+    <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>Device Ready!</h4>
+      <p>
+      <pre class="smallcode" style="font-size: 35%"><code style="width: 100%" data-noescape data-trim >
+//for testing
+var inpg=false;
+
+// listen for PhoneGap to connect with the device
+document.addEventListener("deviceready", onDeviceReady, false);
+
+// PhoneGap is ready to be used!
+function onDeviceReady() {
+    //console.log("device ready");
+	// use for quick checking in browser, bi passes get camera function
+	inpg=true;
+	// store camera info on device ready
+    pictureSource = navigator.camera.PictureSourceType;
+    destinationType = navigator.camera.DestinationType;
+	console.log(pictureSource, destinationType);
+	console.log('device ready', device.platform);
+	//add other events here
+}
+</code></pre>
+      </p>
+    </section>
+        <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>HTML Structure Menu</h4>
+			<p class="small">Out side of the div data-role="page"</p>
+      <pre class="smallcode" style="font-size: 35%"><code style="width: 100%" data-trim >
+ <!-- This is out side of the role page and will be accessible through out the whole app -->
+<ul id="mainNav" class="closed">
+  <li class="menuBtn"><a data-transition="slide" href=""></a></li>
+  <li class="menuCloseBtn"><a data-transition="slide" href=""></a></li>
+  <li class="studioBtn"><a data-transition="slide" href="#">Studio</a></li>
+  <li class="easelBtn"><a class="online" data-transition="slide" href="#" rel="">On the Easel</a></li>
+  <li class="createBtn"><a data-transition="slide" href="#">Create your own</a></li>
+  <li class="exhibitionsBtn"><a class="online" data-transition="slide" href="#">Exhibitions</a></li>
+  <li class="wallBtn selected"><a data-transition="slide" href="#">my Art, Your Wall</a></li>
+  <li class="menuLogo"></li>
+</ul>
+   </code>
+   </pre>
+</section>
+    <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>HTML Structure JQM Page</h4>
+   <p class="small">Usual JQM Page setup (single page)</p>
+      <pre class="smallcode" style="font-size: 35%"><code style="width: 100%" data-trim >
+
+<!-- This will be removed or hidden by JQM with new pages -->
+<div data-role="page" class="contentHolder" id="my-wall">
+<div id="container">
+<main id="content" class="content" role="main">
+<div class="inner margin">
+<header class="page_header">
+  <h1>Camera test</h1>
+  <p> <span class="mobile-only"> Tap the image to start</span></p>
+  <a class="wallinfoBtn">Using this feature</a> </header>
+
+<div class="wallholder">
+ <!-- this is a bx slider marku up look in the js to see when we call it -->
+  <ul id="wallExamples" class="">
+	<li><img src="ASSETS/images-01.jpg" /></li>
+	<li><img src="ASSETS/images-02.jpg" /></li>
+	<li><img src="ASSETS/images-03.jpg" /></li>
+	<li><img src="ASSETS/images-04.jpg" /></li>
+	<li><img src="ASSETS/images-05.jpg" /></li>
+  </ul>
+</div>
+<!-- NEED A BTN TO CALL THE CAMERA - NOTE DATA-AJAX FALSE // NO AJAX-->
+<!-- ALSO USE IMAGES AS A BTN  -->
+<a id="getImage" data-ajax="false" class="ghost-btn right" href="#">Start</a> </div>
+<!--inner--> 
+</main>
+<!-- #content --> 
+
+</div>
+</div>
+<!-- /page --> 
+</code></pre>
+ 
+    </section>
+    <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>Listen for a specific page load</h4>
+      <br>
+      <p>
+      <pre class="smallcode" style="font-size: 35%"><code style="width: 100%" data-noescape data-trim >
+
+
+// This is the index page
+
+$(document).on('pagecreate', '#my-wall', function() {
+    console.log('#my-wall');
+}
+
+
+
+</code></pre>
+      </p>
+    </section>
+    <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>BX Slider</h4>
+      <div class="collumn half">
+        <p class="small">HTML</p>
+        <pre class="smallcode" style="font-size: 35%"><code style="width: 100%" data-trim >
+ &lt;div class=&quot;wallholder&quot;&gt;
+ &lt;!-- this is a bx slider mark up up look in the js to see when we call it --&gt;
+  &lt;ul id=&quot;wallExamples&quot; class=&quot;&quot;&gt;
+	&lt;li&gt;&lt;img src=&quot;ASSETS/images-01.jpg&quot; /&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;img src=&quot;ASSETS/images-02.jpg&quot; /&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;img src=&quot;ASSETS/images-03.jpg&quot; /&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;img src=&quot;ASSETS/images-04.jpg&quot; /&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;img src=&quot;ASSETS/images-05.jpg&quot; /&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+      </div>
+      <div class="collumn half">
+        <p class="small">JS</p>
+        <pre class="smallcode" style="font-size: 35%"><code style="width: 100%" data-trim >
+$(document).on('pagecreate', '#my-wall', function() {    
+// this uses the bx slider plugin. relies on html mark up
+// I have stored the instantiation in a variable
+//means I can access it later or remove it if needs be
+wallslider = $('#wallExamples').bxSlider({
+	mode: 'fade',
+	controls: false,
+	auto: true,
+	pager: false,
+	nextText: '',
+	prevText: '',
+	preloadImages: 'visible',
+	onSliderLoad:function(){
+	console.log('loaded');
+	$('.wallholder').css("opacity","1"); 
+	}
+});
+
+}
+
+</code></pre>
+      </div>
+    </section>
+    <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>The Main Event!</h4>
+      <p class="small">A button to call the camera</p>
+      <div class="collumn half">
+        <p class="small">HTML</p>
+        <pre class="smallcode" style="font-size: 35%"><code style="width: 100%" data-trim >
+&lt;!-- NEED A BTN TO CALL THE CAMERA - NOTE DATA-AJAX FALSE // NO AJAX--&gt;
+&lt;!-- ALSO USE IMAGES AS A BTN  --&gt;
+&lt;a id=&quot;getImage&quot; data-ajax=&quot;false&quot; class=&quot;ghost-btn right&quot; href=&quot;#&quot;&gt;Start&lt;/a&gt; 
+</code></pre>
+      </div>
+      <div class="collumn half">
+        <p class="small">JS</p>
+        <pre class="smallcode" style="font-size: 35%"><code style="width: 100%" data-trim >
+$(document).on('pagecreate', '#my-wall', function() {    
+
+
+// jquery multiple selectors using , these are two seperate items.
+$('#getImage, #wallExamples li img').on("click", function() {
+	console.log('get photo');
+	if(inpg){
+	//if in pg access camera
+	capturePhotoWithData();
+	}
+	else
+	{
+	// if not in pg fake a camera success event
+	onPhotoDataSuccess(null);	
+	}
+});
+
+}
+
+</code></pre>
+      </div>
+    </section>
+    <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>Get the Picture</h4>
+      <p class="small">capturePhotoWithData() function</p>
+      <pre class="smallcode" style="font-size: 35%"><code style="width: 100%" data-trim >
+      
+      
+// A button will call this function
+//
+function capturePhotoWithData() {
+console.log('photo event fired');
+// Take picture using device camera and retrieve image as base64-encoded string
+navigator.camera.getPicture(onPhotoDataSuccess, onFail, {
+	quality: 80,
+	correctOrientation: true
+});
+// look at https://github.com/apache/cordova-plugin-camera
+}
+
+
+</code></pre>
+    </section>
+    <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>Handle Photo Events</h4>
+      <p class="small">onPhotoDataSuccess & onFail</p>
+      <pre class="smallcode" style="font-size: 35%"><code style="width: 100%" data-trim >
+ 
+//passes the image data     
+function onPhotoDataSuccess(imageData) {
+
+// store image data so we can manipulate it, put it in a canvas or img tag
+//this is a global variable and can be accessed when we want - jqm uses ajax so there is no page refresh
+// so we can store and access with no issues
+wallimagedata = imageData;
+
+// this tells JQM to load in a new page programmatically not through a link
+$(":mobile-pagecontainer").pagecontainer("change", 'my-wall-edit.html', {
+	transition: "slide",
+	showLoadMsg: true
+});
+}
+
+// Called if something bad happens.
+// 
+function onFail(message) {
+    alert('Failed because: ' + message);
+}
+
+</code></pre>
+    </section>
+    <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>Change Page</h4>
+      <p class="small">Load in a new page programmatically</p>
+      <pre class="smallcode" style="font-size: 35%"><code style="width: 100%" data-trim >
+ 
+//passes the image data     
+function onPhotoDataSuccess(imageData) {
+
+	
+// this tells JQM to load in a new page programmatically not through a link
+$(":mobile-pagecontainer").pagecontainer("change", 'my-wall-edit.html', {
+	transition: "slide",
+	showLoadMsg: true
+});
+
+
+</code></pre>
+    </section>
+    <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>my-wall-edit.html</h4>
+      <p class="small">HTML Mark up</p>
+      <pre class="smallcode" style="font-size: 35%; margin: 0; width: 100%"><code style="width: 100%" data-trim >
+&lt;div data-role=&quot;page&quot; class=&quot;pageHolder&quot; id=&quot;wall_edit&quot;&gt; 
+  
+  &lt;!-- Another sub menu --&gt;
+  &lt;ul id=&quot;drawNav&quot; class=&quot;create1 closed wallmenu&quot;&gt;
+    &lt;li class=&quot;changeMenu wallBtn step1&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;location london&quot; data-location=&quot;london_menu&quot;&gt; &lt;a class=&quot;location_btn ui-link&quot; data-ajax=&quot;false&quot;&gt; London &lt;/a&gt; &lt;/li&gt;
+    &lt;li class=&quot;location newyork&quot; data-location=&quot;newyork_menu&quot;&gt; &lt;a class=&quot;location_btn ui-link&quot; data-ajax=&quot;false&quot;&gt; New York &lt;/a&gt; &lt;/li&gt;
+    &lt;li class=&quot;location paris&quot; data-location=&quot;paris_menu&quot;&gt; &lt;a class=&quot;location_btn ui-link&quot; data-ajax=&quot;false&quot;&gt; Paris &lt;/a&gt; &lt;/li&gt;
+    &lt;li class=&quot;location other&quot; data-location=&quot;other_menu&quot;&gt; &lt;a class=&quot;location_btn ui-link&quot; data-ajax=&quot;false&quot;&gt; Other &lt;/a&gt; &lt;/li&gt;
+    &lt;li class=&quot;saveBtn createwall&quot;&gt; &lt;a class=&quot;ui-link&quot; data-ajax=&quot;false&quot;&gt; Save &lt;/a&gt; &lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;div id=&quot;london_menu&quot; class=&quot;gallery-choice&quot;&gt; 
+
+    // repeat
+ <!-- note data src is a different image - we wil luse this to load a larger image and use a smaller image for the tumbnail-->
+    <figure class="wall-thumbnail-wrap clear"> 
+     <img class="wall-thumbnail" src="ASSETS/Fiery-Skies-Over-Westminster-40x4022-186x138.jpg" data-name="Fiery Skies Over Westminster"  data-src="ASSETS/Fiery-Skies-Over-Westminster-40x4022.jpg" width="186" height="138"/>
+      <figcaption class="wall-thumbnail-caption"> Fiery Skies Over Westminster<br />40" x 40" </figcaption>
+    </figure>
+    <!--wall-thumbnail-wrap-->   
+    //repeat rest of the figures are hidden for space in presentation   
+  &lt;/div&gt;
+  
+<!-- This is a div placholder - We will use jquery to get and set the background image using the image data
+  Originally used Canvas in lecture-->
+  <div  id="wall_image_holder"></div>
+  
+  <!-- temp art work holder but the image src will change depending on selection 
+  Mark up needed for gestures library-->
+  <div id="artworkholder">
+    <div id="rotate-holder"> <img id="artwork_image" src="ASSETS/Piccadilly-Corner-36x60-186x138.jpg" alt="wallimage" /> </div>
+  </div>
+&lt;/div&gt;
+&lt;!-- /page --&gt;
+</code></pre>
+    </section>
+    <section data-menu-title="example" data-background-iframe="https://wayne-christian.github.io/cpd_lectures_18/w3/" data-background-interactive> </section>
+    <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>Add #wall_edit page load listener</h4>
+      <pre class="smallcode" style="font-size: 35%"><code style="width: 100%" data-trim >
+ 
+ 
+$(document).on('pagecreate', '#wall_edit', function() {
+	console.log("page create #wall_edit'");
+}
+
+
+</code></pre>
+    </section>
+    <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>Key elements</h4>
+      <pre class="smallcode" style="font-size: 35%"><code style="width: 100%" data-trim >
+ 
+<!-- This is a div placholder - We will use jquery to get and set the background image using the image data
+Originally used Canvas in lecture-->
+<div  id="wall_image_holder"></div>
+
+<!-- temp art work holder but the image src will change depending on selection 
+Mark up needed for gestures library-->
+<div id="artworkholder">
+ <div id="rotate-holder"> 
+ <img id="artwork_image" src="ASSETS/Piccadilly-Corner-36x60-186x138.jpg" alt="wallimage" /> 
+</div>
+</div>
+
+
+</code></pre>
+    </section>
+   
+
+    <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>Get image and copy to background</h4>
+		<p class="small">This has been updated from canvas to using an image example</p>
+      <pre class="smallcode" style="font-size: 35%"><code style="width: 100%" data-trim >
+$(document).on('pagecreate', '#wall_edit', function () {
+console.log("page create #wall_edit'");
+
+// for testing. if we want to test the page we can load an placeholder image 
+//other wise the edit wall page relies on a previous image selection
+
+if (!wallimagedata) {
+wallimagedata = 'ASSETS/wall-temp.jpg';
+}
+//console.log(wallimagedata);
+//gets the image data and uses it as a background image (data uri - base 64)
+//simply updates the back ground css - good for speed, NOT good to manipulate
+// can be position via css
+
+$('#wall_image_holder').css('background-image', 'url(' + wallimagedata + ')');
+
+//add click events after this
+}
+</code></pre>
+    </section>
+    
+        <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>Click event for location menu</h4>
+      <p class="small">in 'pagecreate' for '#wall_edit add click/touch events</p>
+      <pre class="smallcode" style="font-size: 35%"><code style="width: 100%" data-trim > 
+// adds a click event for the right hand side submenu to show based on the location button i.e london
+
+$('.location').on("click", function() {
+//prevent any default actions i.e if there was href/link
+event.preventDefault();
+
+//hide all submenus with class gallery-choice
+$('.gallery-choice').hide();
+//bit dirty but using the this referent which is the item that was clicked
+// use jquery data method. gets the value of data-location attribute
+var location_menu = '#' + $(this).data('location');
+//show it
+$(location_menu).show();
+
+});
+</code></pre>
+    </section>
+    <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>Click event for selected image</h4>
+      <p class="small">in 'pagecreate' for '#wall_edit submenu click/touch events</p>
+      <pre class="smallcode" style="font-size: 35%"><code style="width: 100%" data-trim >
+// add click events to all submenus although they are hidden
+$('.wall-thumbnail').on("click", function() {
+console.log("wall click");
+
+//store the associated image to show in the edit wall area
+//get the data-src attribute, note this is NOT the src of the clicked item as the thubmnails are smaller
+var wall_link = $(this).data('src');
+
+//custom function USING THE SELECTED IMAGE and then change page
+<mark>add_wall_image(wall_link);</mark>
+//HIDE SUBMENU
+$('.gallery-choice').hide();
+
+//Shows a save icon to initiate the screenshot plugin 
+$('.createwall').show();
+
+});
+</code></pre>
+</section>
+    
+    
+ <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>Click event to save image with artwork</h4>
+      <pre class="smallcode" style="font-size: 35%"><code style="width: 100%" data-trim >
+ 
+// add a click event to save image
+$('.saveBtn').on("click", function() {
+  // custom function to create an image and save
+  //shown in later slide
+ <mark> createwallimage();</mark>
+});
+
+</code></pre>
+    </section>
+    
+     <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>add_wall_image(wall_link)</h4>
+		 <p class="small">This a bit heavy but well documented from interact.js</p>
+      <pre class="smallcode" style="font-size: 35%"><code style="width: 100%" data-trim >
+function add_wall_image(wall_link) {
+console.log('start gestures', wall_link);
+// global var for assigning n image object
+image = new Image();
+
+//set what happened when image is loaded
+image.onload = function () {
+console.log('image loaded');
+$('#artwork_image').attr("src", wall_link).show();
+$('#artworkholder').show();
+$('#rotate-holder').attr('data-x', w / 2).attr('data-y', h / 2);
+
+var angle = 0;
+var scale = 1;
+// store html elements so we do not have to keep searching the dom
+var	gestureArea = $('#rotate-holder');
+var	scaleElement = $('#artwork_image');
+var	rotateElement = $('#artwork_image');
+var	resetTimeout;
+
+interact(gestureArea)
+.gesturable({
+onstart: function (event) {
+	clearTimeout(resetTimeout);
+	scaleElement.classList.remove('reset');
+},
+onmove: function (event) {
+	scale = scale * (1 + event.ds);
+	angle += event.da;
+	scaleElement.style.webkitTransform = scaleElement.style.transform = 'scale(' + scale + ') rotate(' + angle + 'deg) translate(-50%,-50%)';
+	
+	//this is on the next slide
+	<mark>dragMoveListener(event);</mark>
+
+},
+onend: function (event) {
+	//console.log('end',artmatrix);
+}
+}).draggable({
+	onmove: dragMoveListener,
+	onend: function (event) {
+	//console.log('drag end',artmatrix);
+	}
+}
+
+);
+
+function reset() {
+	scale = 1;
+	scaleElement.style.webkitTransform = scaleElement.style.transform = 'scale(1)';
+}
+
+ // setting the source will trigger the load event on the image object
+ image.src = wall_link;
+ //hide the subnav
+ $('.gallery-choice').hide();
+ //sort out gestures and scale, rotate etc
+
+}
+</code></pre>
+    </section>
+ 
+    <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>Listen to movements</h4>
+      <pre class="smallcode" style="font-size: 35%"><code style="width: 100%" data-trim >
+// listen to movements
+
+function dragMoveListener(event) {
+// these are not seprate lines, this is storing an array
+// keep the dragged position in the data-x/data-y attributes
+var target = event.target,
+x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
+y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
+
+// translate the element
+target.style.webkitTransform = target.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
+
+// update the posiion attributes
+target.setAttribute('data-x', x);
+target.setAttribute('data-y', y);
+}
+
+// this is used later in the resizing and gesture demos
+window.dragMoveListener = dragMoveListener;
+
+};
+</code></pre>
+    </section>
+    
+    
+     <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>createwallimage()</h4>
+		 <p class="small">Takes a screen shot of the screen.</p>
+      <pre class="smallcode" style="font-size: 35%"><code style="width: 100%" data-trim >
+// this takes a screen shot of the screen. So will be low res
+function createwallimage() {
+
+//Dynamically show the JQM loader with custom text
+$.mobile.loading('show', {
+text: 'Saving wall art to your photo library',
+textVisible: true,
+});
+
+/* take screen shot with 3rd party plugin, this will not work in PG APP */
+navigator.screenshot.save(function (error, res) {
+ if (error) {
+	console.error(error);
+ } else {
+	// just set a 3 second time out to catch the image and give feedback to user than something is happening
+	setTimeout(function () {
+		$.mobile.loading('hide');
+	}, 3000);
+	console.log('ok', res.filePath);
+}
+}, 'jpg', 80);
+
+}
+</code></pre>
+    </section>
+ <section  data-background="">
+      <h4>Send to PG BUild </h4>
+      <p class="">To test camera and screenshot functionality you will need to zip up and send to PG Build</p>
+    </section>
+     <section  data-background="">
+      <h4>Image is now stored on your device </h4>
+      <p class="">You could store the location and create an interface to access them through your app instead of exiting it.</p>
+    </section>
+    
+    <section data-menu-title="workshop2" data-background="">
+      <h3>Thursdays Session</h3>
+      <p class="">Build this!</p>
+    </section>
+    <section data-menu-title="finish" data-background="">
+      <h2>BOOM!</h2>
+    </section>
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+<script src="lib/js/head.min.js"></script> 
+<script src="js/reveal.js"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+<script src="https://code.highcharts.com/highcharts.js"></script> 
+<script src="https://code.highcharts.com/highcharts-more.js"></script> 
+<script src="https://code.highcharts.com/modules/solid-gauge.js"></script> 
+<script src="js/themes/mypbtheme.js"></script> 
+<script src="js/jquery.animateNumber.min.js"></script> 
+<script src="js/main.js"></script> 
+<script>
+	var link = document.createElement( 'link' );
+	link.rel = 'stylesheet';
+	link.type = 'text/css';
+	link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+	document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+</body>
+</html>
