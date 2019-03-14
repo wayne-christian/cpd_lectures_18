@@ -1,0 +1,626 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Week 8: REST API'S & AJAX</title>
+<link rel="stylesheet" href="css/reveal.css">
+<link rel="stylesheet" href="css/theme/night.css">
+
+<!-- Theme used for syntax highlighting of code -->
+<link rel="stylesheet" href="lib/css/zenburn.css">
+<link rel="stylesheet" href="css/custom.css">
+
+<!-- Printing and PDF exports -->
+<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+<style>
+.reveal h4 {
+	color: #f28e19
+}
+</style>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+    <section data-background-transition="convex" data-background="#333333">
+      <h2 >Hello</h2>
+      <p style="color:#F8AA00">Cross Platform Development (CMP3035M)</p>
+    </section>
+    <section data-background-transition="convex" data-background-video="assets/week1assets/rainingcode.mp4" data-background-video-loop="loop">
+      <h3 >Wayne Christian</h3>
+      <p style="color:#F8AA00">Designer, Developer, Director & Senior Lecturer</p>
+    </section>
+    
+    <section data-menu-title="CPD" data-background-transition="convex" data-background="assets/week1assets/start.jpg" data-background-size="900px" data-background-color="#333333" > </section>
+    <section data-menu-title="stickies" data-background-transition="convex" data-background="assets/week1assets/sticky4.png" data-background-size="cover" >
+      <h4>Feedback</h4>
+      <p>(Stickies: Rules)</p>
+    </section>
+    <section data-menu-title="stickies" data-background-transition="convex" data-background="#333333">
+      <h4 class="bullet" >Happy</h4>
+      <h4 class=" bullet" >Meh? </h4>
+      <h4 class="bullet" >Unhappy</h4>
+      <p class="">If you are unhappy or unsure on something, please explain on the back</p>
+    </section>
+     
+     <section>
+	<h4>We are here</h4>
+	<p class="tight">Week 1 (18): Slides (Intro to CPD & PhoneGap)</p>
+<p class="tight">Week 2 (19): Mobile Moments / Assessment</p>
+<p class="tight">Week 3 (20): Features overview</p>
+<p class="tight">Week 4 (21): UX,  User scenarios and requirements</p>
+<p class="tight">Week 5 (22): Programming js refresh / debugging</p>
+<p class="tight">Week 6 (23): Programming Features/ Camera, saving images and interface</p>
+<p class="tight">Week 7 (24): Programming Features/ Geolocation</p>
+<p class="tight red">Week 8 (25): Programming Features/ API'S</p>
+<p class="tight">Week 9 (26): Programming Features/ Augmented Reality</p>
+<p class="tight">Week 10 (27):  Evaluation</p>
+<p class="tight">Week 11 (28):  Guest Lecture (Brand Four Ltd)</p>
+<p class="tight">Week 12 (29):  Module Wrap Up</p>
+<p class="tight"> Easter</p>
+
+</section>
+
+     <section data-menu-title="" data-background-transition="convex" >
+      <h4>The second from last lecture on coding!!</h4>
+	  </section>
+  
+    <section data-background-transition="convex" data-background-video="assets/celebration.mp4"></section>
+    
+    
+     <section data-menu-title="slide2" data-background="assets/week9assets/localstorage_rest_forreveal2.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide3" data-background="assets/week9assets/localstorage_rest_forreveal3.png" data-background-size="950px" data-background-color="#212121"></section>
+    
+	  <section data-background-transition="convex" data-background="assets/week5assets/eye.gif" data-background-size="300px">
+      <h3 style="color: red">Recap/observations</h3>
+    </section> 
+     
+    <section data-menu-title="" data-background-transition="convex" >
+      <h4>Last week we looked at:</h4>
+      <p class="bullet ">Add Cordova plugins to your config.xml (geolocation)</p>
+      <p class="tight fragment bullet ">Creating HTML pages</p>
+      <p class="tight fragment bullet ">Create buttons and listening for click events</p>
+      <p class="tight fragment bullet ">Used Navigator.watch to check for movements</p>
+      <p class="tight fragment bullet ">Stored the name, long, lat, timestamp of those movements into an array</p>
+      <p class="tight fragment bullet ">JSON Stringify a JS Array </p>
+      <p class="tight fragment bullet ">Save into Local storage on the device</p>
+      <p class="tight fragment bullet ">Convert JSON back into a JS object (array)</p>
+      <p class="tight fragment bullet ">Loop through each long, lat</p>
+      <p class="tight fragment bullet ">Instantiate a google map</p>
+      <p class="tight fragment bullet ">Plot polylines on the google map (maybe)</p>
+    </section>
+
+   
+   <section data-menu-title="" data-background-transition="convex" >
+      <h4>So far</h4>
+	  </section>
+  
+    <section data-menu-title="slide7" data-background="assets/week9assets/localstorage_rest_forreveal7.png" data-background-size="950px" data-background-color="#212121"></section>
+ 
+     <section data-menu-title="" data-background-transition="convex" >
+      <h4>Today we are going to look at:</h4>
+      <p class="bullet ">JQM Global settings (Had a few questions)</p>
+      <p class="fragment bullet ">Rest services (google to sign in, Spotify playlist example)</p>
+      <p class="fragment bullet ">$ajax to get data</p>
+      <p class="fragment bullet ">Dynamically showing a JQM loader & changing a page.</p>
+      <p class="fragment bullet ">Thursdays workshop (using firebase for notifications)</p>
+    </section>
+
+    <section data-menu-title="slide10" data-background="assets/week9assets/localstorage_rest_forreveal10.png" data-background-size="950px" data-background-color="#212121"></section>
+	  <section data-menu-title="slide11" data-data-background-color="#212121"><h4>Remember</h4></section>
+    <section data-menu-title="slide12" data-background="assets/week9assets/localstorage_rest_forreveal12.png" data-background-size="cover" data-background-color="#212121"></section>
+  
+    <section data-menu-title="slide14" data-background="assets/week9assets/localstorage_rest_forreveal14.png" data-background-size="950px" data-background-color="#2D3639"></section>
+    <section data-menu-title="slide15" data-background="assets/week9assets/localstorage_rest_forreveal15.png" data-background-size="950px" data-background-color="#2D3639"></section>
+    <section data-menu-title="slide16" data-background="assets/week9assets/localstorage_rest_forreveal16.png" data-background-size="950px" data-background-color="#2D3639"></section>
+    <section data-menu-title="slide17" data-background="assets/week9assets/localstorage_rest_forreveal17.png" data-background-size="950px" data-background-color="#ffffff"></section>
+    <section data-menu-title="slide18" data-background="assets/week9assets/localstorage_rest_forreveal18.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide19" data-background="assets/week9assets/localstorage_rest_forreveal19.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide20" data-background="assets/week9assets/localstorage_rest_forreveal20.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide21" data-background="assets/week9assets/localstorage_rest_forreveal21.png" data-background-size="950px" data-background-color="#212121"></section>
+   
+    <section data-menu-title="slide23" data-background="assets/week9assets/localstorage_rest_forreveal23.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide24" data-background="assets/week9assets/localstorage_rest_forreveal24.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide25" data-background="assets/week9assets/localstorage_rest_forreveal25.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide26" data-background="assets/week9assets/localstorage_rest_forreveal26.png" data-background-size="950px" data-background-color="#212121"></section>
+<!--
+    <section data-menu-title="slide27" data-background="assets/week9assets/localstorage_rest_forreveal27.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide28" data-background="assets/week9assets/localstorage_rest_forreveal28.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide29" data-background="assets/week9assets/localstorage_rest_forreveal29.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide30" data-background="assets/week9assets/localstorage_rest_forreveal30.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide31" data-background="assets/week9assets/localstorage_rest_forreveal31.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide32" data-background="assets/week9assets/localstorage_rest_forreveal32.png" data-background-size="950px" data-background-color="#212121"></section>
+-->
+   
+    
+    <section data-menu-title="slide59" data-background="assets/week9assets/localstorage_rest_forreveal59.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide60" data-background="assets/week9assets/localstorage_rest_forreveal60.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide61" data-background="assets/week9assets/localstorage_rest_forreveal61.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide62" data-background="assets/week9assets/localstorage_rest_forreveal62.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide63" data-background="assets/week9assets/localstorage_rest_forreveal63.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide64" data-background="assets/week9assets/localstorage_rest_forreveal64.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide65" data-background="assets/week9assets/localstorage_rest_forreveal65.png" data-background-size="950px" data-background-color="#212121"></section>
+   
+    <section data-menu-title="slide67" data-background="assets/week9assets/localstorage_rest_forreveal67.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide68" data-background="assets/week9assets/localstorage_rest_forreveal68.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide69" data-background="assets/week9assets/localstorage_rest_forreveal69.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide70" data-background="assets/week9assets/localstorage_rest_forreveal70.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide71" data-background="assets/week9assets/localstorage_rest_forreveal71.png" data-background-size="950px" data-background-color="#212121"></section>
+    <section data-menu-title="slide72" data-background="assets/week9assets/localstorage_rest_forreveal72.png" data-background-size="950px" data-background-color="#212121">
+    	
+   <audio data-autoplay src="assets/week1assets/hal.mp3"></audio>
+    </section>
+    <section data-menu-title="slide73" data-background="assets/week9assets/localstorage_rest_forreveal73.png" data-background-size="cover" data-background-color="#212121"></section>
+   
+    <section data-menu-title="" data-background-transition="convex" >
+      <h4>Consuming a Restful Service</h4>
+      <p class="bullet ">Jquery (not jquery mobile which extends jquery) gives us a few tools to give us control:</p>
+      <p class="fragment bullet ">$.get()</p>
+      <p class="fragment bullet ">$.post()</p>
+      <p class="fragment bullet ">$.load()</p>
+      <p class="fragment bullet "><strong>$.ajax()</strong></p>
+    </section>
+   
+    <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>$.get() / $.post()</h4>
+      <p class="">$.get() is just a shorthand for $.ajax() but abstracts some of the configurations away, setting reasonable default values for what it hides from you. Returns the data to a callback. It only allows GET-requests so is accompanied by the $.post()<br>
+ </p>
+      
+      <pre class="code" style="font-size: 65%"><code style="width: 100%" data-noescape data-trim >
+      
+$.get( "www.url.com", function( data ) {
+  //add httml into div (assumes it is html content)
+  $( "#divWantingContent" ).html( data );
+});
+</code></pre>
+    </section>
+    
+    <section data-menu-title="slide76" data-background="assets/week9assets/localstorage_rest_forreveal76.png" data-background-size="950px" data-background-color="#212121"></section>
+    
+       <section data-menu-title="" data-background-transition="convex" >
+      <h4>GET Method</h4>
+      <p class="bullet ">GET requests can be cached</p>
+      <p class="fragment bullet ">GET requests remain in the browser history</p>
+      <p class="fragment bullet ">GET requests can be bookmarked</p>
+      <p class="fragment bullet ">GET requests should never be used with any sensitive data</p>
+      <p class="fragment bullet ">GET requests have length restrictions</p>
+      <p class="fragment bullet ">GET requests should be used only to retrieve data</p>
+    </section>
+    
+   <section data-menu-title="" data-background-transition="convex" >
+      <h4>POST Method</h4>
+      <p class="bullet ">POST requests are never cached</p>
+      <p class="fragment bullet ">POST requests do not remain in the browser history</p>
+      <p class="fragment bullet ">POST requests cannot be bookmarked</p>
+      <p class="fragment bullet ">POST requests have no restrictions on data length</p>
+    </section>
+    
+   <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>$load()</h4>
+      <p class=""><strong>.load()</strong> is similar to <strong>$.get()</strong> but adds functionality which allows you to define where in the document the returned data is to be inserted. Really only usable when the call only will result in HTML. 
+It is called slightly differently than the other, global, calls, as it is a method tied to a particular jQuery-wrapped DOM element. <br>
+<br>
+</p>
+<pre class="code" style="font-size: 55%"><code style="width: 100%" data-noescape data-trim >
+// load html content from web page
+$('#divWantingContent').load('www.url.com');
+// load html content from specific element from web page
+$('#divWantingContent').load('www.url.com  <mark>'#specificdiv'</mark> );
+</code></pre>
+    </section>
+   <!-- <section data-menu-title="slide80" data-background="assets/week9assets/localstorage_rest_forreveal80.png" data-background-size="950px" data-background-color="#212121"></section>-->
+    <section data-menu-title="slide81" data-background="assets/week9assets/localstorage_rest_forreveal81.png" data-background-size="950px" data-background-color="#212121"></section>
+    
+    <section data-background-color="#3f3f3f">
+    <pre class="code" style="font-size: 50%; line-height: normal"><code class="tight" style="width: 100%" data-noescape data-trim >
+$.ajax({
+url: 'yoururl.com',
+<MARK>data: {email : email, password : password},</MARK>
+<mark>type: 'get',</mark>                  
+async: 'true',
+dataType: 'json',
+  beforeSend: function() {
+	// This callback function will trigger before data is sent
+	$.mobile.loading('show'); // This will show ajax spinner
+  },
+  complete: function(data) {
+	// This callback function will trigger on data sent/received complete
+	$.mobile.loading('hide'); // This will hide ajax spinner
+  },
+  success: function (result) {
+  //do shit here
+  //change page	
+ },
+ error: function (request,error) {
+	// This callback function will trigger on unsuccessful action               
+	alert('Network error has occurred please try again!');
+ }
+}); 
+</code></pre>
+    </section>
+
+    <section data-menu-title="slide84" data-background="assets/week9assets/localstorage_rest_forreveal84.png" data-background-size="950px" data-background-color="#2D3639"></section>
+    
+    <section data-menu-title="" data-background-transition="convex" >
+      <h4>Spotify API coding example:</h4>
+      <p class="bullet tight">Get Token from spotify (quick fix for demo purpose)</p>
+      <p class="bullet fragment tight">JQM button to change page (#gettrack)</p>
+      <p class="fragment bullet tight">Add click events on page create (#gettrack)</p>
+      <p class="fragment bullet tight">On click check input field value using JQUERY .val() method</p>
+      <p class="fragment bullet tight">call searchAlbums() function and pass the search string as a parameter</p>
+      <p class="fragment bullet tight">Use $ajax method to search spotify and return JSON (will need spotify account)</p>
+      <p class="fragment bullet tight">Parse JSON, loop though array and use image data to create image grid</p>
+      <p class="fragment bullet tight">Apply click events to each image to get album ID </p>
+      <p class="fragment bullet tight">Create a second request to Spotify to get the album info and mp3</p>
+      <p class="fragment bullet tight">Apply toggle events to play/stop mp3 track</p>
+      <p class="fragment bullet tight">Create a JS audio object and play track</p>
+      
+    </section>
+    <section data-menu-title="stickies website" data-background-iframe="http://adigitalengagement.co.uk/jqm_workshop_rest/" data-background-interactive> </section>
+    
+    <section data-menu-title="stickies website" data-background-iframe="https://beta.developer.spotify.com/console/get-search-item/" data-background-interactive> </section>
+    
+    
+    <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>Usual set up!</h4>
+<pre class="code" style="font-size: 55%"><code style="width: 100%" data-noescape data-trim >
+// use when testing phone gap as will not get fired in browser
+document.addEventListener("deviceready", function() {
+    console.log('device ready');
+    setup();
+});
+
+// use when  in browser
+$(document).ready(function() {
+    console.log('ready');
+    setup();
+});
+</code></pre>
+    </section>
+    
+        <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>Usual set up!</h4>
+<pre class="code" style="font-size: 55%"><code style="width: 100%" data-noescape data-trim >
+//called on device / browser ready
+function setup() {
+// check internet
+
+ if (window.navigator.offLine) {
+	$("#home_network_button").text('No Internet Access').attr("data-icon", "delete").button('refresh');
+ } else {
+	console.log('online');
+ }
+}
+</code></pre>
+    </section>
+    
+     <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>Get track Page</h4>
+<pre class="code" style="font-size: 45%"><code style="width: 100%" data-noescape data-trim >
+//button that links the page
+&lt;a href=&quot;#gettrack&quot; data-transition=&quot;none&quot; data-icon=&quot;plus&quot;&gt;Get spotify playlist&lt;/a&gt;
+
+// When the user views the get track page
+$(document).on('pagecreate', '#get track', function () {
+console.log('spotify page');
+// 'input#search' is the submit button
+$('input#search').click(function (<mark>e</mark>) {
+	// e.preventDefault(); stops any other events firing, i.e if there was a link in an href
+	<mark>e.preventDefault();</mark>
+	// put the text value into a variable for safe keeping
+	var searchstring = $('#query').val();
+	// quick/dirty condition to make sure there is something to search 
+	if (!searchstring) {
+		console.log('no input');
+		return;
+		//return exits but this needs to be handled better
+	}
+	console.log(searchstring);
+	// call searchAlbums functions and pass the string to it
+	<mark>searchAlbums(searchstring);</mark>
+});
+});
+
+</code></pre>
+    </section>
+ 
+     <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>searchAlbums()</h4>
+<pre class="code" style="font-size: 45%"><code style="width: 100%" data-noescape data-trim >
+//I dont want a login so have got my acces token from spotify console which may run out
+var spotifyAccessToken ='yourtoken';
+
+var searchAlbums = function (query) {
+// call https://api.spotify.com/v1/search and pass the search string via ajax
+// data array effectively posts variables the query and the type
+$.ajax({
+ url: 'https://api.spotify.com/v1/search',
+ headers: {
+	<mark>Authorization: 'Bearer ' + spotifyAccessToken</mark>
+ },
+ data: {q: query,type: 'album'},
+ success: function (response) {
+ console.log(response);
+ var items = response.albums.items;
+ var resultsintohtml = '';
+
+ // loop through data with $.each - next slide
+ }
+});
+};
+</code></pre>
+    </section>
+     <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>$each item in spotifiy array</h4>
+<pre class="code" style="font-size: 45%"><code style="width: 100%" data-noescape data-trim >
+//inside search albums
+$.each(items, function (index) {
+	// get the id from the items array;
+	var id = items[index].id;
+	// get the name from the items array
+	var name = items[index].name;
+	// get the image from the items array, note this is a nested array
+	var image = items[index].images[1].url;
+	//console.log(id, name, image);
+	//add the vars into a large string we can holding all the html we need
+	//there are alternative ways to do this via append etc
+	// CONCATENATION,NOTE we create html div tag as a string 
+	<mark>resultsintohtml += '&lt;div style=&quot;background-image:url(' + image + ')&quot; data-album-id=&quot;' + id + '&quot; class=&quot;cover&quot;&gt;&lt;/div&gt;';</mark>
+});
+</code></pre>
+    </section>
+     <section data-background-color="#3f3f3f">
+      <h4>insert html and add click events</h4>
+<pre class="code" style="font-size: 45%"><code style="width: 100%" data-noescape data-trim >
+// once we have iterated through the array and create the html mark up
+// insert it into the results div via the html method
+$('#results').html(resultsintohtml);
+
+// call a new function that applies new click events.
+// we have to do this because on pagecreate the images are not in the dom so no need to apply
+//events after they have been created
+<mark>addclickevents();</mark>
+
+</code></pre>
+    </section> 
+     
+          <section data-menu-title="" data-background="#3f3f3f">
+      <h2>Check in the browser that it is outputting correctly</h2>
+    </section>
+    <section data-menu-title="bx" data-background="#3f3f3f">
+      <p>Add some CSS Styling as we go</p>
+      <pre><code style="font-size: 50%; line-height: normal"> 
+
+/*what are we doing here?*/
+.cover {
+    width: 25vw;
+    height: 25vw;
+    display: inline-block;
+    background-size: cover;
+	/* note the transition */   
+	transition: 0.5s;    
+}
+/*over the cover image*/
+.cover:hover {
+    cursor: pointer;
+	outline: 8px solid #fff;
+	outline-offset: -8px;
+}
+</code></pre>
+    </section>     
+      
+           <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>searchAlbums Complete</h4>
+<pre class="code" style="font-size: 35%"><code style="width: 100%" data-noescape data-trim >
+//I dont want a login so have got my acces token from spotify console which may run out
+var spotifyAccessToken ='yourtojen';
+
+var searchAlbums = function (query) {
+// call https://api.spotify.com/v1/search and pass the search string via ajax
+// data array effectively posts variables the query and the type
+$.ajax({
+ url: 'https://api.spotify.com/v1/search',
+ headers: {
+	<mark>Authorization: 'Bearer ' + spotifyAccessToken</mark>
+ },
+ data: {q: query,type: 'album'},
+ success: function (response) {
+ console.log(response);
+ var items = response.albums.items;
+ var resultsintohtml = '';
+
+ // loop through data 
+ $.each(items, function (index) {
+	// get the id from the items array
+	var id = items[index].id;
+	// get the name from the items array
+	var name = items[index].name;
+	// get the image from the items array - note this is a nested array
+	var image = items[index].images[1].url;
+	//console.log(id, name, image);
+	//add the vars into a large string we can holding all the html we need
+	//there are alternative ways to do this via append() etc
+	// CONCATENATION - NOTE we create html div tag as a string 
+	<mark>resultsintohtml += '&lt;div style=&quot;background-image:url(' + image + ')&quot; data-album-id=&quot;' + id + '&quot; class=&quot;cover&quot;&gt;&lt;/div&gt;';</mark>
+});
+
+// once we have iterated through the array and create the html mark up
+// insert it into the results div via the html() method;
+$('#results').html(resultsintohtml);
+
+// call a new function that applies new click events.
+// we have to do this because on pagecreate the images are not in the dom
+<mark>addclickevents();</mark>
+
+}
+});
+};
+</code></pre>
+    </section>
+       <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>Generate HTML markup</h4>
+		   <p class="">Note the data-album-id attribute</p>
+<pre class="code" style="font-size:60%"><code style="width: 100%" data-noescape data-trim >
+resultsintohtml += '&lt;div style=&quot;background-image:url(' + image + ')&quot; 
+data-album-id=&quot;' + id + '&quot; class=&quot;cover&quot;&gt;&lt;/div&gt;';
+</code></pre>
+    </section>
+      <section data-background-transition="convex" data-background-color="#3f3f3f">
+		  <h4>The returned JSON</h4>
+		  <p class="">this is only 1 album imagine x 20! Paste the json below into https://jsoneditoronline.org/</p>
+		  <pre class="code" style="font-size: 35%"><code style="width: 100%" data-noescape data-trim >
+		  {
+  "albums": {
+    "href": "https://api.spotify.com/v1/search?query=oasis&type=album&market=GB&offset=0&limit=1",
+    "items": [
+      {
+        "album_type": "album",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/2DaxqgrOhkeH0fpeiQq2f4"
+            },
+            "href": "https://api.spotify.com/v1/artists/2DaxqgrOhkeH0fpeiQq2f4",
+            "id": "2DaxqgrOhkeH0fpeiQq2f4",
+            "name": "Oasis",
+            "type": "artist",
+            "uri": "spotify:artist:2DaxqgrOhkeH0fpeiQq2f4"
+          }
+        ],
+        "available_markets": [
+          "US"
+        ],
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/0PTVq4kaAAuROnfvfA7bHG"
+        },
+        "href": "https://api.spotify.com/v1/albums/0PTVq4kaAAuROnfvfA7bHG",
+        "id": "0PTVq4kaAAuROnfvfA7bHG",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/6aa32e708bb0c0619dbb1a45756c2cade01a39b5",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/0e4f88a3e831fc069e966771ed015e1f252db096",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/e65ed6ad88fc33bd644fe068aab185a19099a5cb",
+            "width": 64
+          }
+        ],
+        "name": "(What's the Story) Morning Glory?",
+        "release_date": "1995-10-02",
+        "release_date_precision": "day",
+        "type": "album",
+        "uri": "spotify:album:0PTVq4kaAAuROnfvfA7bHG"
+      }
+    ],
+    "limit": 1,
+    "next": "https://api.spotify.com/v1/search?query=oasis&type=album&market=GB&offset=1&limit=1",
+    "offset": 0,
+    "previous": null,
+    "total": 2949
+  }
+}
+	</code></pre>  </section>
+       
+      <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>addclickevents()</h4>
+<pre class="code" style="font-size: 40%; line-height: normal"><code style="width: 100%" data-noescape data-trim >
+var addclickevents = function () {
+$('.cover').click(function (e) {
+console.log('get song');
+// identify the cover which as been clicked using a referent and store as a var
+<mark>var target = $(this);</mark>
+// if the target has the class 'playing', pause the audio
+if (target.hasClass('playing')) {
+// note the audio var is global,
+//if this was local we would play sounds on top of each other
+	audioObject.pause();
+} else {
+	// if an audio object has already been defined, pause it
+	if (audioObject) {
+		audioObject.pause();
+	}
+	// call a second function which will return the audio information link
+	// again this is a nested array in data.tracks.items[0].preview_url
+	<mark>fetchTracks</mark>(target.data('album-id'), function (data) {
+		audioObject = new Audio(data.tracks.items[0].preview_url);
+		audioObject.play();
+		target.addClass('playing');
+		// listen for audio to end and remove the highlight class
+		audioObject.addEventListener('ended', function () {
+			target.removeClass('playing');
+		});
+		// listen for audio to be paused and remove the highlight class
+		audioObject.addEventListener('pause', function () {
+			target.removeClass('playing');
+		});
+	});
+}
+});
+}
+</code></pre>
+    </section>
+ 
+          <section data-menu-title="" data-background-transition="convex" data-background-color="#3f3f3f">
+      <h4>fetchTracks()</h4>
+<pre class="code" style="font-size: 45%"><code style="width: 100%" data-noescape data-trim >
+// get the track
+var fetchTracks = function (albumId, callback) {
+$.ajax({
+	url: 'https://api.spotify.com/v1/albums/' + albumId,
+	headers: {
+		Authorization: 'Bearer ' + spotifyAccessToken
+	},
+	success: function (response) {
+	//note callback is a js method of passing information back not a custom function.
+	//A callback is a function that is to be executed after another function has finished executing — hence the name ‘call back’.
+	// see https://codeburst.io/javascript-what-the-heck-is-a-callback-aba4da2deced
+	<mark>callback(response);</mark>
+	}
+});
+};
+</code></pre>
+    </section>   
+     
+
+    <section data-menu-title="workshop2" data-background="">
+      <h3>Workshops</h3>
+      <p class="">Build this!<br>
+plus we have an additional google firebase workshop</p>
+    </section>
+    <section data-menu-title="finish" data-background="">
+      <h2>BOOM!</h2>
+    </section>
+  </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+<script src="lib/js/head.min.js"></script> 
+<script src="js/reveal.js"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+<script src="https://code.highcharts.com/highcharts.js"></script> 
+<script src="https://code.highcharts.com/highcharts-more.js"></script> 
+<script src="https://code.highcharts.com/modules/solid-gauge.js"></script> 
+<script src="js/themes/mypbtheme.js"></script> 
+<script src="js/jquery.animateNumber.min.js"></script> 
+<script src="js/main.js"></script> 
+<script>
+	var link = document.createElement( 'link' );
+	link.rel = 'stylesheet';
+	link.type = 'text/css';
+	link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+	document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+</body>
+</html>
